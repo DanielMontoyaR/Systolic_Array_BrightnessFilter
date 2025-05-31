@@ -48,6 +48,17 @@ for fila in Imagen:
 """
 
 
+ImagenPadding2 = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 100, 120, 110, 105, 90, 0, 0],
+    [0, 0, 115, 130, 125, 110, 95, 0, 0],
+    [0, 0, 105, 140, 150, 120, 100, 0, 0],
+    [0, 0, 95, 125, 130, 115, 85, 0, 0],
+    [0, 0, 80, 110, 105,  90, 70, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+]
 
 def agregar_padding(imagen, padding=2):
     filas = len(imagen)
@@ -112,12 +123,12 @@ ImagenPadding = agregar_padding(pixeles, 2)
 
 
 # Imprimir contenido
-print("Imagen Original:")
-print(pixeles)
+#print("Imagen Original:")
+#print(pixeles)
 
 
-print("\nImagen con padding:")
-print(ImagenPadding)
+#print("\nImagen con padding:")
+#print(ImagenPadding)
 #for fila in ImagenPadding:
 #    print(fila)
 
@@ -125,16 +136,16 @@ print(ImagenPadding)
 
 
 # Llamar a la función de convolución
-resultado = convolucion(kernel, ImagenPadding, Divisor)
+resultado = convolucion(kernel, ImagenPadding2, Divisor)
 
 print("\nImagen resultante:")
 print(resultado)
 
 
-resultado_array = np.array(resultado, dtype=np.uint8)
+#resultado_array = np.array(resultado, dtype=np.uint8)
 # Guardar la imagen resultante como JPEG
-resultado_imagen = Image.fromarray(resultado_array,mode='L')
-resultado_imagen.save("C:/Users/Daniel/Desktop/Arqui 2 Arreglo Sistolico Desenfoque Gaussiano/Python/imagen_resultante.jpeg")
+#resultado_imagen = Image.fromarray(resultado_array,mode='L')
+#resultado_imagen.save("C:/Users/Daniel/Desktop/Arqui 2 Arreglo Sistolico Desenfoque Gaussiano/Python/imagen_resultante.jpeg")
 # Imprimir el resultado
 print("Imagen guardada como 'imagen_resultante.jpeg'")
 
