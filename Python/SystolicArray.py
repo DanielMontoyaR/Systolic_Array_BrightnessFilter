@@ -39,13 +39,13 @@ import os
 
 
 # Cargar imagen JPEG en escala de grises
-imagen = Image.open("C:/Users/Daniel/Desktop/Arqui 2 Arreglo Sistolico Desenfoque Gaussiano/Python/Imagen.jpeg").convert("L")
+imagen = Image.open("C:/Users/Daniel/Desktop/Arqui 2 Arreglo Sistolico Desenfoque Gaussiano/Python/imagen.jpeg").convert("L")
 # Convertir a array numpy
 Imagen = np.array(imagen).tolist()
 
 MATRIZ_SIZE = 5
 
-Imagen_pequeña = [
+Imagen_ = [
     [100, 120, 110, 105, 90],
     [115, 130, 125, 110, 95],
     [105, 140, 150, 120, 100],
@@ -99,7 +99,7 @@ Imagen_ = [#Es de 15x15
 
 ]
 
-Imagen_ = [#Es de 10x10
+Imagen = [#Es de 10x10
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     [21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
@@ -160,15 +160,6 @@ for row in kernel:
     print(row)
     print()
 """
-# Mostrar la matriz
-#print(Imagen)
-
-print(len(Imagen[0]))
-print()
-
-
-
-
 
 
 # Here we define the PE class, which represents a Processing Element structure in the systolic array.
@@ -230,8 +221,8 @@ class PE:
                     self.PE_right.left_data_input(partial_result + self.adjacent_data)
                 else:
                     final_result = (partial_result + self.adjacent_data) // div
-                    #final_result = max(0, min(final_result, 255))
-                    self.array_result.append(final_result)
+                    final_result = max(0, min(final_result, 255))#ReLU
+                    self.array_result.insert(0,final_result)
 
                 # Resetear estado para nuevos datos
                 self.above_data = None
@@ -279,7 +270,6 @@ for i in range(MATRIZ_SIZE):
     print()
 
 
-
 print("\nSystolic Array adjacency:")
 for i in range(MATRIZ_SIZE):
     for j in range(MATRIZ_SIZE):
@@ -299,21 +289,22 @@ def start_systolic_Array(Image_input):
             sleep(0.1)  # Small delay to ensure threads start in order
 
     index = 0
-    print("Image input" , Image_input)
-    print("Image input" , Image_input[0])
+    #print("Image input" , Image_input)
+    #print("Image input" , Image_input[0])
 
     
     # Load Image Padding data into the first row of PEs
     for i in range(len(Image_input)):
         for j in range(len(Image_input[0])):
-            print(f"Sending data to {PE_objects[0][index].PE_name}: {Image_input[i][j]}")
+            print(j)
+            #print(f"Sending data to {PE_objects[0][index].PE_name}: {Image_input[i][j]}")
             PE_objects[0][index].above_data_input(Image_input[j][i])
             index += 1
             if index == MATRIZ_SIZE:
                 index = 0
+            sleep(0.00001)
 
-
-    sleep(2)
+    #sleep(1)
     # Signal termination to all PEs
     for j in range(MATRIZ_SIZE):
         print(f"Sending termination signal to {PE_objects[0][j].PE_name}")
@@ -330,14 +321,8 @@ start_systolic_Array(Imagen)
 
 
 
-print("\nFinal Output Array:")
-for i in range(MATRIZ_SIZE):
-    print(PE_objects[i][MATRIZ_SIZE-1].array_result)
-    print("Length is:" , len(PE_objects[i][MATRIZ_SIZE-1].array_result))
-    print("\n")
 
-
-def order_output_array(bloques, original_shape):
+def order_output(bloques, original_shape):
     altura, ancho = original_shape
     # Unir todos los bloques en un solo vector plano
     flat_output = [valor for bloque in bloques for valor in bloque]
@@ -348,7 +333,35 @@ def order_output_array(bloques, original_shape):
     
     # Reorganizar en matriz 2D
     salida_2D = [flat_output[i:i+ancho] for i in range(0, len(flat_output), ancho)]
-    return salida_2D
+
+    #Con la salida 2D de tipo matriz creada. Se ajustan los bits si la imagen es más grande que el arreglo
+
+    if (len(salida_2D)<= MATRIZ_SIZE):
+        print("No jump pattern needed, returning the result as is.")
+        return salida_2D
+    
+    jump_pattern = len(salida_2D)//MATRIZ_SIZE # Así obtenemos el patrón de salto cuando la matriz de entrada es mayor que 5x5
+    print("Jump Pattern:", jump_pattern)
+    ordered_result = []
+
+    range_of_loops = int(len(salida_2D[0])/5)
+    print("Range of Loops:", range_of_loops)
+
+    for loop_times in range(range_of_loops):
+        for i in range(0, len(salida_2D)):
+            for j in range(loop_times, len(salida_2D[0]), jump_pattern):
+                ordered_result.append(salida_2D[i][j])
+
+        #print("Value of i is" , i)
+
+    print("Ordered Result Length:", len(ordered_result))
+
+    # Convertir la lista ordenada en una matriz 2D con las mismas dimensiones que la imagen original
+    ordered_result = [ordered_result[i:i+len(salida_2D[0])] for i in range(0, len(ordered_result), len(salida_2D[0]))]
+    print("Ordered Result Shape:", len(ordered_result), "x", len(ordered_result[0]))
+    # Asegurarse de que la matriz ordenada tenga el mismo número de filas que la imagen original
+
+    return ordered_result
 
 
 results = []
@@ -356,74 +369,20 @@ for i in range(MATRIZ_SIZE):
     result = PE_objects[i][MATRIZ_SIZE-1].array_result
     results.append(result)  # Asegurar que cada bloque tenga el mismo tamaño
 
-
-print(results)
-
-final_output = order_output_array(results, (len(Imagen), len(Imagen[0])))
-print("\nFinal Output Image:")
-for row in final_output:
-    print(row)
+results = [fila[::-1] for fila in results]
 
 
-
-
-
-def ordered_output_result(result_matrix):
-
-    if len(result_matrix) <= MATRIZ_SIZE:
-        print("No jump pattern needed, returning the result as is.")
-        return result_matrix
-
-    jump_pattern = len(result_matrix)//MATRIZ_SIZE # Así obtenemos el patrón de salto cuando la matriz de entrada es mayor que 5x5
-    print("Jump Pattern:", jump_pattern)
-    ordered_result = []
-
-    range_of_loops = int(len(result_matrix[0])/5)
-    print("Range of Loops:", range_of_loops)
-
-    for loop_times in range(range_of_loops):
-        for i in range(0, len(result_matrix)):
-            for j in range(loop_times, len(result_matrix[0]), jump_pattern):
-                ordered_result.append(result_matrix[i][j])
-
-        print("Value of i is" , i)
-        """
-        for i in range(0,len(result_matrix)):
-            for j in range(1, len(result_matrix[0]), jump_pattern):
-                ordered_result.append(result_matrix[i][j])"""
-
-    print("Ordered Result Length:", len(ordered_result))
-
-
-    # Convertir la lista ordenada en una matriz 2D con las mismas dimensiones que la imagen original
-    ordered_result = [ordered_result[i:i+len(result_matrix[0])] for i in range(0, len(ordered_result), len(result_matrix[0]))]
-    print("Ordered Result Shape:", len(ordered_result), "x", len(ordered_result[0]))
-    # Asegurarse de que la matriz ordenada tenga el mismo número de filas que la imagen original
-
-
-    return ordered_result
-
-print("\nOrdered Output Result:")
-ordered_result = ordered_output_result(final_output)
-print(ordered_result)
+ordered_result = order_output(results, (len(Imagen), len(Imagen[0])))
+"""print("\nFinal Output Image:")
+for row in ordered_result:
+    print(row)"""
 
 
 print("\n Are the matrices equal?")
-print("Original Image")
-for row in Imagen:
-    print(row)
-print("Ordered Result")
-for row in ordered_result:
-    print(row)
 if ordered_result == Imagen:
     print("Yes, the matrices are equal.")
 else:
     print("No, the matrices are not equal.")
-
-
-
-
-
 
 
 final_output_array = np.array(ordered_result, dtype=np.uint8)
