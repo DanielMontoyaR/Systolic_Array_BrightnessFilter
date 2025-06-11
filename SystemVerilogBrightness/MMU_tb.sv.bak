@@ -1,90 +1,158 @@
 `timescale 1ns / 1ps
 
-module test_TPU;
-    // Parámetros configurables
-    parameter DEPTH = 4;
-    parameter BIT_WIDTH = 8;
-    parameter ACC_WIDTH = 32;
-    parameter CLK_PERIOD = 500; // 500 ns (250 ns cada flanco)
+module MMU_tb;
 
-    // Señales
-    logic clk;
-    logic control;
-    logic [BIT_WIDTH*DEPTH-1:0] data_arr;
-    logic [BIT_WIDTH*DEPTH-1:0] wt_arr;
-    logic [ACC_WIDTH*DEPTH-1:0] acc_out;
+    // Inputs
+    reg clk;
+    reg control;
+    reg [31:0] data_arr;
+    reg [31:0] wt_arr;
 
-    // Instancia del módulo bajo prueba (TPU o MMU)
-    TPU #(
-        .depth(DEPTH),
-        .bit_width(BIT_WIDTH),
-        .acc_width(ACC_WIDTH),
-        .size(DEPTH)
-    ) uut (
+    // Outputs
+    wire [95:0] acc_out;  // 24 bits * 4 = 96 bits
+    wire [23:0] pe30_out, pe31_out, pe32_out, pe33_out;
+
+    // Instantiate the Unit Under Test (UUT)
+    TPU uut (
         .clk(clk),
         .control(control),
         .data_arr(data_arr),
         .wt_arr(wt_arr),
-        .acc_out(acc_out)
+        .acc_out(acc_out),
+        .pe30_out(pe30_out),
+        .pe31_out(pe31_out),
+        .pe32_out(pe32_out),
+        .pe33_out(pe33_out)
     );
 
-    // Generación de reloj
+    // Clock generation
     initial begin
         clk = 0;
-        forever #(CLK_PERIOD/2) clk = ~clk;
+        forever #250 clk = ~clk;
     end
 
-    // Secuencia de estímulos
     initial begin
-        // Inicialización
+        // Initialize Inputs
         control = 0;
         data_arr = 0;
         wt_arr = 0;
-        #5000; // Espera inicial
-
-        // Fase de pesos (4 ciclos)
+        
+        // Wait for global reset
+        #5000;
+        
+        // Load weights (column by column)
         @(posedge clk);
-        control = 1;
-        wt_arr = 32'h05020304; // W0, W1, W2, W3
-
+        control = 1;  // Weight loading mode
+        
+        // Column 0 weights: 1, 0, 0, 0
+        wt_arr = 32'h00000001;
+        
         @(posedge clk);
-        wt_arr = 32'h03010203;
-
+        // Column 1 weights: 0, 1, 0, 0
+        wt_arr = 32'h00000100;
+        
         @(posedge clk);
-        wt_arr = 32'h07040102;
-
+        // Column 2 weights: 0, 0, 1, 0
+        wt_arr = 32'h00010000;
+        
         @(posedge clk);
-        wt_arr = 32'h01020403;
+        // Column 3 weights: 0, 0, 0, 1
+        wt_arr = 32'h01000000;
 
-        // Fase de datos (7 ciclos)
+		  
+		  
+		  
+        // Load data (row by row)
         @(posedge clk);
-        control = 0;
-        data_arr = 32'h00000001; // D0
-
+        control = 0;  // Calculation mode
+		  
+        
+        // Row 0 data: 0, 1, 2, 3
+        data_arr = 32'h03020100;
+		  
+		  $display("\nResultados T0:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        
         @(posedge clk);
-        data_arr = 32'h00000102; // D1
-
+        // Row 1 data: 4, 5, 6, 7
+        data_arr = 32'h07060504;
+		  $display("\nResultados T1:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+		  
         @(posedge clk);
-        data_arr = 32'h00010200; // D2
-
+        // Row 2 data: 8, 9, 10, 11
+        data_arr = 32'h0b0a0908;		  
+		  $display("\nResultados T2:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        
         @(posedge clk);
-        data_arr = 32'h00010100; // D3
-
+        // Row 3 data: 12, 13, 14, 15
+        data_arr = 32'h0f0e0d0c;		  
+		  $display("\nResultados T3:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        
+        // Wait for results to propagate
         @(posedge clk);
-        data_arr = 32'h02030200;
-
+		  $display("\nResultados T4:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
         @(posedge clk);
-        data_arr = 32'h04010000;
-
+		  $display("\nResultados T5:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
         @(posedge clk);
-        data_arr = 32'h05000000;
-
-        // Finalización
-        #1000 $finish;
-    end
-
-    // Monitoreo de resultados
-    initial begin
-        $monitor("Time = %t: acc_out = %h", $time, acc_out);
+		  $display("\nResultados T6:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        @(posedge clk);
+		  $display("\nResultados T7:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        @(posedge clk);
+		  $display("\nResultados T8:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        @(posedge clk);
+		  $display("\nResultados T9:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        @(posedge clk);
+		  $display("\nResultados T10:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        @(posedge clk);
+		  $display("\nResultados T11:");
+        $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
+        
+        $finish;
     end
 endmodule

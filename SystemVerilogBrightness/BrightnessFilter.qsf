@@ -61,7 +61,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE MMU_tb.sv -section_id MMU_tb
 set_global_assignment -name SYSTEMVERILOG_FILE TPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MAC_module.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MMU_tb.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MMU.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

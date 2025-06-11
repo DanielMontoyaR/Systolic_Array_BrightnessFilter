@@ -1,6 +1,6 @@
 module MAC #(
     parameter bit_width = 8,
-    parameter acc_width = 32
+    parameter acc_width = 24
 )(
     input logic clk,
     input logic control,
@@ -21,6 +21,7 @@ module MAC #(
         if (reset) begin
             acc_out <= 0;
             wt_path_out <= 0;
+				data_out <= 0;
         end
         else begin
             acc_out <= acc_reg;

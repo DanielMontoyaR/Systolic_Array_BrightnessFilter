@@ -9,12 +9,17 @@ module TPU #(
     input logic [(bit_width*depth)-1:0] data_arr,
     input logic [(bit_width*depth)-1:0] wt_arr,
     output logic [acc_width*size-1:0] acc_out,
-	 output logic [acc_width-1:0] final_accs [depth]  // final_accs[0] = PE[0][3], ..., final_accs[3] = PE[3][3]
+	 //output logic [acc_width-1:0] final_accs [depth],  // final_accs[0] = PE[0][3], ..., final_accs[3] = PE[3][3]
+	 output [acc_width-1:0] pe30_out,      // Salida individual PE(3,0)
+    output [acc_width-1:0] pe31_out,      // Salida individual PE(3,1)
+    output [acc_width-1:0] pe32_out,      // Salida individual PE(3,2)
+    output [acc_width-1:0] pe33_out       // Salida individual PE(3,3)
+	 
 );
 
     // Señales intermedias
-    logic [bit_width-1:0] data_out [depth][depth];
-    logic [bit_width-1:0] wt_out [depth][depth];
+    wire [bit_width-1:0] data_out [depth][depth];
+    wire [bit_width-1:0] wt_out [depth][depth];
     logic [acc_width-1:0] acc_out_temp [depth][depth];
 
     //----------------------------------------------------------
@@ -84,18 +89,26 @@ generate
     //----------------------------------------------------------
     // Registro de salida (acumuladores finales)
     //----------------------------------------------------------
-    always_ff @(posedge clk) begin : acc_out_reg
-        for (int k = 0; k < depth; k++) begin
-            acc_out[k*acc_width+:acc_width] <= acc_out_temp[depth-1][k];
-        end
+	/*always_ff @(posedge clk) begin : acc_out_reg
+		 for (int k = 0; k < depth; k++) begin
+			  acc_out[k*acc_width+:acc_width] <= acc_out_temp[k][depth-1];  // Cambiado de [depth-1][k] a [k][depth-1]
+		 end
+	end
 		  
-    end
+    //end
     always_comb begin
         for (int i = 0; i < depth; i++) begin
             final_accs[i] = acc_out_temp[i][depth-1];  // PE[i][3]
         end
-    end
+    end*/
 	 
-	 
+	 // Asignación de salidas concatenadas
+	assign acc_out = {acc_out_temp[3][3], acc_out_temp[3][2], acc_out_temp[3][1], acc_out_temp[3][0]};
+
+	// Asignación de salidas individuales
+	assign pe30_out = acc_out_temp[3][0];
+	assign pe31_out = acc_out_temp[3][1];
+	assign pe32_out = acc_out_temp[3][2];
+	assign pe33_out = acc_out_temp[3][3];
 
 endmodule
