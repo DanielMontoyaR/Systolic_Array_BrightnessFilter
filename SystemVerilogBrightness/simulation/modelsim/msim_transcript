@@ -12,39 +12,39 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:27:22 on Jun 12,2025
+# Start time: 00:36:25 on Jun 13,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
 # -- Compiling module TPU
 # 
 # Top level modules:
 # 	TPU
-# End time: 19:27:22 on Jun 12,2025, Elapsed time: 0:00:00
+# End time: 00:36:25 on Jun 13,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:27:23 on Jun 12,2025
+# Start time: 00:36:25 on Jun 13,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
 # -- Compiling module MAC
 # 
 # Top level modules:
 # 	MAC
-# End time: 19:27:23 on Jun 12,2025, Elapsed time: 0:00:00
+# End time: 00:36:25 on Jun 13,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:27:23 on Jun 12,2025
+# Start time: 00:36:25 on Jun 13,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv 
 # -- Compiling module MMU_tb
 # 
 # Top level modules:
 # 	MMU_tb
-# End time: 19:27:23 on Jun 12,2025, Elapsed time: 0:00:00
+# End time: 00:36:25 on Jun 13,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_tb 
-# Start time: 19:27:23 on Jun 12,2025
+# Start time: 00:36:25 on Jun 13,2025
 # Loading sv_std.std
 # Loading work.MMU_tb
 # Loading work.TPU
@@ -78,7 +78,7 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  00    00    00    01
+# Fila          0:  00    00    00    02
 # Fila          1:  xx    xx    xx    xx
 # Fila          2:  xx    xx    xx    xx
 # Fila          3:  xx    xx    xx    xx
@@ -86,26 +86,26 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  00    00    01    00
-# Fila          1:  00    00    00    01
+# Fila          0:  00    00    02    00
+# Fila          1:  00    00    00    02
 # Fila          2:  xx    xx    xx    xx
 # Fila          3:  xx    xx    xx    xx
 # T4
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  00    01    00    00
-# Fila          1:  00    00    01    00
-# Fila          2:  00    00    00    01
+# Fila          0:  00    02    00    00
+# Fila          1:  00    00    02    00
+# Fila          2:  00    00    00    02
 # Fila          3:  xx    xx    xx    xx
 # T5 Fully loaded:
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
 # 
 # Resultados:
 # PE(3,0) = 0xxxxxxx (x)
@@ -115,13 +115,17 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
 # 
-# Control:0
-# T6:
+# Datos en los PEs (Ciclo 5):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
 # PE(3,0) = 0xxxxxxx (x)
@@ -131,20 +135,17 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
 # 
 # Datos en los PEs (Ciclo 6):
 #         Col0     Col1     Col2     Col3
 # Fila          0:  in:00/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          1:  in:01/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          2:  in:02/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          3:  in:03/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
-# 
-# Control:0
-# T7:
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
 # PE(3,0) = 0xxxxxxx (x)
@@ -154,20 +155,17 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
 # 
 # Datos en los PEs (Ciclo 7):
 #         Col0     Col1     Col2     Col3
-# Fila          0:  in:04/out:00  in:00/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          1:  in:05/out:01  in:01/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          2:  in:06/out:02  in:02/out:xx  in:xx/out:xx  in:xx/out:xx
-# Fila          3:  in:07/out:03  in:03/out:xx  in:xx/out:xx  in:xx/out:xx
-# 
-# Control:0
-# T8:
+# Fila          0:  in:01/out:00  in:00/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:04/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
 # PE(3,0) = 0xxxxxxx (x)
@@ -177,20 +175,17 @@
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
 # 
 # Datos en los PEs (Ciclo 8):
 #         Col0     Col1     Col2     Col3
-# Fila          0:  in:08/out:04  in:04/out:00  in:00/out:xx  in:xx/out:xx
-# Fila          1:  in:09/out:05  in:05/out:01  in:01/out:xx  in:xx/out:xx
-# Fila          2:  in:0a/out:06  in:06/out:02  in:02/out:xx  in:xx/out:xx
-# Fila          3:  in:0b/out:07  in:07/out:03  in:03/out:xx  in:xx/out:xx
-# 
-# Control:0
-# T9
+# Fila          0:  in:02/out:01  in:01/out:00  in:00/out:xx  in:xx/out:xx
+# Fila          1:  in:05/out:04  in:04/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:08/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
 # PE(3,0) = 0xxxxxxx (x)
@@ -198,13 +193,19 @@
 # PE(3,2) = 0xxxxxxx (x)
 # PE(3,3) = 0xxxxxxx (x)
 # 
+# Pesos en los PEs:
+#         Col0  Col1  Col2  Col3
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
+# 
 # Datos en los PEs (Ciclo 9):
 #         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:08  in:08/out:04  in:04/out:00  in:00/out:xx
-# Fila          1:  in:0d/out:09  in:09/out:05  in:05/out:01  in:01/out:xx
-# Fila          2:  in:0e/out:0a  in:0a/out:06  in:06/out:03  in:02/out:xx
-# Fila          3:  in:0f/out:0b  in:0b/out:07  in:07/out:03  in:03/out:xx
-# T10
+# Fila          0:  in:03/out:02  in:02/out:01  in:01/out:00  in:00/out:xx
+# Fila          1:  in:06/out:05  in:05/out:04  in:04/out:xx  in:xx/out:xx
+# Fila          2:  in:09/out:08  in:08/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:0c/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
 # PE(3,0) = 0x000000 (0)
@@ -212,113 +213,188 @@
 # PE(3,2) = 0xxxxxxx (x)
 # PE(3,3) = 0xxxxxxx (x)
 # 
+# Pesos en los PEs:
+#         Col0  Col1  Col2  Col3
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
+# 
 # Datos en los PEs (Ciclo 10):
 #         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:08  in:08/out:04  in:04/out:00
-# Fila          1:  in:0d/out:0d  in:0d/out:09  in:09/out:05  in:05/out:01
-# Fila          2:  in:0e/out:0e  in:0e/out:0a  in:0a/out:07  in:06/out:03
-# Fila          3:  in:0f/out:0f  in:0f/out:0b  in:0b/out:07  in:07/out:03
-# T11
+# Fila          0:  in:xx/out:03  in:03/out:02  in:02/out:01  in:01/out:00
+# Fila          1:  in:07/out:06  in:06/out:05  in:05/out:04  in:04/out:xx
+# Fila          2:  in:0a/out:09  in:09/out:08  in:08/out:xx  in:xx/out:xx
+# Fila          3:  in:0d/out:0c  in:0c/out:xx  in:xx/out:xx  in:xx/out:xx
 # 
 # Resultados:
-# PE(3,0) = 0x000004 (4)
-# PE(3,1) = 0x000005 (5)
+# PE(3,0) = 0x000002 (2)
+# PE(3,1) = 0x000008 (8)
 # PE(3,2) = 0xxxxxxx (x)
 # PE(3,3) = 0xxxxxxx (x)
 # 
+# Pesos en los PEs:
+#         Col0  Col1  Col2  Col3
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
+# 
 # Datos en los PEs (Ciclo 11):
 #         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:08  in:08/out:04
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:09  in:09/out:05
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0b  in:0a/out:07
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0b  in:0b/out:07
-# T12
+# Fila          0:  in:xx/out:xx  in:xx/out:03  in:03/out:02  in:02/out:01
+# Fila          1:  in:xx/out:07  in:07/out:06  in:06/out:05  in:05/out:04
+# Fila          2:  in:0b/out:0a  in:0a/out:09  in:09/out:xx  in:08/out:xx
+# Fila          3:  in:0e/out:0d  in:0d/out:0c  in:0c/out:xx  in:xx/out:xx
 # 
 # Resultados:
-# PE(3,0) = 0x000008 (8)
-# PE(3,1) = 0x000009 (9)
-# PE(3,2) = 0x00000a (10)
+# PE(3,0) = 0x000004 (4)
+# PE(3,1) = 0x00000a (10)
+# PE(3,2) = 0x000010 (16)
 # PE(3,3) = 0xxxxxxx (x)
-# 
-# Datos en los PEs (Ciclo 12):
-#         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c  in:0c/out:08
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d  in:0d/out:09
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0f  in:0e/out:0b
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f  in:0f/out:0b
-# T13
-# 
-# Resultados:
-# PE(3,0) = 0x00000c (12)
-# PE(3,1) = 0x00000d (13)
-# PE(3,2) = 0x00000e (14)
-# PE(3,3) = 0x00000f (15)
-# 
-# Datos en los PEs (Ciclo 13):
-#         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0f  in:0e/out:0f
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f
-# T14
-# 
-# Resultados:
-# PE(3,0) = 0x00000c (12)
-# PE(3,1) = 0x00000d (13)
-# PE(3,2) = 0x00000e (14)
-# PE(3,3) = 0x00000f (15)
-# 
-# Datos en los PEs (Ciclo 14):
-#         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0f  in:0e/out:0f
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f
-# T15
-# 
-# Resultados:
-# PE(3,0) = 0x00000c (12)
-# PE(3,1) = 0x00000d (13)
-# PE(3,2) = 0x00000e (14)
-# PE(3,3) = 0x00000f (15)
-# 
-# Datos en los PEs (Ciclo 15):
-#         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0f  in:0e/out:0f
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f
-# T16 FINISHED ALL
-# 
-# Resultados:
-# PE(3,0) = 0x00000c (12)
-# PE(3,1) = 0x00000d (13)
-# PE(3,2) = 0x00000e (14)
-# PE(3,3) = 0x00000f (15)
-# 
-# Datos en los PEs (Ciclo 16):
-#         Col0     Col1     Col2     Col3
-# Fila          0:  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c  in:0c/out:0c
-# Fila          1:  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d  in:0d/out:0d
-# Fila          2:  in:0e/out:0e  in:0e/out:0e  in:0e/out:0f  in:0e/out:0f
-# Fila          3:  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f  in:0f/out:0f
-# T26 FINISHED ALL
-# 
-# Resultados:
-# PE(3,0) = 0x00000c (12)
-# PE(3,1) = 0x00000d (13)
-# PE(3,2) = 0x00000e (14)
-# PE(3,3) = 0x00000f (15)
 # 
 # Pesos en los PEs:
 #         Col0  Col1  Col2  Col3
-# Fila          0:  01    00    00    00
-# Fila          1:  00    01    00    00
-# Fila          2:  00    00    01    00
-# Fila          3:  00    00    00    01
-# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv(298)
-#    Time: 13250 ns  Iteration: 1  Instance: /MMU_tb
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
+# 
+# Datos en los PEs (Ciclo 12):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:03  in:03/out:02
+# Fila          1:  in:xx/out:xx  in:xx/out:07  in:07/out:06  in:06/out:05
+# Fila          2:  in:xx/out:0b  in:0b/out:0a  in:0a/out:0c  in:09/out:xx
+# Fila          3:  in:0f/out:0e  in:0e/out:0d  in:0d/out:0c  in:0c/out:xx
+# T9
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0x00000e (14)
+# PE(3,2) = 0x000014 (20)
+# PE(3,3) = 0x00001a (26)
+# 
+# Datos en los PEs (Ciclo 14):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:07
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:0e  in:0b/out:0d
+# Fila          3:  in:xx/out:xx  in:xx/out:0f  in:0f/out:0e  in:0e/out:0d
+# T10
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0x000016 (22)
+# PE(3,3) = 0x00001c (28)
+# 
+# Datos en los PEs (Ciclo 15):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:0f  in:xx/out:0e
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:0f  in:0f/out:0e
+# T11
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0x00001e (30)
+# 
+# Datos en los PEs (Ciclo 16):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:0f
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:0f
+# T12
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Datos en los PEs (Ciclo 17):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# T13
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Datos en los PEs (Ciclo 18):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# T14
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Datos en los PEs (Ciclo 19):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# T15
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Datos en los PEs (Ciclo 20):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# T16 FINISHED ALL
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Datos en los PEs (Ciclo 21):
+#         Col0     Col1     Col2     Col3
+# Fila          0:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          1:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          2:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# Fila          3:  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx  in:xx/out:xx
+# T26 FINISHED ALL
+# 
+# Resultados:
+# PE(3,0) = 0xxxxxxx (x)
+# PE(3,1) = 0xxxxxxx (x)
+# PE(3,2) = 0xxxxxxx (x)
+# PE(3,3) = 0xxxxxxx (x)
+# 
+# Pesos en los PEs:
+#         Col0  Col1  Col2  Col3
+# Fila          0:  02    00    00    00
+# Fila          1:  00    02    00    00
+# Fila          2:  00    00    02    00
+# Fila          3:  00    00    00    02
+# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv(366)
+#    Time: 15750 ns  Iteration: 1  Instance: /MMU_tb
 # 1
-# Break in Module MMU_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv line 298
-# End time: 19:47:55 on Jun 12,2025, Elapsed time: 0:20:32
+# Break in Module MMU_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv line 366
+# End time: 00:37:33 on Jun 13,2025, Elapsed time: 0:01:08
 # Errors: 0, Warnings: 0

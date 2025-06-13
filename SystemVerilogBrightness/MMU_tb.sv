@@ -168,28 +168,28 @@ module MMU_tb;
 		  
 		  $display("\nLOAD PROCESS STARTED:");
         // Column 0 weights: 1, 0, 0, 0
-        wt_arr = 32'h01000000;
+        wt_arr = 32'h02000000;
 		  $display("T0:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 1 weights: 0, 1, 0, 0
-        wt_arr = 32'h00010000;
+        wt_arr = 32'h00020000;
 		  $display("T1:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 2 weights: 0, 0, 1, 0
-        wt_arr = 32'h00000100;
+        wt_arr = 32'h00000200;
 		  $display("T2:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 3 weights: 0, 0, 0, 1
-        wt_arr = 32'h00000001;
+        wt_arr = 32'h00000002;
 		  $display("T3 FINISHED LOAD:");
 		  print_weights();
 		  //print_data();
@@ -210,8 +210,76 @@ module MMU_tb;
         // Load data (row by row)
         //@(posedge clk);
         
+		  //TEST
+		  data_arr = 32'hxxxxxx00;
 		  
-        
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  data_arr = 32'hxxxx0401;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  
+		  data_arr = 32'hxx080502;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  
+		  data_arr = 32'h0c090603;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  data_arr = 32'h0d0a07xx;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  data_arr = 32'h0e0bxxxx;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  
+		  data_arr = 32'h0fxxxxxx;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+		  
+		  data_arr = 32'hxxxxxxxx;
+		  
+		  print_outputs();
+		  print_weights();
+		  print_data();
+		  
+		  @(posedge clk);
+		  
+        /*
         // Row 0 data: 0, 1, 2, 3
         data_arr = 32'h03020100;
 		  
@@ -244,7 +312,7 @@ module MMU_tb;
         print_outputs();
 		  print_weights();
 		  print_data();
-		  $display("\nControl:", control);
+		  $display("\nControl:", control);*/
         
         // Wait for results to propagate
         @(posedge clk);
