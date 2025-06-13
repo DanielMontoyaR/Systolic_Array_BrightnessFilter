@@ -24,14 +24,17 @@ module MAC #(
 				data_out <= 0;
         end
         else begin
+				if (control) begin
+					weight_reg <= wt_path_in; //Cargar nuevo peso
+				end
             acc_out <= acc_reg;
-            wt_path_out <= wt_path_in;
+            wt_path_out <= control ? wt_path_in: weight_reg;
             data_out <= data_in;
         end
     end
 
     always_comb begin
-        result = data_in * wt_path_in;
+        result = data_in * (control ? 8'b0 : weight_reg);
         acc_reg = acc_in + result;
     end
 endmodule

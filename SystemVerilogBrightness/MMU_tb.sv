@@ -171,45 +171,45 @@ module MMU_tb;
         wt_arr = 32'h01000000;
 		  $display("T0:");
 		  print_weights();
-		  print_data();
+		  //print_data();
         
         @(posedge clk);
         // Column 1 weights: 0, 1, 0, 0
         wt_arr = 32'h00010000;
 		  $display("T1:");
 		  print_weights();
-		  print_data();
+		  //print_data();
         
         @(posedge clk);
         // Column 2 weights: 0, 0, 1, 0
         wt_arr = 32'h00000100;
 		  $display("T2:");
 		  print_weights();
-		  print_data();
+		  //print_data();
         
         @(posedge clk);
         // Column 3 weights: 0, 0, 0, 1
         wt_arr = 32'h00000001;
 		  $display("T3 FINISHED LOAD:");
 		  print_weights();
-		  print_data();
+		  //print_data();
 		  
 		  @(posedge clk);
 		  $display("T4");
 		  print_weights();
-		  print_data();
-		  
+		  //print_data();
+		  control = 0;  // Calculation mode
 		  
 		  @(posedge clk);
 		  $display("T5 Fully loaded:");
 		  print_weights();
-		  print_data();
+		  //print_data();
 		  
 		  //@(posedge clk);
 		  //print_weights();
         // Load data (row by row)
         //@(posedge clk);
-        control = 0;  // Calculation mode
+        
 		  
         
         // Row 0 data: 0, 1, 2, 3
