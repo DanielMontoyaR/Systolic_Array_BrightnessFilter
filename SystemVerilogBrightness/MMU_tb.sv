@@ -168,28 +168,28 @@ module MMU_tb;
 		  
 		  $display("\nLOAD PROCESS STARTED:");
         // Column 0 weights: 1, 0, 0, 0
-        wt_arr = 32'h02000000;
+        wt_arr = 32'h01000000;
 		  $display("T0:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 1 weights: 0, 1, 0, 0
-        wt_arr = 32'h00020000;
+        wt_arr = 32'h00010000;
 		  $display("T1:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 2 weights: 0, 0, 1, 0
-        wt_arr = 32'h00000200;
+        wt_arr = 32'h00000100;
 		  $display("T2:");
 		  print_weights();
 		  //print_data();
         
         @(posedge clk);
         // Column 3 weights: 0, 0, 0, 1
-        wt_arr = 32'h00000002;
+        wt_arr = 32'h00000001;
 		  $display("T3 FINISHED LOAD:");
 		  print_weights();
 		  //print_data();
