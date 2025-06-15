@@ -1,6 +1,7 @@
 module MAC #(
-    parameter bit_width = 8,
-    parameter acc_width = 24
+    parameter bit_width = 16,
+	 
+    parameter acc_width = 40
 )(
     input logic clk,
     input logic control,
@@ -34,7 +35,8 @@ module MAC #(
     end
 
     always_comb begin
-        result = data_in * (control ? 8'b0 : weight_reg);
+        //result = data_in * (control ? 8'b0 : weight_reg);
+		  result = data_in * (control ? {bit_width{1'b0}} : weight_reg);
         acc_reg = acc_in + result;
     end
 endmodule

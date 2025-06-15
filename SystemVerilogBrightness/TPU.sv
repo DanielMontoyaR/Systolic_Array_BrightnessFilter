@@ -1,15 +1,14 @@
 module TPU #(
     parameter depth = 4,
-    parameter bit_width = 8,
-    parameter acc_width = 24,
+    parameter bit_width = 16,
+    parameter acc_width = 40,
     parameter size = 4
 )(
     input logic clk,
     input logic control,
-    input logic [(bit_width*depth)-1:0] data_arr,
-    input logic [(bit_width*depth)-1:0] wt_arr,
-    output logic [acc_width*size-1:0] acc_out,
-	 //output logic [acc_width-1:0] final_accs [depth],  // final_accs[0] = PE[0][3], ..., final_accs[3] = PE[3][3]
+    input logic [(bit_width*depth)-1:0] data_arr,	//64 bits
+    input logic [(bit_width*depth)-1:0] wt_arr,		//64 bits
+    output logic [acc_width*size-1:0] acc_out,		//160 bits
 	 output [acc_width-1:0] pe30_out,      // Salida individual PE(3,0)
     output [acc_width-1:0] pe31_out,      // Salida individual PE(3,1)
     output [acc_width-1:0] pe32_out,      // Salida individual PE(3,2)
@@ -34,8 +33,8 @@ generate
                     MAC mac_instance (
                         .clk(clk),
                         .control(control),
-                        .reset(1'b0),       // Asegúrate de tener 'reset' en el módulo MAC
-                        .acc_in(24'b0),
+                        .reset(1'b0),
+                        .acc_in({acc_width{1'b0}}),
                         .acc_out(acc_out_temp[i][j]),
                         .data_in(data_arr[i*bit_width+:bit_width]),
                         .wt_path_in(wt_arr[j*bit_width+:bit_width]),
@@ -48,7 +47,7 @@ generate
                         .clk(clk),
                         .control(control),
                         .reset(1'b0),
-                        .acc_in(24'b0),
+                        .acc_in({acc_width{1'b0}}),
                         .acc_out(acc_out_temp[i][j]),
                         .data_in(data_out[i][j-1]),
                         .wt_path_in(wt_arr[j*bit_width+:bit_width]),

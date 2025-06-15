@@ -1,79 +1,30 @@
 `timescale 1ns / 1ps
 
 module MMU_tb;
-
+    parameter BIT_WIDTH = 16;
+    parameter ACC_WIDTH = 40;
+    parameter DEPTH = 4;
+    
     // Inputs
     reg clk;
     reg control;
-    reg [31:0] data_arr;
-    reg [31:0] wt_arr;
+    reg [BIT_WIDTH*DEPTH-1:0] data_arr;  // 64 bits
+    reg [BIT_WIDTH*DEPTH-1:0] wt_arr;    // 64 bits
 
     // Outputs
-    wire [95:0] acc_out;  // 24 bits * 4 = 96 bits
-    wire [23:0] pe30_out, pe31_out, pe32_out, pe33_out;
-	 
-	 
-	 // Señales para acceder a datos internos
-    wire [7:0] pe_weights [3:0][3:0];  // [fila][columna]
-    wire [7:0] pe_data_in [3:0][3:0];  // Datos de entrada a cada PE
-    wire [7:0] pe_data_out [3:0][3:0]; // Datos de salida de cada PE
-	 
+    wire [ACC_WIDTH*DEPTH-1:0] acc_out;  // 160 bits
+    wire [ACC_WIDTH-1:0] pe30_out, pe31_out, pe32_out, pe33_out;
 
-	// Para fila 0
-	assign pe_data_in[0][0] = uut.data_arr[7:0];
-	assign pe_data_in[0][1] = uut.data_out[0][0];
-	assign pe_data_in[0][2] = uut.data_out[0][1];
-	assign pe_data_in[0][3] = uut.data_out[0][2];
-
-	// Para filas 1-3
-	
-	// Conexiones internas para filas 1-3
-	assign pe_data_in[1][0] = uut.data_arr[15:8];
-	assign pe_data_in[1][1] = uut.data_out[1][0];
-	assign pe_data_in[1][2] = uut.data_out[1][1];
-	assign pe_data_in[1][3] = uut.data_out[1][2];
-
-	assign pe_data_in[2][0] = uut.data_arr[23:16];
-	assign pe_data_in[2][1] = uut.data_out[2][0];
-	assign pe_data_in[2][2] = uut.data_out[2][1];
-	assign pe_data_in[2][3] = uut.data_out[2][2];
-
-	assign pe_data_in[3][0] = uut.data_arr[31:24];
-	assign pe_data_in[3][1] = uut.data_out[3][0];
-	assign pe_data_in[3][2] = uut.data_out[3][1];
-	assign pe_data_in[3][3] = uut.data_out[3][2];
-
-	// Salidas de todos los PEs
-	assign pe_data_out[0][0] = uut.data_out[0][0];
-	assign pe_data_out[0][1] = uut.data_out[0][1];
-	assign pe_data_out[0][2] = uut.data_out[0][2];
-	assign pe_data_out[0][3] = uut.data_out[0][3];
-	
-	assign pe_data_out[1][0] = uut.data_out[1][0];
-	assign pe_data_out[1][1] = uut.data_out[1][1];
-	assign pe_data_out[1][2] = uut.data_out[1][2];
-	assign pe_data_out[1][3] = uut.data_out[1][3];
-	
-	assign pe_data_out[2][0] = uut.data_out[2][0];
-	assign pe_data_out[2][1] = uut.data_out[2][1];
-	assign pe_data_out[2][2] = uut.data_out[3][2];
-	assign pe_data_out[2][3] = uut.data_out[3][3];
-	
-	assign pe_data_out[3][0] = uut.data_out[3][0];
-	assign pe_data_out[3][1] = uut.data_out[3][1];
-	assign pe_data_out[3][2] = uut.data_out[3][2];
-	assign pe_data_out[3][3] = uut.data_out[3][3];
-	
-	
-	
-	 
-	 
-	 
-	 
-	 
+    // Señales para monitoreo interno
+    wire [BIT_WIDTH-1:0] pe_weights [0:DEPTH-1][0:DEPTH-1];
+    wire [BIT_WIDTH-1:0] pe_data_in [0:DEPTH-1][0:DEPTH-1];
+    wire [BIT_WIDTH-1:0] pe_data_out [0:DEPTH-1][0:DEPTH-1];
 
     // Instantiate the Unit Under Test (UUT)
-    TPU uut (
+    TPU #(
+        .bit_width(BIT_WIDTH),
+        .acc_width(ACC_WIDTH)
+    ) uut (
         .clk(clk),
         .control(control),
         .data_arr(data_arr),
@@ -85,34 +36,84 @@ module MMU_tb;
         .pe33_out(pe33_out)
     );
 
-	  // Conexión a las señales internas de pesos
-    assign pe_weights[0][0] = uut.wt_out[0][0];
-    assign pe_weights[0][1] = uut.wt_out[0][1];
-    assign pe_weights[0][2] = uut.wt_out[0][2];
-    assign pe_weights[0][3] = uut.wt_out[0][3];
-    
-    assign pe_weights[1][0] = uut.wt_out[1][0];
-    assign pe_weights[1][1] = uut.wt_out[1][1];
-    assign pe_weights[1][2] = uut.wt_out[1][2];
-    assign pe_weights[1][3] = uut.wt_out[1][3];
-    
-    assign pe_weights[2][0] = uut.wt_out[2][0];
-    assign pe_weights[2][1] = uut.wt_out[2][1];
-    assign pe_weights[2][2] = uut.wt_out[2][2];
-    assign pe_weights[2][3] = uut.wt_out[2][3];
-    
-    assign pe_weights[3][0] = uut.wt_out[3][0];
-    assign pe_weights[3][1] = uut.wt_out[3][1];
-    assign pe_weights[3][2] = uut.wt_out[3][2];
-    assign pe_weights[3][3] = uut.wt_out[3][3];
+    // Conexiones para monitoreo
+	// Asignaciones directas para pesos
+	assign pe_weights[0][0] = uut.wt_out[0][0];
+	assign pe_weights[0][1] = uut.wt_out[0][1];
+	assign pe_weights[0][2] = uut.wt_out[0][2];
+	assign pe_weights[0][3] = uut.wt_out[0][3];
 
+	assign pe_weights[1][0] = uut.wt_out[1][0];
+	assign pe_weights[1][1] = uut.wt_out[1][1];
+	assign pe_weights[1][2] = uut.wt_out[1][2];
+	assign pe_weights[1][3] = uut.wt_out[1][3];
+
+	assign pe_weights[2][0] = uut.wt_out[2][0];
+	assign pe_weights[2][1] = uut.wt_out[2][1];
+	assign pe_weights[2][2] = uut.wt_out[2][2];
+	assign pe_weights[2][3] = uut.wt_out[2][3];
+
+	assign pe_weights[3][0] = uut.wt_out[3][0];
+	assign pe_weights[3][1] = uut.wt_out[3][1];
+	assign pe_weights[3][2] = uut.wt_out[3][2];
+	assign pe_weights[3][3] = uut.wt_out[3][3];
+
+	// Asignaciones directas para data_out
+	assign pe_data_out[0][0] = uut.data_out[0][0];
+	assign pe_data_out[0][1] = uut.data_out[0][1];
+	assign pe_data_out[0][2] = uut.data_out[0][2];
+	assign pe_data_out[0][3] = uut.data_out[0][3];
+
+	assign pe_data_out[1][0] = uut.data_out[1][0];
+	assign pe_data_out[1][1] = uut.data_out[1][1];
+	assign pe_data_out[1][2] = uut.data_out[1][2];
+	assign pe_data_out[1][3] = uut.data_out[1][3];
+
+	assign pe_data_out[2][0] = uut.data_out[2][0];
+	assign pe_data_out[2][1] = uut.data_out[2][1];
+	assign pe_data_out[2][2] = uut.data_out[2][2];
+	assign pe_data_out[2][3] = uut.data_out[2][3];
+
+	assign pe_data_out[3][0] = uut.data_out[3][0];
+	assign pe_data_out[3][1] = uut.data_out[3][1];
+	assign pe_data_out[3][2] = uut.data_out[3][2];
+	assign pe_data_out[3][3] = uut.data_out[3][3];
+
+	// Asignaciones directas para data_in (16 bits)
+	assign pe_data_in[0][0] = uut.data_arr[15:0];  // PE(0,0) toma bits 15-0
+	assign pe_data_in[0][1] = uut.data_out[0][0];  // PE(0,1) toma salida de PE(0,0)
+	assign pe_data_in[0][2] = uut.data_out[0][1];  // PE(0,2) toma salida de PE(0,1)
+	assign pe_data_in[0][3] = uut.data_out[0][2];  // PE(0,3) toma salida de PE(0,2)
+
+	assign pe_data_in[1][0] = uut.data_arr[31:16]; // PE(1,0) toma bits 31-16
+	assign pe_data_in[1][1] = uut.data_out[1][0];  // PE(1,1) toma salida de PE(1,0)
+	assign pe_data_in[1][2] = uut.data_out[1][1];  // PE(1,2) toma salida de PE(1,1)
+	assign pe_data_in[1][3] = uut.data_out[1][2];  // PE(1,3) toma salida de PE(1,2)
+
+	assign pe_data_in[2][0] = uut.data_arr[47:32]; // PE(2,0) toma bits 47-32
+	assign pe_data_in[2][1] = uut.data_out[2][0];  // PE(2,1) toma salida de PE(2,0)
+	assign pe_data_in[2][2] = uut.data_out[2][1];  // PE(2,2) toma salida de PE(2,1)
+	assign pe_data_in[2][3] = uut.data_out[2][2];  // PE(2,3) toma salida de PE(2,2)
+
+	assign pe_data_in[3][0] = uut.data_arr[63:48]; // PE(3,0) toma bits 63-48
+	assign pe_data_in[3][1] = uut.data_out[3][0];  // PE(3,1) toma salida de PE(3,0)
+	assign pe_data_in[3][2] = uut.data_out[3][1];  // PE(3,2) toma salida de PE(3,1)
+	assign pe_data_in[3][3] = uut.data_out[3][2];  // PE(3,3) toma salida de PE(3,2)
 	 
-	     // Función para mostrar los pesos
+	 
+
+    // Clock generation
+    initial begin
+        clk = 0;
+        forever #250 clk = ~clk;
+    end
+
+    // Función para mostrar pesos
     function void print_weights;
-        $display("\nPesos en los PEs:");
-        $display("        Col0  Col1  Col2  Col3");
-        for (int i = 0; i < 4; i++) begin
-            $display("Fila%d:  %2h    %2h    %2h    %2h", 
+        $display("\nPesos en los PEs (T=%0t):", $time);
+        $display("        Col0        Col1        Col2        Col3");
+        for (int i = 0; i < DEPTH; i++) begin
+            $display("Fila%d:  %4h        %4h        %4h        %4h", 
                     i, 
                     pe_weights[i][0], 
                     pe_weights[i][1], 
@@ -120,24 +121,13 @@ module MMU_tb;
                     pe_weights[i][3]);
         end
     endfunction
-	 
-	 
-	 function void print_outputs;
-		  $display("\nResultados:");
-		  $display("PE(3,0) = 0x%h (%0d)", pe30_out, pe30_out);
-        $display("PE(3,1) = 0x%h (%0d)", pe31_out, pe31_out);
-        $display("PE(3,2) = 0x%h (%0d)", pe32_out, pe32_out);
-        $display("PE(3,3) = 0x%h (%0d)", pe33_out, pe33_out);
-	 endfunction
-	 
-	 
-    // Función para mostrar datos
 
-    function void print_data;
-        $display("\nDatos en los PEs (Ciclo %0d):", $time/500);
-        $display("        Col0     Col1     Col2     Col3");
-        for (int i = 0; i < 4; i++) begin
-            $display("Fila%d:  in:%2h/out:%2h  in:%2h/out:%2h  in:%2h/out:%2h  in:%2h/out:%2h", 
+    // Función para mostrar datos
+    function void print_data_flow;
+        $display("\nFlujo de Datos (T=%0t):", $time);
+        $display("        Col0               Col1               Col2               Col3");
+        for (int i = 0; i < DEPTH; i++) begin
+            $display("Fila%d:  in:%4h/out:%4h  in:%4h/out:%4h  in:%4h/out:%4h  in:%4h/out:%4h", 
                     i,
                     pe_data_in[i][0], pe_data_out[i][0],
                     pe_data_in[i][1], pe_data_out[i][1],
@@ -145,224 +135,106 @@ module MMU_tb;
                     pe_data_in[i][3], pe_data_out[i][3]);
         end
     endfunction
-	 
-    // Clock generation
-    initial begin
-        clk = 0;
-        forever #250 clk = ~clk;
-    end
+
+    // Función para mostrar resultados
+    function void print_results;
+        $display("\nResultados Acumulados (T=%0t):", $time);
+        $display("PE(3,0) = %10h (dec %0d)", pe30_out, pe30_out);
+        $display("PE(3,1) = %10h (dec %0d)", pe31_out, pe31_out);
+        $display("PE(3,2) = %10h (dec %0d)", pe32_out, pe32_out);
+        $display("PE(3,3) = %10h (dec %0d)", pe33_out, pe33_out);
+    endfunction
 
     initial begin
-        // Initialize Inputs
-        //control = 0;
-        //data_arr = 0;
-        //wt_arr = 0;
+        // Inicialización
+        control = 0;
+        data_arr = 0;
+        wt_arr = 0;
+        #500;
         
-        // Wait for global reset
-        //#500;
+        // Fase 1: Carga de pesos (matriz identidad)
+        $display("\n=== FASE 1: CARGA DE PESOS ===");
+        control = 1;
         
-        // Load weights (column by column)
+        // Carga por columnas (weight stationary)
         @(posedge clk);
-        control = 1;  // Weight loading mode
-        
-		  
-		  $display("\nLOAD PROCESS STARTED:");
-        // Column 0 weights: 1, 0, 0, 0
-        wt_arr = 32'h01000000;
-		  $display("T0:");
-		  print_weights();
-		  //print_data();
+        wt_arr = 64'h0005000000000000;  // Columna 0: [1, 0, 0, 0]
+        print_weights();
         
         @(posedge clk);
-        // Column 1 weights: 0, 1, 0, 0
-        wt_arr = 32'h00010000;
-		  $display("T1:");
-		  print_weights();
-		  //print_data();
+        wt_arr = 64'h0000000500000000;  // Columna 1: [0, 1, 0, 0]
+        print_weights();
         
         @(posedge clk);
-        // Column 2 weights: 0, 0, 1, 0
-        wt_arr = 32'h00000100;
-		  $display("T2:");
-		  print_weights();
-		  //print_data();
+        wt_arr = 64'h0000000000050000;  // Columna 2: [0, 0, 1, 0]
+        print_weights();
         
         @(posedge clk);
-        // Column 3 weights: 0, 0, 0, 1
-        wt_arr = 32'h00000001;
-		  $display("T3 FINISHED LOAD:");
-		  print_weights();
-		  //print_data();
-		  
-		  @(posedge clk);
-		  $display("T4");
-		  print_weights();
-		  //print_data();
-		  control = 0;  // Calculation mode
-		  
-		  @(posedge clk);
-		  $display("T5 Fully loaded:");
-		  print_weights();
-		  //print_data();
-		  
-		  //@(posedge clk);
-		  //print_weights();
-        // Load data (row by row)
-        //@(posedge clk);
-        
-		  //TEST
-		  data_arr = 32'hxxxxxx00;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  data_arr = 32'hxxxx0401;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  
-		  data_arr = 32'hxx080502;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  
-		  data_arr = 32'h0c090603;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  data_arr = 32'h0d0a07xx;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  data_arr = 32'h0e0bxxxx;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  
-		  data_arr = 32'h0fxxxxxx;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-		  
-		  data_arr = 32'hxxxxxxxx;
-		  
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  
-		  @(posedge clk);
-		  
-        /*
-        // Row 0 data: 0, 1, 2, 3
-        data_arr = 32'h03020100;
-		  
-		  print_outputs();
-		  print_weights();
-		  $display("\nControl:", control);
-        
-        @(posedge clk);
-        // Row 1 data: 4, 5, 6, 7
-        data_arr = 32'h07060504;
-		  $display("T6:");
-		  print_outputs();
-		  print_weights();
-		  print_data();
-		  $display("\nControl:", control);
+        wt_arr = 64'h0000000000000005;  // Columna 3: [0, 0, 0, 1]
+        print_weights();
 		  
         @(posedge clk);
-        // Row 2 data: 8, 9, 10, 11
-        data_arr = 32'h0b0a0908;		  
-		  $display("T7:");
-        print_outputs();
-		  print_weights();
-		  print_data();
-		  $display("\nControl:", control);
-        
+        // Verificación final de pesos
+		  control = 0;
         @(posedge clk);
-        // Row 3 data: 12, 13, 14, 15
-        data_arr = 32'h0f0e0d0c;		  
-		  $display("T8:");
-        print_outputs();
-		  print_weights();
-		  print_data();
-		  $display("\nControl:", control);*/
+        $display("\nPesos finales cargados:");
+        print_weights();
         
-        // Wait for results to propagate
+        // Fase 2: Carga de datos en patrón diagonal
+        $display("\n=== FASE 2: CARGA DE DATOS (PATRÓN DIAGONAL) ===");
+        print_weights();
+        // Ciclo 1: D0
         @(posedge clk);
-		  $display("T9");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T10");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T11");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T12");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T13");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T14");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T15");
-        print_outputs();
-		  print_data();
-        
-		  @(posedge clk);
-		  $display("T16 FINISHED ALL");
-        print_outputs();
-		  print_data();
-		  
-		  
-		  
-		  repeat(10) @(posedge clk);
-		  $display("T26 FINISHED ALL");
-    
-		 // Mostrar resultados solo cuando estén listos
-		  print_outputs();
+        data_arr = 64'hxxxx_xxxx_xxxx_0000;  // [x, x, x, 0]
+        print_data_flow();
 		  print_weights();
+        
+        // Ciclo 2: D1, D0
+        @(posedge clk);
+        data_arr = 64'hxxxx_xxxx_0004_0001;  // [x, x, 4, 1]
+        print_data_flow();
+        
+        // Ciclo 3: D2, D1, D0
+        @(posedge clk);
+        data_arr = 64'hxxxx_0008_0005_0002;  // [x, 8, 5, 2]
+        print_data_flow();
+        
+        // Ciclo 4: D3, D2, D1, D0
+        @(posedge clk);
+        data_arr = 64'h000c_0009_0006_0003;  // [c, 9, 6, 3]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000d_000a_0007_xxxx;  // [d, a, 7, x]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000e_000b_xxxx_xxxx;  // [e, b, x, x]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000f_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        print_data_flow();
+        
+        // Ciclos adicionales para completar el flujo
+        repeat(8) begin
+            @(posedge clk);
+            data_arr = 64'hxxxx_xxxx_xxxx_xxxx;  // Solo propagación
+            print_data_flow();
+            print_results();
+        end
+        
+        // Verificación final
+        $display("\n=== RESULTADOS FINALES ===");
+        print_results();
+        
+        // Verificación automática (matriz identidad)
+        if (pe30_out == 0 && pe31_out == 0 && pe32_out == 0 && pe33_out == 3) begin
+            $display("TEST PASADO: Resultados correctos para patrón diagonal");
+        end else begin
+            $display("TEST FALLADO: Resultados incorrectos");
+        end
+        
         $finish;
     end
 endmodule
