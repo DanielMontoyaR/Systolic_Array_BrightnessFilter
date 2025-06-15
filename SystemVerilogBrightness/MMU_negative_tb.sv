@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module MMU_tb;
+module MMU_negative_tb;
     parameter BIT_WIDTH = 16;
     parameter ACC_WIDTH = 40;
     parameter DEPTH = 4;
@@ -158,19 +158,19 @@ module MMU_tb;
         
         // Carga por columnas (weight stationary)
         @(posedge clk);
-        wt_arr = 64'h0001000000000000;  // Columna 0: [-1, 0, 0, 0]
+        wt_arr = 64'hFFFF000000000000;  // Columna 0: [-1, 0, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000100000000;  // Columna 1: [0, -1, 0, 0]
+        wt_arr = 64'h0000FFFF00000000;  // Columna 1: [0, -1, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000010000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h00000000FFFF0000;  // Columna 2: [0, 0, 1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000000001;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h000000000000FFFF;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);
@@ -203,7 +203,18 @@ module MMU_tb;
         @(posedge clk);
         data_arr = 64'h000c_0009_0006_0003;  // [c, 9, 6, 3]
         print_data_flow();
-
+		  
+		  @(posedge clk);
+		  
+					// Prueba valores de 0 a 255 para verificar funcionamiento de ReLU
+		 for (int val = 0; val < 256; val++) begin
+			  data_arr = {val[15:0], 16'd0, 16'd0, 16'd0};  // val en data_arr[0]
+			  //wt_arr = {16'hFFFF, 16'd0, 16'd0, 16'd0};     // -1 como peso solo en la primera columna
+			  //control = 1'b1; #1; control = 1'b0;
+			  @(posedge clk); // Espera un ciclo de reloj
+			  $display("Input=%0d, PE(3,0) out=%0d", val, pe30_out); // Mostrar resultado con ReLU
+		 end
+		  
 		  @(posedge clk);
         data_arr = 64'h000d_000a_0007_xxxx;  // [d, a, 7, x]
         print_data_flow();
@@ -213,7 +224,7 @@ module MMU_tb;
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000F_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h0100_xxxx_xxxx_xxxx;  // [f, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo

@@ -85,20 +85,11 @@ generate
         end
     endgenerate
 
-    // Función ReLU mejorada con validación de rango
+    // Función ReLU (combinacional)
     function automatic [acc_width-1:0] relu;
         input [acc_width-1:0] value;
-        reg overflow;
         begin
-            // Detectar si hay bits significativos más allá de los 16 bits
-            overflow = |value[acc_width-1:bit_width];
-            
-            // Si hay overflow o el bit de signo de los 16 bits está activo
-            if (overflow || value[bit_width-1]) begin
-                relu = {acc_width{1'b0}}; // Cero
-            end else begin
-                relu = value; // Mantener valor original
-            end
+            relu = value[bit_width-1] ? {acc_width{1'b0}} : value; // Si es negativo, cero
         end
     endfunction
 	

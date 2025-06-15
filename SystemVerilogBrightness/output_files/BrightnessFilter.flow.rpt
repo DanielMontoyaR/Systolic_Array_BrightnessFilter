@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Sun Jun 15 03:41:15 2025
+Sun Jun 15 14:54:25 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sun Jun 15 03:41:15 2025       ;
+; Flow Status                 ; Successful - Sun Jun 15 14:54:25 2025       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; BrightnessFilter                            ;
 ; Top-level Entity Name       ; TPU                                         ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/15/2025 03:41:09 ;
+; Start date & time ; 06/15/2025 14:54:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589199.174998046937540         ; --               ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 10995770589199.175002085934488         ; --               ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_tb                                 ; --               ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --               ; --          ; eda_simulation ;
