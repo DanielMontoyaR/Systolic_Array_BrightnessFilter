@@ -85,22 +85,33 @@ generate
         end
     endgenerate
 
-    //----------------------------------------------------------
-    // Registro de salida (acumuladores finales)
-    //----------------------------------------------------------
-	/*always_ff @(posedge clk) begin : acc_out_reg
-		 for (int k = 0; k < depth; k++) begin
-			  acc_out[k*acc_width+:acc_width] <= acc_out_temp[k][depth-1];  // Cambiado de [depth-1][k] a [k][depth-1]
-		 end
-	end
-		  
-    //end
-    always_comb begin
-        for (int i = 0; i < depth; i++) begin
-            final_accs[i] = acc_out_temp[i][depth-1];  // PE[i][3]
+    // Función ReLU mejorada con validación de rango
+    function automatic [acc_width-1:0] relu;
+        input [acc_width-1:0] value;
+        reg overflow;
+        begin
+            // Detectar si hay bits significativos más allá de los 16 bits
+            overflow = |value[acc_width-1:bit_width];
+            
+            // Si hay overflow o el bit de signo de los 16 bits está activo
+            if (overflow || value[bit_width-1]) begin
+                relu = {acc_width{1'b0}}; // Cero
+            end else begin
+                relu = value; // Mantener valor original
+            end
         end
-    end*/
-	 
+    endfunction
+	
+	// Asignación de salidas con ReLU aplicado
+   assign pe30_out = relu(acc_out_temp[3][0]);
+   assign pe31_out = relu(acc_out_temp[3][1]);
+   assign pe32_out = relu(acc_out_temp[3][2]);
+   assign pe33_out = relu(acc_out_temp[3][3]);
+	
+	// Salida concatenada sin ReLU (para mantener precisión en pasos intermedios)
+   assign acc_out = {acc_out_temp[3][3], acc_out_temp[3][2], acc_out_temp[3][1], acc_out_temp[3][0]};
+	
+	/*
 	 // Asignación de salidas concatenadas
 	assign acc_out = {acc_out_temp[3][3], acc_out_temp[3][2], acc_out_temp[3][1], acc_out_temp[3][0]};
 
@@ -108,6 +119,6 @@ generate
 	assign pe30_out = acc_out_temp[3][0];
 	assign pe31_out = acc_out_temp[3][1];
 	assign pe32_out = acc_out_temp[3][2];
-	assign pe33_out = acc_out_temp[3][3];
+	assign pe33_out = acc_out_temp[3][3];*/
 
 endmodule

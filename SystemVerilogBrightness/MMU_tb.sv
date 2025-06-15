@@ -158,19 +158,19 @@ module MMU_tb;
         
         // Carga por columnas (weight stationary)
         @(posedge clk);
-        wt_arr = 64'h0005000000000000;  // Columna 0: [1, 0, 0, 0]
+        wt_arr = 64'h8001000000000000;  // Columna 0: [-1, 0, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000500000000;  // Columna 1: [0, 1, 0, 0]
+        wt_arr = 64'h0000800100000000;  // Columna 1: [0, -1, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000050000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h0000000080010000;  // Columna 2: [0, 0, 1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000000005;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h0000000000008001;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);

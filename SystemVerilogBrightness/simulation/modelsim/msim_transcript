@@ -12,39 +12,39 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:21:44 on Jun 14,2025
+# Start time: 03:41:50 on Jun 15,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
 # -- Compiling module TPU
 # 
 # Top level modules:
 # 	TPU
-# End time: 23:21:44 on Jun 14,2025, Elapsed time: 0:00:00
+# End time: 03:41:50 on Jun 15,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:21:44 on Jun 14,2025
+# Start time: 03:41:50 on Jun 15,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
 # -- Compiling module MAC
 # 
 # Top level modules:
 # 	MAC
-# End time: 23:21:44 on Jun 14,2025, Elapsed time: 0:00:00
+# End time: 03:41:50 on Jun 15,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:21:44 on Jun 14,2025
+# Start time: 03:41:50 on Jun 15,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv 
 # -- Compiling module MMU_tb
 # 
 # Top level modules:
 # 	MMU_tb
-# End time: 23:21:44 on Jun 14,2025, Elapsed time: 0:00:00
+# End time: 03:41:51 on Jun 15,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_tb 
-# Start time: 23:21:44 on Jun 14,2025
+# Start time: 03:41:51 on Jun 15,2025
 # Loading sv_std.std
 # Loading work.MMU_tb
 # Loading work.TPU
@@ -75,15 +75,15 @@
 # 
 # Pesos en los PEs (T=1750000):
 #         Col0        Col1        Col2        Col3
-# Fila          0:  0000        0000        0000        0005
+# Fila          0:  0000        0000        0000        8001
 # Fila          1:  0000        0000        0000        0000
 # Fila          2:  xxxx        xxxx        xxxx        xxxx
 # Fila          3:  xxxx        xxxx        xxxx        xxxx
 # 
 # Pesos en los PEs (T=2250000):
 #         Col0        Col1        Col2        Col3
-# Fila          0:  0000        0000        0005        0000
-# Fila          1:  0000        0000        0000        0005
+# Fila          0:  0000        0000        8001        0000
+# Fila          1:  0000        0000        0000        8001
 # Fila          2:  0000        0000        0000        0000
 # Fila          3:  xxxx        xxxx        xxxx        xxxx
 # 
@@ -91,19 +91,19 @@
 # 
 # Pesos en los PEs (T=3250000):
 #         Col0        Col1        Col2        Col3
-# Fila          0:  0005        0000        0000        0000
-# Fila          1:  0000        0005        0000        0000
-# Fila          2:  0000        0000        0005        0000
-# Fila          3:  0000        0000        0000        0005
+# Fila          0:  8001        0000        0000        0000
+# Fila          1:  0000        8001        0000        0000
+# Fila          2:  0000        0000        8001        0000
+# Fila          3:  0000        0000        0000        8001
 # 
 # === FASE 2: CARGA DE DATOS (PATRÓN DIAGONAL) ===
 # 
 # Pesos en los PEs (T=3250000):
 #         Col0        Col1        Col2        Col3
-# Fila          0:  0005        0000        0000        0000
-# Fila          1:  0000        0005        0000        0000
-# Fila          2:  0000        0000        0005        0000
-# Fila          3:  0000        0000        0000        0005
+# Fila          0:  8001        0000        0000        0000
+# Fila          1:  0000        8001        0000        0000
+# Fila          2:  0000        0000        8001        0000
+# Fila          3:  0000        0000        0000        8001
 # 
 # Flujo de Datos (T=3750000):
 #         Col0               Col1               Col2               Col3
@@ -114,10 +114,10 @@
 # 
 # Pesos en los PEs (T=3750000):
 #         Col0        Col1        Col2        Col3
-# Fila          0:  0005        0000        0000        0000
-# Fila          1:  0000        0005        0000        0000
-# Fila          2:  0000        0000        0005        0000
-# Fila          3:  0000        0000        0000        0005
+# Fila          0:  8001        0000        0000        0000
+# Fila          1:  0000        8001        0000        0000
+# Fila          2:  0000        0000        8001        0000
+# Fila          3:  0000        0000        0000        8001
 # 
 # Flujo de Datos (T=4250000):
 #         Col0               Col1               Col2               Col3
@@ -169,9 +169,9 @@
 # Fila          3:  in:000f/out:000e  in:000e/out:000d  in:000d/out:000c  in:000c/out:xxxx
 # 
 # Resultados Acumulados (T=7250000):
-# PE(3,0) = 000000000a (dec 10)
-# PE(3,1) = 0000000019 (dec 25)
-# PE(3,2) = 0000000028 (dec 40)
+# PE(3,0) = 0000000000 (dec 0)
+# PE(3,1) = 0000000000 (dec 0)
+# PE(3,2) = 0000000000 (dec 0)
 # PE(3,3) = xxxxxxxxxx (dec x)
 # 
 # Flujo de Datos (T=7750000):
@@ -182,10 +182,10 @@
 # Fila          3:  in:xxxx/out:000f  in:000f/out:000e  in:000e/out:000d  in:000d/out:000c
 # 
 # Resultados Acumulados (T=7750000):
-# PE(3,0) = 000000000f (dec 15)
-# PE(3,1) = 000000001e (dec 30)
-# PE(3,2) = 000000002d (dec 45)
-# PE(3,3) = 000000003c (dec 60)
+# PE(3,0) = 0000000000 (dec 0)
+# PE(3,1) = 0000000000 (dec 0)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
 # 
 # Flujo de Datos (T=8250000):
 #         Col0               Col1               Col2               Col3
@@ -196,9 +196,9 @@
 # 
 # Resultados Acumulados (T=8250000):
 # PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = 0000000023 (dec 35)
-# PE(3,2) = 0000000032 (dec 50)
-# PE(3,3) = 0000000041 (dec 65)
+# PE(3,1) = 0000000000 (dec 0)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
 # 
 # Flujo de Datos (T=8750000):
 #         Col0               Col1               Col2               Col3
@@ -210,8 +210,8 @@
 # Resultados Acumulados (T=8750000):
 # PE(3,0) = xxxxxxxxxx (dec x)
 # PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = 0000000037 (dec 55)
-# PE(3,3) = 0000000046 (dec 70)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
 # 
 # Flujo de Datos (T=9250000):
 #         Col0               Col1               Col2               Col3
@@ -224,7 +224,7 @@
 # PE(3,0) = xxxxxxxxxx (dec x)
 # PE(3,1) = xxxxxxxxxx (dec x)
 # PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = 000000004b (dec 75)
+# PE(3,3) = 0000000000 (dec 0)
 # 
 # Flujo de Datos (T=9750000):
 #         Col0               Col1               Col2               Col3
@@ -277,5 +277,5 @@
 #    Time: 10750 ns  Iteration: 1  Instance: /MMU_tb
 # 1
 # Break in Module MMU_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv line 238
-# End time: 23:23:06 on Jun 14,2025, Elapsed time: 0:01:22
+# End time: 03:42:14 on Jun 15,2025, Elapsed time: 0:00:23
 # Errors: 0, Warnings: 0
