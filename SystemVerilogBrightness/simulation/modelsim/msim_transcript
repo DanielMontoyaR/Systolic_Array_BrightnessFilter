@@ -10,125 +10,112 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:48:44 on Jun 16,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v 
+# Start time: 02:41:42 on Jun 16,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v 
 # -- Compiling module ram1
 # 
 # Top level modules:
 # 	ram1
-# End time: 01:48:44 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:48:44 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv 
-# -- Compiling module ram_tb
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
+# -- Compiling module TPU
 # 
 # Top level modules:
-# 	ram_tb
-# End time: 01:48:44 on Jun 16,2025, Elapsed time: 0:00:00
+# 	TPU
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:48:44 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv 
-# -- Compiling module ram_tb
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
+# -- Compiling module MAC
 # 
 # Top level modules:
-# 	ram_tb
-# End time: 01:48:44 on Jun 16,2025, Elapsed time: 0:00:00
+# 	MAC
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv 
+# -- Compiling module Normalizer
+# 
+# Top level modules:
+# 	Normalizer
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller.sv 
+# -- Compiling module Matrix_Controller
+# 
+# Top level modules:
+# 	Matrix_Controller
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv 
+# -- Compiling module TPU_System
+# 
+# Top level modules:
+# 	TPU_System
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ram_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ram_tb 
-# Start time: 01:48:44 on Jun 16,2025
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:41:43 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System_tb.sv 
+# -- Compiling module TPU_System_tb
+# 
+# Top level modules:
+# 	TPU_System_tb
+# End time: 02:41:43 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TPU_System_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TPU_System_tb 
+# Start time: 02:41:43 on Jun 16,2025
 # Loading sv_std.std
-# Loading work.ram_tb
+# Loading work.TPU_System_tb
+# Loading work.TPU_System
 # Loading work.ram1
 # Loading altera_mf_ver.altsyncram
+# Loading work.Matrix_Controller
+# Loading work.TPU
+# Loading work.Normalizer
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.MAC
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'controller'.  Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb/uut/controller File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv Line: 47
+# ** Warning: (vsim-3722) C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv(47): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'tpu'.  Expected 13, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb/uut/tpu File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv Line: 65
+# ** Warning: (vsim-3722) C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU_System.sv(65): [TFMPC] - Missing connection for port 'acc_out'.
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
+#           Attempting to use alternate WLF file "./wlft15ce8f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft15ce8f
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Leyendo memoria inicializada desde .mif
-# -----------------------------
-# |  Addr  |   Dato en q      |
-# -----------------------------
-# |    0   |         x       |
-# |    1   |         1       |
-# |    2   |         2       |
-# |    3   |         3       |
-# |    4   |         4       |
-# |    5   |         5       |
-# |    6   |         6       |
-# |    7   |         7       |
-# |    8   |         8       |
-# |    9   |         9       |
-# |   10   |        10       |
-# |   11   |        11       |
-# |   12   |        12       |
-# |   13   |        13       |
-# |   14   |        14       |
-# |   15   |        15       |
-# |   16   |        16       |
-# |   17   |        17       |
-# |   18   |        18       |
-# |   19   |        19       |
-# |   20   |        20       |
-# |   21   |        21       |
-# |   22   |        22       |
-# |   23   |        23       |
-# |   24   |        24       |
-# |   25   |        25       |
-# |   26   |        26       |
-# |   27   |        27       |
-# |   28   |        28       |
-# |   29   |        29       |
-# |   30   |        30       |
-# |   31   |        31       |
-# |   32   |        32       |
-# |   33   |        33       |
-# |   34   |        34       |
-# |   35   |        35       |
-# |   36   |        36       |
-# |   37   |        37       |
-# |   38   |        38       |
-# |   39   |        39       |
-# |   40   |        40       |
-# |   41   |        41       |
-# |   42   |        42       |
-# |   43   |        43       |
-# |   44   |        44       |
-# |   45   |        45       |
-# |   46   |        46       |
-# |   47   |        47       |
-# |   48   |        48       |
-# |   49   |        49       |
-# |   50   |        50       |
-# |   51   |        51       |
-# |   52   |        52       |
-# |   53   |        53       |
-# |   54   |        54       |
-# |   55   |        55       |
-# |   56   |        56       |
-# |   57   |        57       |
-# |   58   |        58       |
-# |   59   |        59       |
-# |   60   |        60       |
-# |   61   |        61       |
-# |   62   |        62       |
-# |   63   |        63       |
-# -----------------------------
-# ** Note: $finish    : C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv(43)
-#    Time: 655 ns  Iteration: 1  Instance: /ram_tb
-# 1
-# Break in Module ram_tb at C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram_tb.sv line 43
+# Break key hit
+# Simulation stop requested.
+# End time: 02:42:58 on Jun 16,2025, Elapsed time: 0:01:15
+# Errors: 0, Warnings: 6

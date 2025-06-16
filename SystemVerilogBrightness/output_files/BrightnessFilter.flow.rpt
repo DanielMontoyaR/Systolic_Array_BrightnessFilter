@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Mon Jun 16 01:43:17 2025
+Mon Jun 16 02:40:37 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Jun 16 01:43:17 2025       ;
+; Flow Status                 ; Successful - Mon Jun 16 02:40:37 2025       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; BrightnessFilter                            ;
-; Top-level Entity Name       ; ram_tb                                      ;
+; Top-level Entity Name       ; TPU_System                                  ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/16/2025 01:43:12 ;
+; Start date & time ; 06/16/2025 02:40:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
@@ -74,31 +74,35 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-------------+-----------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id      ;
 +--------------------------------------+----------------------------------------+------------------+-------------+-----------------+
-; COMPILER_SIGNATURE_ID                ; 264086602265196.175005979242524        ; --               ; --          ; --              ;
+; COMPILER_SIGNATURE_ID                ; 10995770589199.175006323131632         ; --               ; --          ; --              ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_negative_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb          ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_tb                                 ; --               ; --          ; eda_simulation  ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; ram_tb          ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ram_tb                                 ; --               ; --          ; eda_simulation  ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --               ; --          ; eda_simulation  ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>           ; --          ; --              ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --               ; --          ; eda_simulation  ;
 ; EDA_TEST_BENCH_FILE                  ; MMU_negative_tb.sv                     ; --               ; --          ; MMU_negative_tb ;
 ; EDA_TEST_BENCH_FILE                  ; MMU_tb.sv                              ; --               ; --          ; MMU_tb          ;
+; EDA_TEST_BENCH_FILE                  ; ram_tb.sv                              ; --               ; --          ; ram_tb          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MMU_negative_tb                        ; --               ; --          ; MMU_negative_tb ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MMU_tb                                 ; --               ; --          ; MMU_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ram_tb                                 ; --               ; --          ; ram_tb          ;
 ; EDA_TEST_BENCH_NAME                  ; MMU_tb                                 ; --               ; --          ; eda_simulation  ;
 ; EDA_TEST_BENCH_NAME                  ; MMU_negative_tb                        ; --               ; --          ; eda_simulation  ;
+; EDA_TEST_BENCH_NAME                  ; ram_tb                                 ; --               ; --          ; eda_simulation  ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --               ; --          ; eda_simulation  ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --               ; --          ; --              ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --               ; --          ; --              ;
 ; MISC_FILE                            ; ram1_bb.v                              ; --               ; --          ; --              ;
 ; MISC_FILE                            ; ram2_bb.v                              ; --               ; --          ; --              ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; ram_tb      ; Top             ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; ram_tb      ; Top             ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; ram_tb      ; Top             ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; TPU_System  ; Top             ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; TPU_System  ; Top             ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; TPU_System  ; Top             ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --               ; --          ; --              ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --          ; --              ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --               ; --          ; --              ;
-; TOP_LEVEL_ENTITY                     ; ram_tb                                 ; BrightnessFilter ; --          ; --              ;
+; TOP_LEVEL_ENTITY                     ; TPU_System                             ; BrightnessFilter ; --          ; --              ;
 +--------------------------------------+----------------------------------------+------------------+-------------+-----------------+
 
 
@@ -107,8 +111,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4778 MB             ; 00:00:12                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4788 MB             ; 00:00:16                           ;
+; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:16                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,7 +121,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; Naheem           ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 
