@@ -457,6 +457,14 @@ pe30_norm_out[4] << Normalizer:norm30.out_value
 pe30_norm_out[5] << Normalizer:norm30.out_value
 pe30_norm_out[6] << Normalizer:norm30.out_value
 pe30_norm_out[7] << Normalizer:norm30.out_value
+pe30_norm_out[8] << Normalizer:norm30.out_value
+pe30_norm_out[9] << Normalizer:norm30.out_value
+pe30_norm_out[10] << Normalizer:norm30.out_value
+pe30_norm_out[11] << Normalizer:norm30.out_value
+pe30_norm_out[12] << Normalizer:norm30.out_value
+pe30_norm_out[13] << Normalizer:norm30.out_value
+pe30_norm_out[14] << Normalizer:norm30.out_value
+pe30_norm_out[15] << Normalizer:norm30.out_value
 pe31_norm_out[0] << Normalizer:norm31.out_value
 pe31_norm_out[1] << Normalizer:norm31.out_value
 pe31_norm_out[2] << Normalizer:norm31.out_value
@@ -465,6 +473,14 @@ pe31_norm_out[4] << Normalizer:norm31.out_value
 pe31_norm_out[5] << Normalizer:norm31.out_value
 pe31_norm_out[6] << Normalizer:norm31.out_value
 pe31_norm_out[7] << Normalizer:norm31.out_value
+pe31_norm_out[8] << Normalizer:norm31.out_value
+pe31_norm_out[9] << Normalizer:norm31.out_value
+pe31_norm_out[10] << Normalizer:norm31.out_value
+pe31_norm_out[11] << Normalizer:norm31.out_value
+pe31_norm_out[12] << Normalizer:norm31.out_value
+pe31_norm_out[13] << Normalizer:norm31.out_value
+pe31_norm_out[14] << Normalizer:norm31.out_value
+pe31_norm_out[15] << Normalizer:norm31.out_value
 pe32_norm_out[0] << Normalizer:norm32.out_value
 pe32_norm_out[1] << Normalizer:norm32.out_value
 pe32_norm_out[2] << Normalizer:norm32.out_value
@@ -473,6 +489,14 @@ pe32_norm_out[4] << Normalizer:norm32.out_value
 pe32_norm_out[5] << Normalizer:norm32.out_value
 pe32_norm_out[6] << Normalizer:norm32.out_value
 pe32_norm_out[7] << Normalizer:norm32.out_value
+pe32_norm_out[8] << Normalizer:norm32.out_value
+pe32_norm_out[9] << Normalizer:norm32.out_value
+pe32_norm_out[10] << Normalizer:norm32.out_value
+pe32_norm_out[11] << Normalizer:norm32.out_value
+pe32_norm_out[12] << Normalizer:norm32.out_value
+pe32_norm_out[13] << Normalizer:norm32.out_value
+pe32_norm_out[14] << Normalizer:norm32.out_value
+pe32_norm_out[15] << Normalizer:norm32.out_value
 pe33_norm_out[0] << Normalizer:norm33.out_value
 pe33_norm_out[1] << Normalizer:norm33.out_value
 pe33_norm_out[2] << Normalizer:norm33.out_value
@@ -481,6 +505,14 @@ pe33_norm_out[4] << Normalizer:norm33.out_value
 pe33_norm_out[5] << Normalizer:norm33.out_value
 pe33_norm_out[6] << Normalizer:norm33.out_value
 pe33_norm_out[7] << Normalizer:norm33.out_value
+pe33_norm_out[8] << Normalizer:norm33.out_value
+pe33_norm_out[9] << Normalizer:norm33.out_value
+pe33_norm_out[10] << Normalizer:norm33.out_value
+pe33_norm_out[11] << Normalizer:norm33.out_value
+pe33_norm_out[12] << Normalizer:norm33.out_value
+pe33_norm_out[13] << Normalizer:norm33.out_value
+pe33_norm_out[14] << Normalizer:norm33.out_value
+pe33_norm_out[15] << Normalizer:norm33.out_value
 
 
 |TPU|MAC:gen_row[0].gen_col[0].mac_instance
@@ -6446,20 +6478,28 @@ in_value[7] => LessThan1.IN73
 in_value[7] => out_value.DATAA
 in_value[8] => LessThan0.IN72
 in_value[8] => LessThan1.IN72
+in_value[8] => out_value.DATAA
 in_value[9] => LessThan0.IN71
 in_value[9] => LessThan1.IN71
+in_value[9] => out_value.DATAA
 in_value[10] => LessThan0.IN70
 in_value[10] => LessThan1.IN70
+in_value[10] => out_value.DATAA
 in_value[11] => LessThan0.IN69
 in_value[11] => LessThan1.IN69
+in_value[11] => out_value.DATAA
 in_value[12] => LessThan0.IN68
 in_value[12] => LessThan1.IN68
+in_value[12] => out_value.DATAA
 in_value[13] => LessThan0.IN67
 in_value[13] => LessThan1.IN67
+in_value[13] => out_value.DATAA
 in_value[14] => LessThan0.IN66
 in_value[14] => LessThan1.IN66
+in_value[14] => out_value.DATAA
 in_value[15] => LessThan0.IN65
 in_value[15] => LessThan1.IN65
+in_value[15] => out_value.DATAA
 in_value[16] => LessThan0.IN64
 in_value[16] => LessThan1.IN64
 in_value[17] => LessThan0.IN63
@@ -6516,6 +6556,14 @@ out_value[4] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[5] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[6] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[7] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[8] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[9] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[10] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[11] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[12] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[13] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[14] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[15] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TPU|Normalizer:norm31
@@ -6545,20 +6593,28 @@ in_value[7] => LessThan1.IN73
 in_value[7] => out_value.DATAA
 in_value[8] => LessThan0.IN72
 in_value[8] => LessThan1.IN72
+in_value[8] => out_value.DATAA
 in_value[9] => LessThan0.IN71
 in_value[9] => LessThan1.IN71
+in_value[9] => out_value.DATAA
 in_value[10] => LessThan0.IN70
 in_value[10] => LessThan1.IN70
+in_value[10] => out_value.DATAA
 in_value[11] => LessThan0.IN69
 in_value[11] => LessThan1.IN69
+in_value[11] => out_value.DATAA
 in_value[12] => LessThan0.IN68
 in_value[12] => LessThan1.IN68
+in_value[12] => out_value.DATAA
 in_value[13] => LessThan0.IN67
 in_value[13] => LessThan1.IN67
+in_value[13] => out_value.DATAA
 in_value[14] => LessThan0.IN66
 in_value[14] => LessThan1.IN66
+in_value[14] => out_value.DATAA
 in_value[15] => LessThan0.IN65
 in_value[15] => LessThan1.IN65
+in_value[15] => out_value.DATAA
 in_value[16] => LessThan0.IN64
 in_value[16] => LessThan1.IN64
 in_value[17] => LessThan0.IN63
@@ -6615,6 +6671,14 @@ out_value[4] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[5] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[6] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[7] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[8] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[9] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[10] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[11] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[12] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[13] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[14] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[15] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TPU|Normalizer:norm32
@@ -6644,20 +6708,28 @@ in_value[7] => LessThan1.IN73
 in_value[7] => out_value.DATAA
 in_value[8] => LessThan0.IN72
 in_value[8] => LessThan1.IN72
+in_value[8] => out_value.DATAA
 in_value[9] => LessThan0.IN71
 in_value[9] => LessThan1.IN71
+in_value[9] => out_value.DATAA
 in_value[10] => LessThan0.IN70
 in_value[10] => LessThan1.IN70
+in_value[10] => out_value.DATAA
 in_value[11] => LessThan0.IN69
 in_value[11] => LessThan1.IN69
+in_value[11] => out_value.DATAA
 in_value[12] => LessThan0.IN68
 in_value[12] => LessThan1.IN68
+in_value[12] => out_value.DATAA
 in_value[13] => LessThan0.IN67
 in_value[13] => LessThan1.IN67
+in_value[13] => out_value.DATAA
 in_value[14] => LessThan0.IN66
 in_value[14] => LessThan1.IN66
+in_value[14] => out_value.DATAA
 in_value[15] => LessThan0.IN65
 in_value[15] => LessThan1.IN65
+in_value[15] => out_value.DATAA
 in_value[16] => LessThan0.IN64
 in_value[16] => LessThan1.IN64
 in_value[17] => LessThan0.IN63
@@ -6714,6 +6786,14 @@ out_value[4] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[5] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[6] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[7] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[8] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[9] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[10] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[11] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[12] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[13] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[14] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[15] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TPU|Normalizer:norm33
@@ -6743,20 +6823,28 @@ in_value[7] => LessThan1.IN73
 in_value[7] => out_value.DATAA
 in_value[8] => LessThan0.IN72
 in_value[8] => LessThan1.IN72
+in_value[8] => out_value.DATAA
 in_value[9] => LessThan0.IN71
 in_value[9] => LessThan1.IN71
+in_value[9] => out_value.DATAA
 in_value[10] => LessThan0.IN70
 in_value[10] => LessThan1.IN70
+in_value[10] => out_value.DATAA
 in_value[11] => LessThan0.IN69
 in_value[11] => LessThan1.IN69
+in_value[11] => out_value.DATAA
 in_value[12] => LessThan0.IN68
 in_value[12] => LessThan1.IN68
+in_value[12] => out_value.DATAA
 in_value[13] => LessThan0.IN67
 in_value[13] => LessThan1.IN67
+in_value[13] => out_value.DATAA
 in_value[14] => LessThan0.IN66
 in_value[14] => LessThan1.IN66
+in_value[14] => out_value.DATAA
 in_value[15] => LessThan0.IN65
 in_value[15] => LessThan1.IN65
+in_value[15] => out_value.DATAA
 in_value[16] => LessThan0.IN64
 in_value[16] => LessThan1.IN64
 in_value[17] => LessThan0.IN63
@@ -6813,5 +6901,13 @@ out_value[4] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[5] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[6] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 out_value[7] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[8] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[9] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[10] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[11] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[12] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[13] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[14] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
+out_value[15] <= out_value.DB_MAX_OUTPUT_PORT_TYPE
 
 

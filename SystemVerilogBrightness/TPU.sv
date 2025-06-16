@@ -13,7 +13,7 @@ module TPU #(
     output [acc_width-1:0] pe31_out,      // Salida individual PE(3,1)
     output [acc_width-1:0] pe32_out,      // Salida individual PE(3,2)
     output [acc_width-1:0] pe33_out,       // Salida individual PE(3,3)
-	 output logic [7:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out
+	 output logic [15:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out
 	 
 );
 
@@ -111,7 +111,7 @@ generate
 	
 	Normalizer #(
     .IN_WIDTH(acc_width),
-    .OUT_WIDTH(8)
+    .OUT_WIDTH(16)
 	) norm30 (
 		 .in_value(pe30_out),
 		 .out_value(pe30_norm_out)
@@ -119,7 +119,7 @@ generate
 
 	Normalizer #(
 		 .IN_WIDTH(acc_width),
-		 .OUT_WIDTH(8)
+		 .OUT_WIDTH(16)
 	) norm31 (
 		 .in_value(pe31_out),
 		 .out_value(pe31_norm_out)
@@ -127,7 +127,7 @@ generate
 
 	Normalizer #(
 		 .IN_WIDTH(acc_width),
-		 .OUT_WIDTH(8)
+		 .OUT_WIDTH(16)
 	) norm32 (
 		 .in_value(pe32_out),
 		 .out_value(pe32_norm_out)
@@ -135,7 +135,7 @@ generate
 
 	Normalizer #(
 		 .IN_WIDTH(acc_width),
-		 .OUT_WIDTH(8)
+		 .OUT_WIDTH(16)
 	) norm33 (
 		 .in_value(pe33_out),
 		 .out_value(pe33_norm_out)
