@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Mon Jun 16 01:03:02 2025
+Mon Jun 16 01:43:17 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Jun 16 01:03:02 2025       ;
+; Flow Status                 ; Successful - Mon Jun 16 01:43:17 2025       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; BrightnessFilter                            ;
 ; Top-level Entity Name       ; ram_tb                                      ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/16/2025 01:02:56 ;
+; Start date & time ; 06/16/2025 01:43:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-------------+-----------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id      ;
 +--------------------------------------+----------------------------------------+------------------+-------------+-----------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589199.175005737646388         ; --               ; --          ; --              ;
+; COMPILER_SIGNATURE_ID                ; 264086602265196.175005979242524        ; --               ; --          ; --              ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_negative_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb          ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_tb                                 ; --               ; --          ; eda_simulation  ;
@@ -107,8 +107,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4781 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4778 MB             ; 00:00:12                           ;
+; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:12                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,7 +117,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; Naheem           ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 
