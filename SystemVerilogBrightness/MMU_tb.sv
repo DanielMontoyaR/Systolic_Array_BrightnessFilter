@@ -218,7 +218,7 @@ module MMU_tb;
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000f_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h0100_xxxx_xxxx_xxxx;  // [f, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo

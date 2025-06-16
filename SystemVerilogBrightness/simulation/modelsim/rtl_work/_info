@@ -8,56 +8,56 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/simulation/modelsim
+Z0 dC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/simulation/modelsim
 vMAC
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1750037297
+Z2 !s110 1750049095
 !i10b 1
 !s100 _3E4cMRUiWUz6G_P3SEZH2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IlYjFEo6bZUg5^6X843^zY3
+I2g?aPVgc:>>^gl9^O=J?R0
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1749968868
-8C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv
-FC:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv
+w1749963812
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv
 !i122 1
 L0 1 42
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1750037297.000000
-!s107 C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness|C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv|
+Z6 !s108 1750049095.000000
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv|
 !i113 1
 Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness
+Z8 !s92 -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness
 Z9 tCvgOpt 0
 n@m@a@c
 vMMU_tb
 R1
-Z10 !s110 1750037298
+R2
 !i10b 1
-!s100 3Qb_zlf>0`4m82Um?mf5S0
+!s100 gCWR3^2LaJC:jK:A4M5nZ1
 R3
-I54EdV2QXoZg1LnWkXLhCM3
+I0KaAc9<i]42PW4mF13[:O0
 R4
 S1
 R0
-w1750037264
-8C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MMU_tb.sv
-FC:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MMU_tb.sv
+w1750049069
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv
 !i122 3
 L0 3 243
 R5
 r1
 !s85 0
 31
-Z11 !s108 1750037298.000000
-!s107 C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MMU_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness|C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MMU_tb.sv|
+R6
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv|
 !i113 1
 R7
 R8
@@ -65,26 +65,26 @@ R9
 n@m@m@u_tb
 vNormalizer
 R1
-R10
+R2
 !i10b 1
-!s100 G8IBX5lnTj4eT8K?KC4;T1
+!s100 BgCI6O67ZXWDMM6;m?2X=1
 R3
-IZTKJ8?>M]Lm<Ykk]@KP5Z0
+I;Ga:Uc0QZN>khi`K=Om?l0
 R4
 S1
 R0
-w1750036607
-8C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv
-FC:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv
+w1750048996
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv
 !i122 2
 L0 1 18
 R5
 r1
 !s85 0
 31
-R11
-!s107 C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness|C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv|
+R6
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv|
 !i113 1
 R7
 R8
@@ -96,13 +96,13 @@ R2
 !i10b 1
 !s100 _id=NkInlJoVRn<6Tl4>`2
 R3
-I>f<4<kFSU0@;Gc@0HoVMh1
+IIT@V9SIEZjjUEG>gZPZW03
 R4
 S1
 R0
-w1750036589
-8C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv
-FC:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv
+w1750047141
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv
 !i122 0
 L0 1 158
 R5
@@ -110,8 +110,8 @@ r1
 !s85 0
 31
 R6
-!s107 C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness|C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv|
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv|
 !i113 1
 R7
 R8
