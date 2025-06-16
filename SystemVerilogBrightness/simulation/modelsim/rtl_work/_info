@@ -9,111 +9,80 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/simulation/modelsim
-vMAC
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1750049095
-!i10b 1
-!s100 _3E4cMRUiWUz6G_P3SEZH2
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I2g?aPVgc:>>^gl9^O=J?R0
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-S1
-R0
-w1749963812
-8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv
-FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv
-!i122 1
-L0 1 42
-Z5 OV;L;2020.1;71
-r1
-!s85 0
-31
-Z6 !s108 1750049095.000000
-!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv|
-!i113 1
-Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness
-Z9 tCvgOpt 0
-n@m@a@c
 vMMU_tb
-R1
-R2
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1750057678
 !i10b 1
 !s100 gCWR3^2LaJC:jK:A4M5nZ1
-R3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I0KaAc9<i]42PW4mF13[:O0
-R4
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1750049069
 8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv
 FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv
-!i122 3
+!i122 2
 L0 3 243
-R5
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-R6
+!s108 1750057678.000000
 !s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv|
 !i113 1
-R7
-R8
-R9
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness
+Z7 tCvgOpt 0
 n@m@m@u_tb
-vNormalizer
-R1
-R2
+vram1
+Z8 !s110 1750057677
 !i10b 1
-!s100 BgCI6O67ZXWDMM6;m?2X=1
-R3
-I;Ga:Uc0QZN>khi`K=Om?l0
-R4
-S1
-R0
-w1750048996
-8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv
-FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv
-!i122 2
-L0 1 18
-R5
-r1
-!s85 0
-31
-R6
-!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv|
-!i113 1
-R7
-R8
-R9
-n@normalizer
-vTPU
-R1
+!s100 2L3J9lH[eoT<`BdHRBM;M1
 R2
-!i10b 1
-!s100 _id=NkInlJoVRn<6Tl4>`2
+I`5c1=<gVTl]9QDmhC@Og:3
 R3
-IIT@V9SIEZjjUEG>gZPZW03
-R4
-S1
 R0
-w1750047141
-8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv
-FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv
+w1750053650
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v
 !i122 0
-L0 1 158
-R5
+L0 40 66
+R4
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv|
+Z9 !s108 1750057677.000000
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram1.v|
 !i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness
 R7
+vram_tb
+R1
 R8
+!i10b 1
+!s100 bU8@AzO?;YdIlNHe0a6JD3
+R2
+IlUZlA>37[0<4DPL=Tk=zb2
+R3
+S1
+R0
+w1750057375
+8C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram_tb.sv
+FC:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram_tb.sv
+!i122 1
+L0 3 44
+R4
+r1
+!s85 0
+31
 R9
-n@t@p@u
+!s107 C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness|C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/ram_tb.sv|
+!i113 1
+R5
+R6
+R7

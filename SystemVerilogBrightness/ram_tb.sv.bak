@@ -1,0 +1,15 @@
+module ram_tb();
+
+logic clock, wren, rst;
+
+logic [7:0] address, data, q;
+
+ram mem(address, clock, wren, q);
+
+/*	input	[5:0]  address;
+	input	  clock;
+	input	[7:0]  data;
+	input	  wren;
+	output	[7:0]  q;*/
+	
+endmodule
