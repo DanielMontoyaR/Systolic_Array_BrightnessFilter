@@ -2,88 +2,68 @@
 
 module Matrix_Controller_tb;
 
-    // Parámetros
-    parameter CLK_PERIOD = 10; // 100 MHz
-    parameter MATRIX_SIZE = 8; // Matriz 8x8
-    parameter CHUNK_SIZE = 4;  // Chunk 4x4
+  // Parámetros de prueba
+  parameter addr_width = 8;
+  parameter data_width = 8;
+  parameter chunk_size = 4;
+  parameter matrix_size = 8;
 
-    // Señales
-    logic clk;
-    logic reset;
-    logic start;
-    logic done;
-    logic [5:0] ram_addr;
-    logic [7:0] ram_data;
-    logic [63:0] tpu_data_arr;
-    logic tpu_control;
-    logic tpu_ready;
+  // Señales
+  logic clk;
+  logic rst;
+  logic enable;
+  logic start;
 
-    // Instancia del módulo bajo prueba
-    Matrix_Controller #(
-        .MATRIX_SIZE(MATRIX_SIZE)
-    ) uut (
-        .clk(clk),
-        .reset(reset),
-        .start(start),
-        .done(done),
-        .ram_addr(ram_addr),
-        .ram_data(ram_data),
-        .tpu_data_arr(tpu_data_arr),
-        .tpu_control(tpu_control),
-        .tpu_ready(tpu_ready)
-    );
+  logic [addr_width-1:0] out_addr;
+  logic [data_width-1:0] out_data;
+  logic out_valid;
 
-    // Simulación de la RAM (8x8, valores del 1 al 64)
-    logic [7:0] ram [0:63];
-    initial begin
-        for (int i = 0; i < 64; i++) begin
-            ram[i] = i + 1; // Inicializa con valores 1..64
-        end
+  // Instancia del DUT
+  Matrix_Controller #(
+    .addr_width(addr_width),
+    .data_width(data_width),
+    .chunk_size(chunk_size),
+    .matrix_size(matrix_size)
+  ) uut (
+    .clk(clk),
+    .rst(rst),
+    .enable(enable),
+    .start(start),
+    .out_addr(out_addr),
+    .out_data(out_data),
+    .out_valid(out_valid)
+  );
+
+  // Generar reloj de 10ns
+  always #5 clk = ~clk;
+
+  // Inicialización
+  initial begin
+    clk = 0;
+    rst = 1;
+    enable = 0;
+    start = 0;
+
+    // Reset por 20ns
+    #20 rst = 0;
+
+    // Iniciar sistema
+    #10 enable = 1;
+         start = 1;
+
+    // Esperar procesamiento completo
+    #2000;
+
+    $display("FIN de simulación.");
+    $finish;
+  end
+
+  // Monitor de actividad de lectura
+  always_ff @(posedge clk) begin
+    if (out_valid) begin
+      $display("Time=%0t | READ -> Addr=%0d Data=%0h",
+                $time, out_addr, out_data);
     end
-    assign ram_data = ram[ram_addr]; // Lectura de la RAM
-
-    // Generación de reloj
-    initial begin
-        clk = 0;
-        forever #(CLK_PERIOD/2) clk = ~clk;
-    end
-
-    // Secuencia de prueba
-    initial begin
-        // Inicialización
-        reset = 1;
-        start = 0;
-        tpu_ready = 1; // TPU siempre listo
-        #20;
-        reset = 0;
-        #20;
-
-        // Caso de prueba 1: Procesar toda la matriz 8x8
-        $display("=== Iniciando procesamiento ===");
-        start = 1;
-        #CLK_PERIOD;
-        start = 0;
-
-        // Monitorear salidas
-        wait (done);
-        $display("=== Procesamiento completado ===");
-        #100;
-
-        // Finalizar simulación
-        $finish;
-    end
-
-    // Monitor: Imprime tpu_data_arr en cada flanco de reloj
-    always @(posedge clk) begin
-        if (tpu_control) begin
-            $display("[T=%0t] tpu_data_arr = %h", $time, tpu_data_arr);
-            // Desglose de los 4 valores de 16 bits
-            $display("    Valores: %d, %d, %d, %d",
-                tpu_data_arr[15:0],
-                tpu_data_arr[31:16],
-                tpu_data_arr[47:32],
-                tpu_data_arr[63:48]);
-        end
-    end
+  end
 
 endmodule

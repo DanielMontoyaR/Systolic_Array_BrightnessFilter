@@ -1,72 +1,50 @@
-`timescale 1ns / 1ps
-
-module TPU_System #(
-    parameter BIT_WIDTH = 16,
-    parameter ACC_WIDTH = 40,
-    parameter DEPTH = 4,          // Tamaño del arreglo sistólico (4x4)
-    parameter MATRIX_SIZE = 8,    // Tamaño de la matriz grande (8x8)
-    parameter RAM_DATA_WIDTH = 8, // Ancho de datos de la RAM (8 bits)
-    parameter RAM_ADDR_WIDTH = 6  // 6 bits para 64 posiciones (8x8)
-)(
-    input logic clk,
-    input logic reset,
-    input logic start,
+module TPU_System (
+    input  logic clk,
+    input  logic reset,
+    input  logic start,
     output logic done,
-    // Salidas para monitoreo (opcional)
-    output logic [ACC_WIDTH-1:0] pe30_out, pe31_out, pe32_out, pe33_out,
+
+    output logic [39:0] pe30_out, pe31_out, pe32_out, pe33_out,
     output logic [15:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out
 );
 
-    //-------------------------------------------
-    // Señales de interconexión
-    //-------------------------------------------
-    logic [RAM_ADDR_WIDTH-1:0] ram_addr;
-    logic [RAM_DATA_WIDTH-1:0] ram_data;
-    logic [BIT_WIDTH*DEPTH-1:0] tpu_data_arr; // 64 bits (4x16)
-    logic tpu_control;
-    logic tpu_ready = 1'b1; // Asumimos que el TPU siempre está listo
+    // Señales internas
+    logic [31:0] data_arr;
+    logic [63:0] wt_arr;
+    logic        tpu_valid;
 
-    //-------------------------------------------
-    // Instancia de la RAM (8x8, 8 bits por dato)
-    //-------------------------------------------
-    ram1 ram (
-        .address(ram_addr),
+    // Conexión a la RAM
+    logic [5:0] addr;
+    logic [7:0] q;
+
+    ram1 RAM_inst (
+        .address(addr),
         .clock(clk),
-        .data(8'h00),     // No escribimos en la RAM
-        .wren(1'b0),      // Solo lectura
-        .q(ram_data)
+        .data(8'b0),
+        .rden(1'b1),
+        .wren(1'b0),
+        .q(q)
     );
 
-    //-------------------------------------------
-    // Instancia del Controlador
-    //-------------------------------------------
-    Matrix_Controller #(
-        .MATRIX_SIZE(MATRIX_SIZE),
-        .ADDR_WIDTH(RAM_ADDR_WIDTH),
-        .DATA_WIDTH(RAM_DATA_WIDTH)
-    ) controller (
+    // Controlador que genera datos y pesos
+    Matrix_Controller controller_inst (
         .clk(clk),
+        .reset(reset),
         .start(start),
         .done(done),
-        .ram_addr(ram_addr),
-        .ram_data(ram_data),
-        .tpu_data_arr(tpu_data_arr),
-        .tpu_control(tpu_control),
-        .tpu_ready(tpu_ready)
+        .ram_data(q),
+        .addr(addr),
+        .data_arr(data_arr),
+        .wt_arr(wt_arr),
+        .tpu_valid(tpu_valid)
     );
 
-    //-------------------------------------------
-    // Instancia del TPU (arreglo sistólico 4x4)
-    //-------------------------------------------
-    TPU #(
-        .bit_width(BIT_WIDTH),
-        .acc_width(ACC_WIDTH),
-        .depth(DEPTH)
-    ) tpu (
+    // TPU: se mantiene sin modificar según tu solicitud
+    TPU tpu_inst (
         .clk(clk),
-        .control(tpu_control),
-        .data_arr(tpu_data_arr),
-        .wt_arr(64'h0000_0001_0000_0001), // Pesos fijos (ejemplo)
+        .data_arr(data_arr),
+        .wt_arr(wt_arr),
+        .valid(tpu_valid),
         .pe30_out(pe30_out),
         .pe31_out(pe31_out),
         .pe32_out(pe32_out),

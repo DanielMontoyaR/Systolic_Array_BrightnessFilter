@@ -10,115 +10,105 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller.sv}
+# vlog -vlog01compat -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:18:45 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller.sv 
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v 
+# -- Compiling module ram1
+# 
+# Top level modules:
+# 	ram1
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv 
+# -- Compiling module TPU
+# 
+# Top level modules:
+# 	TPU
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv 
+# -- Compiling module MAC
+# 
+# Top level modules:
+# 	MAC
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv 
+# -- Compiling module Normalizer
+# 
+# Top level modules:
+# 	Normalizer
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Matrix_Controller.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Matrix_Controller.sv 
 # -- Compiling module Matrix_Controller
 # 
 # Top level modules:
 # 	Matrix_Controller
-# End time: 14:18:46 on Jun 16,2025, Elapsed time: 0:00:01
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:18:46 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller_tb.sv 
-# -- Compiling module Matrix_Controller_tb
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System.sv 
+# -- Compiling module TPU_System
 # 
 # Top level modules:
-# 	Matrix_Controller_tb
-# End time: 14:18:46 on Jun 16,2025, Elapsed time: 0:00:00
+# 	TPU_System
+# End time: 01:03:21 on Jun 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Matrix_Controller_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Matrix_Controller_tb 
-# Start time: 14:18:46 on Jun 16,2025
-# Loading sv_std.std
-# Loading work.Matrix_Controller_tb
-# Loading work.Matrix_Controller
+# vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:03:21 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System_tb.sv 
+# -- Compiling module TPU_System_tb
 # 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
-#           Attempting to use alternate WLF file "./wlft6rymtf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6rymtf
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
-# === Iniciando procesamiento ===
-# [T=65000] tpu_data_arr = 00000000000000xx
-#     Valores:     X,     0,     0,     0
-# [T=75000] tpu_data_arr = 0000000000xx00xx
-#     Valores:     X,     X,     0,     0
-# [T=85000] tpu_data_arr = 000000xx00xx00xx
-#     Valores:     X,     X,     X,     0
-# [T=95000] tpu_data_arr = 00xx00xx00xx00xx
-#     Valores:     X,     X,     X,     X
-# [T=105000] tpu_data_arr = 00xx00xx00xx0000
-#     Valores:     0,     X,     X,     X
-# [T=115000] tpu_data_arr = 00xx00xx00000000
-#     Valores:     0,     0,     X,     X
-# [T=125000] tpu_data_arr = 00xx000000000000
-#     Valores:     0,     0,     0,     X
-# [T=135000] tpu_data_arr = 0000000000000000
-#     Valores:     0,     0,     0,     0
-# [T=175000] tpu_data_arr = 0000000000000020
-#     Valores:    32,     0,     0,     0
-# [T=185000] tpu_data_arr = 0000000000200020
-#     Valores:    32,    32,     0,     0
-# [T=195000] tpu_data_arr = 0000002000200020
-#     Valores:    32,    32,    32,     0
-# [T=205000] tpu_data_arr = 0020002000200020
-#     Valores:    32,    32,    32,    32
-# [T=215000] tpu_data_arr = 0020002000200000
-#     Valores:     0,    32,    32,    32
-# [T=225000] tpu_data_arr = 0020002000000000
-#     Valores:     0,     0,    32,    32
-# [T=235000] tpu_data_arr = 0020000000000000
-#     Valores:     0,     0,     0,    32
-# [T=245000] tpu_data_arr = 0000000000000000
-#     Valores:     0,     0,     0,     0
-# [T=285000] tpu_data_arr = 000000000000003c
-#     Valores:    60,     0,     0,     0
-# [T=295000] tpu_data_arr = 00000000003c003c
-#     Valores:    60,    60,     0,     0
-# [T=305000] tpu_data_arr = 0000003c003c003c
-#     Valores:    60,    60,    60,     0
-# [T=315000] tpu_data_arr = 003c003c003c003c
-#     Valores:    60,    60,    60,    60
-# [T=325000] tpu_data_arr = 003c003c003c0000
-#     Valores:     0,    60,    60,    60
-# [T=335000] tpu_data_arr = 003c003c00000000
-#     Valores:     0,     0,    60,    60
-# [T=345000] tpu_data_arr = 003c000000000000
-#     Valores:     0,     0,     0,    60
-# [T=355000] tpu_data_arr = 0000000000000000
-#     Valores:     0,     0,     0,     0
-# [T=395000] tpu_data_arr = 0000000000000040
-#     Valores:    64,     0,     0,     0
-# [T=405000] tpu_data_arr = 0000000000400040
-#     Valores:    64,    64,     0,     0
-# [T=415000] tpu_data_arr = 0000004000400040
-#     Valores:    64,    64,    64,     0
-# [T=425000] tpu_data_arr = 0040004000400040
-#     Valores:    64,    64,    64,    64
-# [T=435000] tpu_data_arr = 0040004000400000
-#     Valores:     0,    64,    64,    64
-# [T=445000] tpu_data_arr = 0040004000000000
-#     Valores:     0,     0,    64,    64
-# [T=455000] tpu_data_arr = 0040000000000000
-#     Valores:     0,     0,     0,    64
-# [T=465000] tpu_data_arr = 0000000000000000
-#     Valores:     0,     0,     0,     0
-# === Procesamiento completado ===
-# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller_tb.sv(73)
-#    Time: 575 ns  Iteration: 0  Instance: /Matrix_Controller_tb
-# 1
-# Break in Module Matrix_Controller_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller_tb.sv line 73
-# End time: 14:22:34 on Jun 16,2025, Elapsed time: 0:03:48
-# Errors: 0, Warnings: 2
+# Top level modules:
+# 	TPU_System_tb
+# End time: 01:03:22 on Jun 17,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TPU_System_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TPU_System_tb 
+# Start time: 01:03:22 on Jun 17,2025
+# Loading sv_std.std
+# Loading work.TPU_System_tb
+# Loading work.TPU_System
+# Loading work.ram1
+# Loading altera_mf_ver.altsyncram
+# Loading work.Matrix_Controller
+# Loading work.TPU
+# Loading work.Normalizer
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.MAC
+# ** Warning: (vsim-3008) [CNNODP] - Component name (index) is not on a downward path.
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb File: C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System_tb.sv Line: 45
+# ** Error: (vsim-3043) Unresolved reference to 'index' in uut.controller_inst.index.
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb File: C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System_tb.sv Line: 45
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (64) for port 'tpu_data_arr'. The port definition is at: C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Matrix_Controller.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb/uut/controller_inst File: C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System.sv Line: 41
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'tpu_inst'.  Expected 13, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /TPU_System_tb/uut/tpu_inst File: C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System.sv Line: 76
+# ** Warning: (vsim-3722) C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU_System.sv(76): [TFMPC] - Missing connection for port 'acc_out'.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./BrightnessFilter_run_msim_rtl_verilog.do PAUSED at line 17
+# End time: 01:04:49 on Jun 17,2025, Elapsed time: 0:01:27
+# Errors: 1, Warnings: 4

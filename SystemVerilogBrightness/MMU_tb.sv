@@ -12,8 +12,7 @@ module MMU_tb;
     reg [BIT_WIDTH*DEPTH-1:0] wt_arr;    // 64 bits
 
     // Outputs
-    wire [ACC_WIDTH*DEPTH-1:0] acc_out;      wire [15:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out;
-// 160 bits
+    wire [ACC_WIDTH*DEPTH-1:0] acc_out;  // 160 bits
     wire [ACC_WIDTH-1:0] pe30_out, pe31_out, pe32_out, pe33_out;
 
     // Señales para monitoreo interno
@@ -34,12 +33,8 @@ module MMU_tb;
         .pe30_out(pe30_out),
         .pe31_out(pe31_out),
         .pe32_out(pe32_out),
-        .pe33_out(pe33_out),
-    
-        .pe30_norm_out(pe30_norm_out),
-        .pe31_norm_out(pe31_norm_out),
-        .pe32_norm_out(pe32_norm_out),
-        .pe33_norm_out(pe33_norm_out));
+        .pe33_out(pe33_out)
+    );
 
     // Conexiones para monitoreo
 	// Asignaciones directas para pesos
@@ -218,7 +213,7 @@ module MMU_tb;
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h0100_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h000F_xxxx_xxxx_xxxx;  // [f, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo

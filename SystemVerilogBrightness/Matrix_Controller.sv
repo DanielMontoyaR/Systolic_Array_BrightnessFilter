@@ -1,121 +1,91 @@
-module Matrix_Controller #(
-    parameter ADDR_WIDTH = 6,
-    parameter DATA_WIDTH = 8,
-    parameter MATRIX_SIZE = 8,
-    parameter CHUNK_SIZE = 4
-)(
+module Matrix_Controller(
     input logic clk,
+    input logic reset,
     input logic start,
-	 input logic reset,
+    input logic [7:0] data_in,
     output logic done,
-    // Interface con la RAM
-    output logic [ADDR_WIDTH-1:0] ram_addr,
-    input logic [DATA_WIDTH-1:0] ram_data,
-    // Interface con el TPU
-    output logic [63:0] tpu_data_arr, // 4x16 bits
-    output logic tpu_control,
-    input logic tpu_ready
+    output logic [5:0] addr,
+    output logic tpu_valid,
+    output logic [31:0] data_arr,
+    output logic [63:0] wt_arr
 );
 
-    // Estados del controlador
-    typedef enum {
-        IDLE,
-        LOAD_CHUNK,
-        SEND_DIAGONAL,
-        NEXT_CHUNK,
-        DONE
+    typedef enum logic [1:0] {
+        IDLE, READ, WEIGHT_LOAD, DONE
     } state_t;
 
-    state_t current_state, next_state;
+    state_t state, next_state;
+    logic [3:0] index;
+    logic [7:0] buffer [0:15];
 
-    // Contadores y registros
-    logic [7:0] row_offset, col_offset;
-    logic [2:0] diag_counter;
-    logic [15:0] chunk_buffer [0:CHUNK_SIZE-1][0:CHUNK_SIZE-1];
-
-    // Máquina de estados
-    always_ff @(posedge clk) begin
-        if (reset) current_state <= IDLE;
-        else current_state <= next_state;
+    // Address counter
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset)
+            index <= 0;
+        else if (state == READ && index < 16)
+            index <= index + 1;
     end
 
-    // Lógica del próximo estado
+    // RAM read control
     always_comb begin
-        case (current_state)
-            IDLE:       next_state = start ? LOAD_CHUNK : IDLE;
-            LOAD_CHUNK: next_state = (chunk_loaded()) ? SEND_DIAGONAL : LOAD_CHUNK;
-            SEND_DIAGONAL: next_state = (diag_sent()) ? 
-                                      (last_chunk() ? DONE : NEXT_CHUNK) : SEND_DIAGONAL;
-            NEXT_CHUNK: next_state = LOAD_CHUNK;
-            DONE:       next_state = IDLE;
-            default:    next_state = IDLE;
+        if (state == READ)
+            addr = index;
+        else
+            addr = 0;
+    end
+
+    // FSM
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset)
+            state <= IDLE;
+        else
+            state <= next_state;
+    end
+
+    always_comb begin
+        next_state = state;
+        case (state)
+            IDLE:
+                if (start) next_state = READ;
+            READ:
+                if (index == 15) next_state = WEIGHT_LOAD;
+            WEIGHT_LOAD:
+                next_state = DONE;
+            DONE:
+                next_state = DONE;
         endcase
     end
 
-    // Cargar chunk desde la RAM
+    // Buffering data
     always_ff @(posedge clk) begin
-        if (current_state == LOAD_CHUNK) begin
-            for (int i = 0; i < CHUNK_SIZE; i++) begin
-                for (int j = 0; j < CHUNK_SIZE; j++) begin
-                    ram_addr <= (row_offset + i) * MATRIX_SIZE + (col_offset + j);
-                    chunk_buffer[i][j] <= {8'h00, ram_data}; // Extender a 16 bits
-                end
-            end
-        end
+        if (state == READ)
+            buffer[index] <= data_in;
     end
 
-    // Generar patron diagonal para el TPU
-    always_comb begin
-        tpu_data_arr = 64'h0;
-        tpu_control = (current_state == SEND_DIAGONAL);
-
-        case (diag_counter)
-            0: tpu_data_arr = {48'h0, chunk_buffer[3][0]};
-            1: tpu_data_arr = {32'h0, chunk_buffer[2][0], chunk_buffer[3][1]};
-            2: tpu_data_arr = {16'h0, chunk_buffer[1][0], chunk_buffer[2][1], chunk_buffer[3][2]};
-            3: tpu_data_arr = {chunk_buffer[0][0], chunk_buffer[1][1], chunk_buffer[2][2], chunk_buffer[3][3]};
-            4: tpu_data_arr = {chunk_buffer[0][1], chunk_buffer[1][2], chunk_buffer[2][3], 16'h0};
-            5: tpu_data_arr = {chunk_buffer[0][2], chunk_buffer[1][3], 32'h0};
-            6: tpu_data_arr = {chunk_buffer[0][3], 48'h0};
-            default: tpu_data_arr = 64'h0;
-        endcase
-    end
-
-    // Control de contadores
-    always_ff @(posedge clk) begin
+    // Output control
+    always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
-            row_offset <= 0;
-            col_offset <= 0;
-            diag_counter <= 0;
+            data_arr <= 0;
+            wt_arr <= 0;
+            tpu_valid <= 0;
             done <= 0;
-        end
-        else case (current_state)
-            SEND_DIAGONAL: if (tpu_ready) diag_counter <= diag_counter + 1;
-            NEXT_CHUNK: begin
-                if (col_offset + CHUNK_SIZE >= MATRIX_SIZE) begin
-                    col_offset <= 0;
-                    row_offset <= row_offset + CHUNK_SIZE;
-                end else begin
-                    col_offset <= col_offset + CHUNK_SIZE;
+        end else begin
+            case (state)
+                WEIGHT_LOAD: begin
+                    // Construye data_arr con 4 datos para cada ciclo
+                    data_arr <= {buffer[12], buffer[9], buffer[6], buffer[3]};
+                    wt_arr <= 64'h0001000000000000;  // Pesos estáticos de ejemplo
+                    tpu_valid <= 1;
                 end
-                diag_counter <= 0;
-            end
-            DONE: done <= 1;
-        endcase
+                DONE: begin
+                    done <= 1;
+                    tpu_valid <= 0;
+                end
+                default: begin
+                    tpu_valid <= 0;
+                    done <= 0;
+                end
+            endcase
+        end
     end
-
-    // Funciones helper
-    function logic chunk_loaded();
-        return (ram_addr == (row_offset + CHUNK_SIZE-1) * MATRIX_SIZE + (col_offset + CHUNK_SIZE-1));
-    endfunction
-
-    function logic diag_sent();
-        return (diag_counter == 7);
-    endfunction
-
-    function logic last_chunk();
-        return (row_offset + CHUNK_SIZE >= MATRIX_SIZE) && 
-               (col_offset + CHUNK_SIZE >= MATRIX_SIZE);
-    endfunction
-
 endmodule
