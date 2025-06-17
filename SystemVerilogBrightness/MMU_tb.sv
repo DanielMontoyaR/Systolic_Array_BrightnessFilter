@@ -12,7 +12,8 @@ module MMU_tb;
     reg [BIT_WIDTH*DEPTH-1:0] wt_arr;    // 64 bits
 
     // Outputs
-    wire [ACC_WIDTH*DEPTH-1:0] acc_out;  // 160 bits
+    wire [ACC_WIDTH*DEPTH-1:0] acc_out;      wire [7:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out;
+// 160 bits
     wire [ACC_WIDTH-1:0] pe30_out, pe31_out, pe32_out, pe33_out;
 
     // Señales para monitoreo interno
@@ -33,8 +34,12 @@ module MMU_tb;
         .pe30_out(pe30_out),
         .pe31_out(pe31_out),
         .pe32_out(pe32_out),
-        .pe33_out(pe33_out)
-    );
+        .pe33_out(pe33_out),
+    
+        .pe30_norm_out(pe30_norm_out),
+        .pe31_norm_out(pe31_norm_out),
+        .pe32_norm_out(pe32_norm_out),
+        .pe33_norm_out(pe33_norm_out));
 
     // Conexiones para monitoreo
 	// Asignaciones directas para pesos
@@ -158,19 +163,19 @@ module MMU_tb;
         
         // Carga por columnas (weight stationary)
         @(posedge clk);
-        wt_arr = 64'h0001000000000000;  // Columna 0: [-1, 0, 0, 0]
+        wt_arr = 64'h000a000000000000;  // Columna 0: [-1, 0, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000100000000;  // Columna 1: [0, -1, 0, 0]
+        wt_arr = 64'h0000000a00000000;  // Columna 1: [0, -1, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000010000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h00000000000a0000;  // Columna 2: [0, 0, 1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000000001;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h000000000000000a;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);
@@ -213,7 +218,7 @@ module MMU_tb;
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000F_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h001e_xxxx_xxxx_xxxx;  // [f, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo
