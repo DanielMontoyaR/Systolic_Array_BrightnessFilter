@@ -5,8 +5,8 @@ module Matrix_Controller #(
     parameter CHUNK_SIZE = 4
 )(
     input logic clk,
-    input logic start,
 	 input logic reset,
+    input logic start,
     output logic done,
     // Interface con la RAM
     output logic [ADDR_WIDTH-1:0] ram_addr,

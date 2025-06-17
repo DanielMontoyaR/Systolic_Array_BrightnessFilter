@@ -166,11 +166,11 @@ module MMU_negative_tb;
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h00000000FFFF0000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h00000000FFFF0000;  // Columna 2: [0, 0, -1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h000000000000FFFF;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h0000000000000001;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);
