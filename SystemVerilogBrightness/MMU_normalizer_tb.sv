@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module MMU_tb;
+module MMU_normalizer_tb;
     parameter BIT_WIDTH = 16;
     parameter ACC_WIDTH = 40;
     parameter DEPTH = 4;
@@ -163,19 +163,19 @@ module MMU_tb;
         
         // Carga por columnas (weight stationary)
         @(posedge clk);
-        wt_arr = 64'h0001000000000000;  // Columna 0: [-1, 0, 0, 0]
+        wt_arr = 64'h000a000000000000;  // Columna 0: [-1, 0, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000100000000;  // Columna 1: [0, -1, 0, 0]
+        wt_arr = 64'h0000000a00000000;  // Columna 1: [0, -1, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000010000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h00000000000a0000;  // Columna 2: [0, 0, 1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000000001;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h000000000000000a;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);
@@ -214,11 +214,11 @@ module MMU_tb;
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000e_000b_xxxx_xxxx;  // [e, b, x, x]
+        data_arr = 64'h000e_001a_xxxx_xxxx;  // [e, b, x, x]
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000f_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h001e_xxxx_xxxx_xxxx;  // [1e, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo

@@ -12,69 +12,69 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:59:24 on Jun 17,2025
+# Start time: 02:48:50 on Jun 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
 # -- Compiling module TPU
 # 
 # Top level modules:
 # 	TPU
-# End time: 01:59:24 on Jun 17,2025, Elapsed time: 0:00:00
+# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:59:24 on Jun 17,2025
+# Start time: 02:48:50 on Jun 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
 # -- Compiling module MAC
 # 
 # Top level modules:
 # 	MAC
-# End time: 01:59:24 on Jun 17,2025, Elapsed time: 0:00:00
+# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:59:24 on Jun 17,2025
+# Start time: 02:48:50 on Jun 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv 
 # -- Compiling module Normalizer
 # 
 # Top level modules:
 # 	Normalizer
-# End time: 01:59:24 on Jun 17,2025, Elapsed time: 0:00:00
+# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:59:24 on Jun 17,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv 
-# -- Compiling module MMU_tb
+# Start time: 02:48:50 on Jun 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv 
+# -- Compiling module MMU_normalizer_tb
 # 
 # Top level modules:
-# 	MMU_tb
-# End time: 01:59:24 on Jun 17,2025, Elapsed time: 0:00:00
+# 	MMU_normalizer_tb
+# End time: 02:48:51 on Jun 17,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_tb 
-# Start time: 01:59:24 on Jun 17,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_normalizer_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_normalizer_tb 
+# Start time: 02:48:51 on Jun 17,2025
 # Loading sv_std.std
-# Loading work.MMU_tb
+# Loading work.MMU_normalizer_tb
 # Loading work.TPU
 # Loading work.Normalizer
 # Loading work.MAC
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe30_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv Line: 28
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe31_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv Line: 28
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe32_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv Line: 28
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe33_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv Line: 28
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
-#           Attempting to use alternate WLF file "./wlftcc6yh0".
+#           Attempting to use alternate WLF file "./wlftt7maqe".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcc6yh0
+#           Using alternate file: ./wlftt7maqe
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -182,14 +182,14 @@
 #         Col0               Col1               Col2               Col3
 # Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:0003  in:0003/out:0002  in:0002/out:0001
 # Fila          1:  in:xxxx/out:0007  in:0007/out:0006  in:0006/out:0005  in:0005/out:0004
-# Fila          2:  in:000b/out:000a  in:000a/out:0009  in:0009/out:0008  in:0008/out:xxxx
+# Fila          2:  in:001a/out:000a  in:000a/out:0009  in:0009/out:0008  in:0008/out:xxxx
 # Fila          3:  in:000e/out:000d  in:000d/out:000c  in:000c/out:xxxx  in:xxxx/out:xxxx
 # 
 # Flujo de Datos (T=7250000):
 #         Col0               Col1               Col2               Col3
 # Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0003  in:0003/out:0002
 # Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:0007  in:0007/out:0006  in:0006/out:0005
-# Fila          2:  in:xxxx/out:000b  in:000b/out:000a  in:000a/out:0009  in:0009/out:0008
+# Fila          2:  in:xxxx/out:001a  in:001a/out:000a  in:000a/out:0009  in:0009/out:0008
 # Fila          3:  in:001e/out:000e  in:000e/out:000d  in:000d/out:000c  in:000c/out:xxxx
 # 
 # Resultados Acumulados (T=7250000):
@@ -202,7 +202,7 @@
 #         Col0               Col1               Col2               Col3
 # Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0003
 # Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0007  in:0007/out:0006
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:000b  in:000b/out:000a  in:000a/out:0009
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:001a  in:001a/out:000a  in:000a/out:0009
 # Fila          3:  in:xxxx/out:001e  in:001e/out:000e  in:000e/out:000d  in:000d/out:000c
 # 
 # Resultados Acumulados (T=7750000):
@@ -215,7 +215,7 @@
 #         Col0               Col1               Col2               Col3
 # Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
 # Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0007
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:000b  in:000b/out:000a
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001a  in:001a/out:000a
 # Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:001e  in:001e/out:000e  in:000e/out:000d
 # 
 # Resultados Acumulados (T=8250000):
@@ -228,13 +228,13 @@
 #         Col0               Col1               Col2               Col3
 # Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
 # Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:000b
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001a
 # Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001e  in:001e/out:000e
 # 
 # Resultados Acumulados (T=8750000):
 # PE(3,0) = xxxxxxxxxx (dec x)
 # PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = 000000006e (dec 110)
+# PE(3,2) = 0000000104 (dec 260)
 # PE(3,3) = 000000008c (dec 140)
 # 
 # Flujo de Datos (T=9250000):
@@ -297,9 +297,9 @@
 # PE(3,2) = xxxxxxxxxx (dec x)
 # PE(3,3) = xxxxxxxxxx (dec x)
 # TEST FALLADO: Resultados incorrectos
-# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv(243)
-#    Time: 10750 ns  Iteration: 1  Instance: /MMU_tb
+# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv(243)
+#    Time: 10750 ns  Iteration: 1  Instance: /MMU_normalizer_tb
 # 1
-# Break in Module MMU_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_tb.sv line 243
-# End time: 02:00:13 on Jun 17,2025, Elapsed time: 0:00:49
+# Break in Module MMU_normalizer_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv line 243
+# End time: 02:49:24 on Jun 17,2025, Elapsed time: 0:00:33
 # Errors: 0, Warnings: 6
