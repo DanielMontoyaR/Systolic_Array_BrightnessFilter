@@ -1,0 +1,104 @@
+`timescale 1ns / 1ps
+
+module RAM_Loader_tb;
+
+    // Parámetros
+    localparam RAM_ADDR_WIDTH = 6;
+    localparam RAM_DATA_WIDTH = 8;
+    localparam PE_DATA_WIDTH = 16;
+    localparam DEPTH = 4;
+    
+    // Señales
+    logic clk;
+    logic reset;
+    logic start;
+    logic [PE_DATA_WIDTH*DEPTH-1:0] data_out;
+    logic data_valid;
+    logic [RAM_ADDR_WIDTH-1:0] ram_address;
+    logic [RAM_DATA_WIDTH-1:0] ram_data;
+    
+    // Instancia del módulo bajo prueba
+    RAM_Loader #(
+        .RAM_ADDR_WIDTH(RAM_ADDR_WIDTH),
+        .RAM_DATA_WIDTH(RAM_DATA_WIDTH),
+        .PE_DATA_WIDTH(PE_DATA_WIDTH),
+        .DEPTH(DEPTH)
+    ) uut (
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .data_out(data_out),
+        .data_valid(data_valid),
+        .ram_address(ram_address),
+        .ram_data(ram_data)
+    );
+    
+    // Memoria RAM simulada
+    logic [RAM_DATA_WIDTH-1:0] ram [0:2**RAM_ADDR_WIDTH-1];
+    
+    // Inicializar RAM con datos de prueba (matriz 8x8)
+    initial begin
+        for (int i = 0; i < 64; i++) begin
+            ram[i] = i + 1; // Datos de 1 a 64
+        end
+    end
+    
+    // Asignar datos de RAM
+    assign ram_data = ram[ram_address];
+    
+    // Generador de reloj
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+    
+    // Tareas para monitoreo
+    task print_data_flow;
+        $display("T=%0t: data_out=%h", $time, data_out);
+        $display("PE0_in=%h, PE1_in=%h, PE2_in=%h, PE3_in=%h", 
+                 uut.pe_data_in[0], uut.pe_data_in[1], 
+                 uut.pe_data_in[2], uut.pe_data_in[3]);
+    endtask
+    
+    // Proceso de prueba
+    initial begin
+        // Inicialización
+        reset = 1;
+        start = 0;
+        #20;
+        
+        reset = 0;
+        #10;
+        
+        $display("=== TEST 1: Carga de datos desde RAM ===");
+        start = 1;
+        #10;
+        start = 0;
+        
+        // Esperar a que termine el proceso
+        wait (uut.current_state == uut.DONE);
+        
+        // Verificar resultados
+        $display("\n=== RESULTADOS FINALES ===");
+        print_data_flow();
+        
+        // Verificar datos esperados
+        if (data_out === 64'h0010000900060003) begin
+            $display("TEST PASADO: Datos cargados correctamente");
+        end else begin
+            $display("TEST FALLADO: Datos incorrectos");
+            $display("Esperado: 0010000900060003");
+            $display("Obtenido: %h", data_out);
+        end
+        
+        $finish;
+    end
+    
+    // Monitoreo de estados y direcciones
+    always @(posedge clk) begin
+        $display("Estado: %s, Addr: %d, Cycle: %d, Row: %d", 
+                 uut.current_state.name(), ram_address, 
+                 uut.cycle_count, uut.row_count);
+    end
+    
+endmodule

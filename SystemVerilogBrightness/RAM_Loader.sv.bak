@@ -1,0 +1,143 @@
+`timescale 1ns / 1ps
+
+module RAM_Loader #(
+    parameter RAM_ADDR_WIDTH = 6,   // 64 posiciones (0-63)
+    parameter RAM_DATA_WIDTH = 8,
+    parameter PE_DATA_WIDTH = 16,
+    parameter DEPTH = 4             // Tamaño del arreglo sistólico (4x4)
+)(
+    input logic clk,
+    input logic reset,
+    input logic start,
+    output logic [PE_DATA_WIDTH*DEPTH-1:0] data_out, // Salida de 64 bits (4x16)
+    output logic data_valid,
+    output logic [RAM_ADDR_WIDTH-1:0] ram_address,
+    input logic [RAM_DATA_WIDTH-1:0] ram_data
+);
+
+    // Estados de la máquina de estados
+    typedef enum logic [2:0] {
+        IDLE,
+        INIT,
+        LOAD_DIAGONAL,
+        SHIFT_OUT,
+        DONE
+    } state_t;
+
+    state_t current_state, next_state;
+    
+    // Contadores y registros
+    logic [3:0] cycle_count;
+    logic [3:0] row_count;
+    logic [RAM_ADDR_WIDTH-1:0] base_addr;
+    logic [RAM_ADDR_WIDTH-1:0] next_addr;
+    
+    // Registros para almacenar temporalmente los datos
+    logic [PE_DATA_WIDTH-1:0] data_buffer [DEPTH];
+    
+    // Máquina de estados
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
+            current_state <= IDLE;
+            cycle_count <= 0;
+            row_count <= 0;
+            base_addr <= 0;
+            data_valid <= 0;
+        end else begin
+            current_state <= next_state;
+            
+            case (current_state)
+                INIT: begin
+                    cycle_count <= 0;
+                    row_count <= 0;
+                    base_addr <= 0;
+                end
+                
+                LOAD_DIAGONAL: begin
+                    if (cycle_count < DEPTH*2 - 1) begin
+                        cycle_count <= cycle_count + 1;
+                    end
+                    
+                    // Actualizar dirección base después de completar un bloque
+                    if (cycle_count == DEPTH*2 - 1 && row_count < (DEPTH-1)) begin
+                        row_count <= row_count + 1;
+                        base_addr <= base_addr + DEPTH; // Siguiente fila en RAM
+                    end
+                end
+                
+                SHIFT_OUT: begin
+                    data_valid <= 1;
+                end
+                
+                DONE: begin
+                    data_valid <= 0;
+                end
+            endcase
+        end
+    end
+    
+    // Lógica de próximo estado
+    always_comb begin
+        next_state = current_state;
+        
+        case (current_state)
+            IDLE: if (start) next_state = INIT;
+            INIT: next_state = LOAD_DIAGONAL;
+            LOAD_DIAGONAL: 
+                if (cycle_count >= DEPTH*2 - 1 && row_count >= (DEPTH-1)) 
+                    next_state = SHIFT_OUT;
+            SHIFT_OUT: next_state = DONE;
+            DONE: next_state = IDLE;
+        endcase
+    end
+    
+    // Lógica de dirección de RAM
+    always_comb begin
+        ram_address = base_addr;
+        next_addr = base_addr;
+        
+        if (current_state == LOAD_DIAGONAL) begin
+            // Cálculo de dirección según el patrón diagonal
+            if (cycle_count < DEPTH) begin
+                ram_address = base_addr + (DEPTH - 1 - cycle_count);
+                next_addr = ram_address;
+            end else begin
+                if (cycle_count - DEPTH < row_count) begin
+                    ram_address = next_addr - DEPTH + 1;
+                    next_addr = ram_address;
+                end
+            end
+        end
+    end
+    
+    // Lógica de generación de data_out
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            for (int i = 0; i < DEPTH; i++) begin
+                data_buffer[i] <= 0;
+            end
+            data_out <= 0;
+        end else if (current_state == LOAD_DIAGONAL) begin
+            // Almacenar datos en el buffer y desplazar
+            if (cycle_count < DEPTH) begin
+                data_buffer[DEPTH - 1 - cycle_count] <= {8'h00, ram_data}; // Extender a 16 bits
+            end else begin
+                for (int i = 0; i < DEPTH-1; i++) begin
+                    data_buffer[i] <= data_buffer[i+1];
+                end
+                data_buffer[DEPTH-1] <= {8'h00, ram_data}; // Extender a 16 bits
+            end
+        end else if (current_state == SHIFT_OUT) begin
+            // Formatear salida para el arreglo sistólico
+            data_out <= {data_buffer[3], data_buffer[2], data_buffer[1], data_buffer[0]};
+        end
+    end
+    
+    // Monitoreo interno (similar a MMU_tb)
+    logic [PE_DATA_WIDTH-1:0] pe_data_in [DEPTH];
+    assign pe_data_in[0] = data_out[15:0];
+    assign pe_data_in[1] = data_out[31:16];
+    assign pe_data_in[2] = data_out[47:32];
+    assign pe_data_in[3] = data_out[63:48];
+    
+endmodule

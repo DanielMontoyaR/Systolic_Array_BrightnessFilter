@@ -10,296 +10,125 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:48:50 on Jun 17,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
-# -- Compiling module TPU
+# Start time: 02:55:06 on Jun 18,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader.sv 
+# -- Compiling module RAM_Loader
 # 
 # Top level modules:
-# 	TPU
-# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
+# 	RAM_Loader
+# End time: 02:55:06 on Jun 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
+# 
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:48:50 on Jun 17,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
-# -- Compiling module MAC
+# Start time: 02:55:06 on Jun 18,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv 
+# -- Compiling module RAM_Loader_tb
 # 
 # Top level modules:
-# 	MAC
-# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:48:50 on Jun 17,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv 
-# -- Compiling module Normalizer
-# 
-# Top level modules:
-# 	Normalizer
-# End time: 02:48:50 on Jun 17,2025, Elapsed time: 0:00:00
+# 	RAM_Loader_tb
+# End time: 02:55:06 on Jun 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:48:50 on Jun 17,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv 
-# -- Compiling module MMU_normalizer_tb
-# 
-# Top level modules:
-# 	MMU_normalizer_tb
-# End time: 02:48:51 on Jun 17,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_normalizer_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_normalizer_tb 
-# Start time: 02:48:51 on Jun 17,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_Loader_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" RAM_Loader_tb 
+# Start time: 02:55:07 on Jun 18,2025
 # Loading sv_std.std
-# Loading work.MMU_normalizer_tb
-# Loading work.TPU
-# Loading work.Normalizer
-# Loading work.MAC
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe30_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe31_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe32_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe33_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
-#    Time: 0 ps  Iteration: 0  Instance: /MMU_normalizer_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv Line: 28
+# Loading work.RAM_Loader_tb
+# Loading work.RAM_Loader
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
-#           Attempting to use alternate WLF file "./wlftt7maqe".
+#           Attempting to use alternate WLF file "./wlft1t0a5b".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt7maqe
+#           Using alternate file: ./wlft1t0a5b
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # 
-# === FASE 1: CARGA DE PESOS ===
-# 
-# Pesos en los PEs (T=750000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  xxxx        xxxx        xxxx        xxxx
-# Fila          1:  xxxx        xxxx        xxxx        xxxx
-# Fila          2:  xxxx        xxxx        xxxx        xxxx
-# Fila          3:  xxxx        xxxx        xxxx        xxxx
-# 
-# Pesos en los PEs (T=1250000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  0000        0000        0000        0000
-# Fila          1:  xxxx        xxxx        xxxx        xxxx
-# Fila          2:  xxxx        xxxx        xxxx        xxxx
-# Fila          3:  xxxx        xxxx        xxxx        xxxx
-# 
-# Pesos en los PEs (T=1750000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  0000        0000        0000        000a
-# Fila          1:  0000        0000        0000        0000
-# Fila          2:  xxxx        xxxx        xxxx        xxxx
-# Fila          3:  xxxx        xxxx        xxxx        xxxx
-# 
-# Pesos en los PEs (T=2250000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  0000        0000        000a        0000
-# Fila          1:  0000        0000        0000        000a
-# Fila          2:  0000        0000        0000        0000
-# Fila          3:  xxxx        xxxx        xxxx        xxxx
-# 
-# Pesos finales cargados:
-# 
-# Pesos en los PEs (T=3250000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  000a        0000        0000        0000
-# Fila          1:  0000        000a        0000        0000
-# Fila          2:  0000        0000        000a        0000
-# Fila          3:  0000        0000        0000        000a
-# 
-# === FASE 2: CARGA DE DATOS (PATRÓN DIAGONAL) ===
-# 
-# Pesos en los PEs (T=3250000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  000a        0000        0000        0000
-# Fila          1:  0000        000a        0000        0000
-# Fila          2:  0000        0000        000a        0000
-# Fila          3:  0000        0000        0000        000a
-# 
-# Flujo de Datos (T=3750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          1:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          2:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          3:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# 
-# Pesos en los PEs (T=3750000):
-#         Col0        Col1        Col2        Col3
-# Fila          0:  000a        0000        0000        0000
-# Fila          1:  0000        000a        0000        0000
-# Fila          2:  0000        0000        000a        0000
-# Fila          3:  0000        0000        0000        000a
-# 
-# Flujo de Datos (T=4250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          1:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          2:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          3:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# 
-# Flujo de Datos (T=4750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:0001/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          1:  in:0004/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
-# 
-# Flujo de Datos (T=5250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:0002/out:0001  in:0001/out:0000  in:0000/out:0000  in:0000/out:0000
-# Fila          1:  in:0005/out:0004  in:0004/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
-# Fila          2:  in:0008/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
-# 
-# Flujo de Datos (T=5750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:0003/out:0002  in:0002/out:0001  in:0001/out:0000  in:0000/out:0000
-# Fila          1:  in:0006/out:0005  in:0005/out:0004  in:0004/out:xxxx  in:xxxx/out:0000
-# Fila          2:  in:0009/out:0008  in:0008/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
-# Fila          3:  in:000c/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
-# 
-# Flujo de Datos (T=6250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:0003  in:0003/out:0002  in:0002/out:0001  in:0001/out:0000
-# Fila          1:  in:0007/out:0006  in:0006/out:0005  in:0005/out:0004  in:0004/out:xxxx
-# Fila          2:  in:000a/out:0009  in:0009/out:0008  in:0008/out:xxxx  in:xxxx/out:xxxx
-# Fila          3:  in:000d/out:000c  in:000c/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# 
-# Flujo de Datos (T=6750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:0003  in:0003/out:0002  in:0002/out:0001
-# Fila          1:  in:xxxx/out:0007  in:0007/out:0006  in:0006/out:0005  in:0005/out:0004
-# Fila          2:  in:001a/out:000a  in:000a/out:0009  in:0009/out:0008  in:0008/out:xxxx
-# Fila          3:  in:000e/out:000d  in:000d/out:000c  in:000c/out:xxxx  in:xxxx/out:xxxx
-# 
-# Flujo de Datos (T=7250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0003  in:0003/out:0002
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:0007  in:0007/out:0006  in:0006/out:0005
-# Fila          2:  in:xxxx/out:001a  in:001a/out:000a  in:000a/out:0009  in:0009/out:0008
-# Fila          3:  in:001e/out:000e  in:000e/out:000d  in:000d/out:000c  in:000c/out:xxxx
-# 
-# Resultados Acumulados (T=7250000):
-# PE(3,0) = 0000000014 (dec 20)
-# PE(3,1) = 0000000032 (dec 50)
-# PE(3,2) = 0000000050 (dec 80)
-# PE(3,3) = xxxxxxxxxx (dec x)
-# 
-# Flujo de Datos (T=7750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0003
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0007  in:0007/out:0006
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:001a  in:001a/out:000a  in:000a/out:0009
-# Fila          3:  in:xxxx/out:001e  in:001e/out:000e  in:000e/out:000d  in:000d/out:000c
-# 
-# Resultados Acumulados (T=7750000):
-# PE(3,0) = 000000001e (dec 30)
-# PE(3,1) = 000000003c (dec 60)
-# PE(3,2) = 000000005a (dec 90)
-# PE(3,3) = 0000000078 (dec 120)
-# 
-# Flujo de Datos (T=8250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0007
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001a  in:001a/out:000a
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:001e  in:001e/out:000e  in:000e/out:000d
-# 
-# Resultados Acumulados (T=8250000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = 0000000046 (dec 70)
-# PE(3,2) = 0000000064 (dec 100)
-# PE(3,3) = 0000000082 (dec 130)
-# 
-# Flujo de Datos (T=8750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001a
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001e  in:001e/out:000e
-# 
-# Resultados Acumulados (T=8750000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = 0000000104 (dec 260)
-# PE(3,3) = 000000008c (dec 140)
-# 
-# Flujo de Datos (T=9250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:001e
-# 
-# Resultados Acumulados (T=9250000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = 000000012c (dec 300)
-# 
-# Flujo de Datos (T=9750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# 
-# Resultados Acumulados (T=9750000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = xxxxxxxxxx (dec x)
-# 
-# Flujo de Datos (T=10250000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# 
-# Resultados Acumulados (T=10250000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = xxxxxxxxxx (dec x)
-# 
-# Flujo de Datos (T=10750000):
-#         Col0               Col1               Col2               Col3
-# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
-# 
-# Resultados Acumulados (T=10750000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = xxxxxxxxxx (dec x)
-# 
-# === RESULTADOS FINALES ===
-# 
-# Resultados Acumulados (T=10750000):
-# PE(3,0) = xxxxxxxxxx (dec x)
-# PE(3,1) = xxxxxxxxxx (dec x)
-# PE(3,2) = xxxxxxxxxx (dec x)
-# PE(3,3) = xxxxxxxxxx (dec x)
-# TEST FALLADO: Resultados incorrectos
-# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv(243)
-#    Time: 10750 ns  Iteration: 1  Instance: /MMU_normalizer_tb
-# 1
-# Break in Module MMU_normalizer_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_normalizer_tb.sv line 243
-# End time: 02:49:24 on Jun 17,2025, Elapsed time: 0:00:33
-# Errors: 0, Warnings: 6
+# === TEST: Carga secuencial desde RAM ===
+# T=35000 [MONITOR]: Addr= 0, Data=01, Valid=0, Done=0, Out=0000000000000000
+# T=45000 [MONITOR]: Addr= 1, Data=02, Valid=0, Done=0, Out=0000000000000001
+# T=55000 [MONITOR]: Addr= 2, Data=03, Valid=0, Done=0, Out=0000000000020001
+# T=65000 [MONITOR]: Addr= 3, Data=04, Valid=0, Done=0, Out=0000000300020001
+# T=65000 [DATA]: Addr= 4, Data=05, Valid=1, Done=0, Out=0004000300020001
+# T=75000 [MONITOR]: Addr= 4, Data=05, Valid=1, Done=0, Out=0004000300020001
+# T=85000 [MONITOR]: Addr= 5, Data=06, Valid=0, Done=0, Out=0004000300020005
+# T=95000 [MONITOR]: Addr= 6, Data=07, Valid=0, Done=0, Out=0004000300060005
+# T=105000 [MONITOR]: Addr= 7, Data=08, Valid=0, Done=0, Out=0004000700060005
+# T=105000 [DATA]: Addr= 8, Data=09, Valid=1, Done=0, Out=0008000700060005
+# T=115000 [MONITOR]: Addr= 8, Data=09, Valid=1, Done=0, Out=0008000700060005
+# T=125000 [MONITOR]: Addr= 9, Data=0a, Valid=0, Done=0, Out=0008000700060009
+# T=135000 [MONITOR]: Addr=10, Data=0b, Valid=0, Done=0, Out=00080007000a0009
+# T=145000 [MONITOR]: Addr=11, Data=0c, Valid=0, Done=0, Out=0008000b000a0009
+# T=145000 [DATA]: Addr=12, Data=0d, Valid=1, Done=0, Out=000c000b000a0009
+# T=155000 [MONITOR]: Addr=12, Data=0d, Valid=1, Done=0, Out=000c000b000a0009
+# T=165000 [MONITOR]: Addr=13, Data=0e, Valid=0, Done=0, Out=000c000b000a000d
+# T=175000 [MONITOR]: Addr=14, Data=0f, Valid=0, Done=0, Out=000c000b000e000d
+# T=185000 [MONITOR]: Addr=15, Data=10, Valid=0, Done=0, Out=000c000f000e000d
+# T=185000 [DATA]: Addr=16, Data=11, Valid=1, Done=0, Out=0010000f000e000d
+# T=195000 [MONITOR]: Addr=16, Data=11, Valid=1, Done=0, Out=0010000f000e000d
+# T=205000 [MONITOR]: Addr=17, Data=12, Valid=0, Done=0, Out=0010000f000e0011
+# T=215000 [MONITOR]: Addr=18, Data=13, Valid=0, Done=0, Out=0010000f00120011
+# T=225000 [MONITOR]: Addr=19, Data=14, Valid=0, Done=0, Out=0010001300120011
+# T=225000 [DATA]: Addr=20, Data=15, Valid=1, Done=0, Out=0014001300120011
+# T=235000 [MONITOR]: Addr=20, Data=15, Valid=1, Done=0, Out=0014001300120011
+# T=245000 [MONITOR]: Addr=21, Data=16, Valid=0, Done=0, Out=0014001300120015
+# T=255000 [MONITOR]: Addr=22, Data=17, Valid=0, Done=0, Out=0014001300160015
+# T=265000 [MONITOR]: Addr=23, Data=18, Valid=0, Done=0, Out=0014001700160015
+# T=265000 [DATA]: Addr=24, Data=19, Valid=1, Done=0, Out=0018001700160015
+# T=275000 [MONITOR]: Addr=24, Data=19, Valid=1, Done=0, Out=0018001700160015
+# T=285000 [MONITOR]: Addr=25, Data=1a, Valid=0, Done=0, Out=0018001700160019
+# T=295000 [MONITOR]: Addr=26, Data=1b, Valid=0, Done=0, Out=00180017001a0019
+# T=305000 [MONITOR]: Addr=27, Data=1c, Valid=0, Done=0, Out=0018001b001a0019
+# T=305000 [DATA]: Addr=28, Data=1d, Valid=1, Done=0, Out=001c001b001a0019
+# T=315000 [MONITOR]: Addr=28, Data=1d, Valid=1, Done=0, Out=001c001b001a0019
+# T=325000 [MONITOR]: Addr=29, Data=1e, Valid=0, Done=0, Out=001c001b001a001d
+# T=335000 [MONITOR]: Addr=30, Data=1f, Valid=0, Done=0, Out=001c001b001e001d
+# T=345000 [MONITOR]: Addr=31, Data=20, Valid=0, Done=0, Out=001c001f001e001d
+# T=345000 [DATA]: Addr=32, Data=21, Valid=1, Done=0, Out=0020001f001e001d
+# T=355000 [MONITOR]: Addr=32, Data=21, Valid=1, Done=0, Out=0020001f001e001d
+# T=365000 [MONITOR]: Addr=33, Data=22, Valid=0, Done=0, Out=0020001f001e0021
+# T=375000 [MONITOR]: Addr=34, Data=23, Valid=0, Done=0, Out=0020001f00220021
+# T=385000 [MONITOR]: Addr=35, Data=24, Valid=0, Done=0, Out=0020002300220021
+# T=385000 [DATA]: Addr=36, Data=25, Valid=1, Done=0, Out=0024002300220021
+# T=395000 [MONITOR]: Addr=36, Data=25, Valid=1, Done=0, Out=0024002300220021
+# T=405000 [MONITOR]: Addr=37, Data=26, Valid=0, Done=0, Out=0024002300220025
+# T=415000 [MONITOR]: Addr=38, Data=27, Valid=0, Done=0, Out=0024002300260025
+# T=425000 [MONITOR]: Addr=39, Data=28, Valid=0, Done=0, Out=0024002700260025
+# T=425000 [DATA]: Addr=40, Data=29, Valid=1, Done=0, Out=0028002700260025
+# T=435000 [MONITOR]: Addr=40, Data=29, Valid=1, Done=0, Out=0028002700260025
+# T=445000 [MONITOR]: Addr=41, Data=2a, Valid=0, Done=0, Out=0028002700260029
+# T=455000 [MONITOR]: Addr=42, Data=2b, Valid=0, Done=0, Out=00280027002a0029
+# T=465000 [MONITOR]: Addr=43, Data=2c, Valid=0, Done=0, Out=0028002b002a0029
+# T=465000 [DATA]: Addr=44, Data=2d, Valid=1, Done=0, Out=002c002b002a0029
+# T=475000 [MONITOR]: Addr=44, Data=2d, Valid=1, Done=0, Out=002c002b002a0029
+# T=485000 [MONITOR]: Addr=45, Data=2e, Valid=0, Done=0, Out=002c002b002a002d
+# T=495000 [MONITOR]: Addr=46, Data=2f, Valid=0, Done=0, Out=002c002b002e002d
+# T=505000 [MONITOR]: Addr=47, Data=30, Valid=0, Done=0, Out=002c002f002e002d
+# T=505000 [DATA]: Addr=48, Data=31, Valid=1, Done=0, Out=0030002f002e002d
+# T=515000 [MONITOR]: Addr=48, Data=31, Valid=1, Done=0, Out=0030002f002e002d
+# T=525000 [MONITOR]: Addr=49, Data=32, Valid=0, Done=0, Out=0030002f002e0031
+# T=535000 [MONITOR]: Addr=50, Data=33, Valid=0, Done=0, Out=0030002f00320031
+# T=545000 [MONITOR]: Addr=51, Data=34, Valid=0, Done=0, Out=0030003300320031
+# T=545000 [DATA]: Addr=52, Data=35, Valid=1, Done=0, Out=0034003300320031
+# T=555000 [MONITOR]: Addr=52, Data=35, Valid=1, Done=0, Out=0034003300320031
+# T=565000 [MONITOR]: Addr=53, Data=36, Valid=0, Done=0, Out=0034003300320035
+# T=575000 [MONITOR]: Addr=54, Data=37, Valid=0, Done=0, Out=0034003300360035
+# T=585000 [MONITOR]: Addr=55, Data=38, Valid=0, Done=0, Out=0034003700360035
+# T=585000 [DATA]: Addr=56, Data=39, Valid=1, Done=0, Out=0038003700360035
+# T=595000 [MONITOR]: Addr=56, Data=39, Valid=1, Done=0, Out=0038003700360035
+# T=605000 [MONITOR]: Addr=57, Data=3a, Valid=0, Done=0, Out=0038003700360039
+# T=615000 [MONITOR]: Addr=58, Data=3b, Valid=0, Done=0, Out=00380037003a0039
+# T=625000 [MONITOR]: Addr=59, Data=3c, Valid=0, Done=0, Out=0038003b003a0039
+# T=625000 [DATA]: Addr=60, Data=3d, Valid=1, Done=0, Out=003c003b003a0039
+# T=635000 [MONITOR]: Addr=60, Data=3d, Valid=1, Done=0, Out=003c003b003a0039
+# Break key hit
+# Break in Module RAM_Loader_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv line 51
+# End time: 03:09:34 on Jun 18,2025, Elapsed time: 0:14:27
+# Errors: 0, Warnings: 2
