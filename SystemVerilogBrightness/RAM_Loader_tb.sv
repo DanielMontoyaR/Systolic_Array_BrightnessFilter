@@ -52,12 +52,15 @@ module RAM_Loader_tb;
     end
     
     // Tarea para mostrar datos
-    task print_status;
+    task print_block;
         input string tag;
         begin
-            $display("T=%0t [%s]: Addr=%d, Data=%h, Valid=%b, Done=%b, Out=%h",
+            $display("T=%0t [%s]: Addr=%2d, Data=%2h, Valid=%b, Done=%b, Out=%h",
                     $time, tag, ram_address, ram_data, 
                     data_valid, done, data_out);
+            $display("  PE0: %h, PE1: %h, PE2: %h, PE3: %h",
+                    data_out[15:0], data_out[31:16],
+                    data_out[47:32], data_out[63:48]);
         end
     endtask
     
@@ -72,18 +75,16 @@ module RAM_Loader_tb;
         start = 1;
         #10 start = 0;
         
-        // Monitorear todos los bloques
-        while (!done) begin
-            @(posedge data_valid);
-            print_status("DATA");
-        end
+        // Esperar a que se complete la carga
+        wait(done);
         
         // Verificación final
-        $display("\n=== RESULTADOS ===");
-        $display("Bloques completos cargados: %d", (2**RAM_ADDR_WIDTH)/DEPTH);
-        $display("Última dirección accedida: %d", ram_address);
+        $display("\n=== RESULTADOS FINALES ===");
+        $display("Bloques completos cargados: 16");
+        $display("Última dirección accedida: %d (0x%h)", ram_address, ram_address);
+        $display("Señal done: %b", done);
         
-        if (ram_address == 0 && done) begin
+        if (done && ram_address == 0) begin
             $display("TEST PASADO: Todos los datos se cargaron correctamente");
         end else begin
             $display("TEST FALLADO");
@@ -92,10 +93,20 @@ module RAM_Loader_tb;
         $finish;
     end
     
-    // Monitoreo continuo
+    // Monitoreo de bloques completos
+    always @(posedge data_valid) begin
+        print_block("BLOCK");
+    end
+    
+    // Monitoreo de estados
     always @(posedge clk) begin
-        if (uut.current_state == uut.LOAD) begin
-            print_status("MONITOR");
+        if (uut.current_state != uut.IDLE || uut.data_valid) begin
+            $display("T=%0t [STATE]: %s, Addr=%2d, Word=%d, Base=%d",
+                   $time,
+                   uut.current_state == uut.IDLE ? "IDLE" :
+                   uut.current_state == uut.LOAD ? "LOAD" :
+                   uut.current_state == uut.FINISH ? "FINISH" : "DONE",
+                   uut.ram_address, uut.word_counter, uut.base_addr);
         end
     end
 endmodule

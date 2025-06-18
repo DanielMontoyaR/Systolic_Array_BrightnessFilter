@@ -20,6 +20,7 @@ module RAM_Loader #(
     typedef enum logic [1:0] {
         IDLE,
         LOAD,
+        FINISH,
         DONE_ST
     } state_t;
 
@@ -29,6 +30,7 @@ module RAM_Loader #(
     logic [RAM_ADDR_WIDTH-1:0] base_addr;
     logic [1:0] word_counter;
     logic [PE_DATA_WIDTH-1:0] data_buffer [DEPTH];
+    logic last_block;
     
     // Lógica de estado
     always_ff @(posedge clk or posedge reset) begin
@@ -38,6 +40,7 @@ module RAM_Loader #(
             word_counter <= 0;
             data_valid <= 0;
             done <= 0;
+            last_block <= 0;
             for (int i = 0; i < DEPTH; i++) data_buffer[i] <= 0;
         end else begin
             current_state <= next_state;
@@ -51,10 +54,15 @@ module RAM_Loader #(
                         word_counter <= 0;
                         base_addr <= base_addr + DEPTH;
                         data_valid <= 1;
+                        last_block <= (base_addr + DEPTH >= 2**RAM_ADDR_WIDTH - DEPTH);
                     end else begin
                         word_counter <= word_counter + 1;
                         data_valid <= 0;
                     end
+                end
+                
+                FINISH: begin
+                    data_valid <= 1;
                 end
                 
                 DONE_ST: begin
@@ -75,16 +83,17 @@ module RAM_Loader #(
         
         case (current_state)
             IDLE: if (start) next_state = LOAD;
-            LOAD: if (base_addr >= (2**RAM_ADDR_WIDTH - DEPTH)) next_state = DONE_ST;
+            LOAD: if (last_block && word_counter == DEPTH-1) next_state = FINISH;
+            FINISH: next_state = DONE_ST;
             DONE_ST: next_state = IDLE;
         endcase
     end
     
-    // Dirección de RAM (protegida contra overflow)
-    assign ram_address = (current_state == LOAD) ? 
-                        ((base_addr + word_counter) < 2**RAM_ADDR_WIDTH ? 
-                         base_addr + word_counter : 0) : 0;
+    // Dirección de RAM
+    assign ram_address = (current_state == LOAD) ? (base_addr + word_counter) : 0;
     
     // Salida concatenada
-    assign data_out = {data_buffer[3], data_buffer[2], data_buffer[1], data_buffer[0]};
+    assign data_out = (current_state == FINISH) ? 
+                     {data_buffer[3], data_buffer[2], data_buffer[1], data_buffer[0]} :
+                     {data_buffer[3], data_buffer[2], data_buffer[1], data_buffer[0]};
 endmodule
