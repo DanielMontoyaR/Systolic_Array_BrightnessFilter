@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Fri Jun 20 22:28:08 2025
+Analysis & Elaboration Status : Successful - Sat Jun 21 14:24:52 2025
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : BrightnessFilter
-Top-level Entity Name : TPU
+Top-level Entity Name : RAM_Loader
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

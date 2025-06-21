@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Fri Jun 20 22:28:08 2025
+Sat Jun 21 14:24:52 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Fri Jun 20 22:28:08 2025       ;
+; Flow Status                 ; Successful - Sat Jun 21 14:24:52 2025       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; BrightnessFilter                            ;
-; Top-level Entity Name       ; TPU                                         ;
+; Top-level Entity Name       ; RAM_Loader                                  ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/20/2025 22:28:02 ;
+; Start date & time ; 06/21/2025 14:24:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id           ;
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589201.175048008230652         ; --               ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID                ; 264086602265196.175053748726592        ; --               ; --          ; --                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_negative_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; TPU_System_tb        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_diagonalzeros_tb ;
@@ -83,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; ram_tb               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; RAM_Loader_tb        ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_diagonalzeros_tb                   ; --               ; --          ; eda_simulation       ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RAM_Loader_tb                          ; --               ; --          ; eda_simulation       ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --               ; --          ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>           ; --          ; --                   ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --               ; --          ; eda_simulation       ;
@@ -116,13 +116,13 @@ https://fpgasoftware.intel.com/eula.
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --               ; --          ; --                   ;
 ; MISC_FILE                            ; ram1_bb.v                              ; --               ; --          ; --                   ;
 ; MISC_FILE                            ; ram2_bb.v                              ; --               ; --          ; --                   ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --               ; --          ; --                   ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --          ; --                   ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --               ; --          ; --                   ;
-; TOP_LEVEL_ENTITY                     ; TPU                                    ; BrightnessFilter ; --          ; --                   ;
+; TOP_LEVEL_ENTITY                     ; RAM_Loader                             ; BrightnessFilter ; --          ; --                   ;
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
 
 
@@ -131,8 +131,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4773 MB             ; 00:00:17                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:17                           ;
+; Analysis & Elaboration ; 00:00:05     ; 1.0                     ; 4780 MB             ; 00:00:12                           ;
+; Total                  ; 00:00:05     ; --                      ; --                  ; 00:00:12                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -141,7 +141,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; Naheem           ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 

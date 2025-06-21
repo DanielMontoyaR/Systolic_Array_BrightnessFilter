@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY TPU
+set_global_assignment -name TOP_LEVEL_ENTITY RAM_Loader
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:51:45  JUNE 06, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -53,7 +53,7 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH MMU_diagonalzeros_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RAM_Loader_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME MMU_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MMU_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MMU_tb -section_id MMU_tb
@@ -92,14 +92,13 @@ set_global_assignment -name SYSTEMVERILOG_FILE RAM_Loader_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME RAM_Loader_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RAM_Loader_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RAM_Loader_tb -section_id RAM_Loader_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE MMU_diagonalzeros_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME MMU_diagonalzeros_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MMU_diagonalzeros_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MMU_diagonalzeros_tb -section_id MMU_diagonalzeros_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE MMU_diagonalzeros_tb.sv -section_id MMU_diagonalzeros_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE MMU_tb.sv -section_id MMU_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE MMU_negative_tb.sv -section_id MMU_negative_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE ram_tb.sv -section_id ram_tb
@@ -107,4 +106,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE TPU_System_tb.sv -section_id TPU
 set_global_assignment -name EDA_TEST_BENCH_FILE Matrix_Controller_tb.sv -section_id Matrix_Controller_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE MMU_normalizer_tb.sv -section_id MMU_normalizer_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE RAM_Loader_tb.sv -section_id RAM_Loader_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE MMU_diagonalzeros_tb.sv -section_id MMU_diagonalzeros_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
