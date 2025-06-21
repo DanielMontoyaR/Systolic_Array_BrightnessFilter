@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module MMU_tb;
+module MMU_diagonalzeros_tb;
     parameter BIT_WIDTH = 16;
     parameter ACC_WIDTH = 40;
     parameter DEPTH = 4;
@@ -208,6 +208,23 @@ module MMU_tb;
         @(posedge clk);
         data_arr = 64'h000c_0009_0006_0003;  // [c, 9, 6, 3]
         print_data_flow();
+		  //PRUEBA GOATED
+		  @(posedge clk);
+        data_arr = 64'h0003_0002_0001_0000;  // [c, 9, 6, 3]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h0007_0006_0005_0004;  // [c, 9, 6, 3]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000B_000a_0009_0008;  // [c, 9, 6, 3]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000f_000e_000d_000c;  // [c, 9, 6, 3]
+        print_data_flow();
+
 
 		  @(posedge clk);
         data_arr = 64'h000d_000a_0007_xxxx;  // [d, a, 7, x]

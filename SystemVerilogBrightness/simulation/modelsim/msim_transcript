@@ -10,155 +10,331 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:12:32 on Jun 18,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader.sv 
-# -- Compiling module RAM_Loader
+# Start time: 22:30:57 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv 
+# -- Compiling module TPU
 # 
 # Top level modules:
-# 	RAM_Loader
-# End time: 03:12:32 on Jun 18,2025, Elapsed time: 0:00:00
+# 	TPU
+# End time: 22:30:57 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:12:32 on Jun 18,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv 
-# -- Compiling module RAM_Loader_tb
+# Start time: 22:30:57 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MAC_module.sv 
+# -- Compiling module MAC
 # 
 # Top level modules:
-# 	RAM_Loader_tb
-# End time: 03:12:32 on Jun 18,2025, Elapsed time: 0:00:00
+# 	MAC
+# End time: 22:30:57 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:30:57 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Normalizer.sv 
+# -- Compiling module Normalizer
+# 
+# Top level modules:
+# 	Normalizer
+# End time: 22:30:57 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_Loader_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" RAM_Loader_tb 
-# Start time: 03:12:33 on Jun 18,2025
+# vlog -sv -work work +incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness {C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:30:57 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness" C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv 
+# -- Compiling module MMU_diagonalzeros_tb
+# 
+# Top level modules:
+# 	MMU_diagonalzeros_tb
+# End time: 22:30:57 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_diagonalzeros_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" MMU_diagonalzeros_tb 
+# Start time: 22:30:57 on Jun 20,2025
 # Loading sv_std.std
-# Loading work.RAM_Loader_tb
-# Loading work.RAM_Loader
+# Loading work.MMU_diagonalzeros_tb
+# Loading work.TPU
+# Loading work.Normalizer
+# Loading work.MAC
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe30_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_diagonalzeros_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv Line: 28
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe31_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_diagonalzeros_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv Line: 28
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe32_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_diagonalzeros_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv Line: 28
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'pe33_norm_out'. The port definition is at: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/TPU.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /MMU_diagonalzeros_tb/uut File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv Line: 28
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
-#           Attempting to use alternate WLF file "./wlftx5btr2".
+#           Attempting to use alternate WLF file "./wlftwndek7".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftx5btr2
+#           Using alternate file: ./wlftwndek7
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # 
-# === TEST: Carga secuencial desde RAM ===
-# T=35000 [STATE]:   LOAD, Addr= 0, Word=0, Base= 0
-# T=45000 [STATE]:   LOAD, Addr= 1, Word=1, Base= 0
-# T=55000 [STATE]:   LOAD, Addr= 2, Word=2, Base= 0
-# T=65000 [STATE]:   LOAD, Addr= 3, Word=3, Base= 0
-# T=65000 [BLOCK]: Addr= 4, Data=05, Valid=1, Done=0, Out=0004000300020001
-#   PE0: 0001, PE1: 0002, PE2: 0003, PE3: 0004
-# T=75000 [STATE]:   LOAD, Addr= 4, Word=0, Base= 4
-# T=85000 [STATE]:   LOAD, Addr= 5, Word=1, Base= 4
-# T=95000 [STATE]:   LOAD, Addr= 6, Word=2, Base= 4
-# T=105000 [STATE]:   LOAD, Addr= 7, Word=3, Base= 4
-# T=105000 [BLOCK]: Addr= 8, Data=09, Valid=1, Done=0, Out=0008000700060005
-#   PE0: 0005, PE1: 0006, PE2: 0007, PE3: 0008
-# T=115000 [STATE]:   LOAD, Addr= 8, Word=0, Base= 8
-# T=125000 [STATE]:   LOAD, Addr= 9, Word=1, Base= 8
-# T=135000 [STATE]:   LOAD, Addr=10, Word=2, Base= 8
-# T=145000 [STATE]:   LOAD, Addr=11, Word=3, Base= 8
-# T=145000 [BLOCK]: Addr=12, Data=0d, Valid=1, Done=0, Out=000c000b000a0009
-#   PE0: 0009, PE1: 000a, PE2: 000b, PE3: 000c
-# T=155000 [STATE]:   LOAD, Addr=12, Word=0, Base=12
-# T=165000 [STATE]:   LOAD, Addr=13, Word=1, Base=12
-# T=175000 [STATE]:   LOAD, Addr=14, Word=2, Base=12
-# T=185000 [STATE]:   LOAD, Addr=15, Word=3, Base=12
-# T=185000 [BLOCK]: Addr=16, Data=11, Valid=1, Done=0, Out=0010000f000e000d
-#   PE0: 000d, PE1: 000e, PE2: 000f, PE3: 0010
-# T=195000 [STATE]:   LOAD, Addr=16, Word=0, Base=16
-# T=205000 [STATE]:   LOAD, Addr=17, Word=1, Base=16
-# T=215000 [STATE]:   LOAD, Addr=18, Word=2, Base=16
-# T=225000 [STATE]:   LOAD, Addr=19, Word=3, Base=16
-# T=225000 [BLOCK]: Addr=20, Data=15, Valid=1, Done=0, Out=0014001300120011
-#   PE0: 0011, PE1: 0012, PE2: 0013, PE3: 0014
-# T=235000 [STATE]:   LOAD, Addr=20, Word=0, Base=20
-# T=245000 [STATE]:   LOAD, Addr=21, Word=1, Base=20
-# T=255000 [STATE]:   LOAD, Addr=22, Word=2, Base=20
-# T=265000 [STATE]:   LOAD, Addr=23, Word=3, Base=20
-# T=265000 [BLOCK]: Addr=24, Data=19, Valid=1, Done=0, Out=0018001700160015
-#   PE0: 0015, PE1: 0016, PE2: 0017, PE3: 0018
-# T=275000 [STATE]:   LOAD, Addr=24, Word=0, Base=24
-# T=285000 [STATE]:   LOAD, Addr=25, Word=1, Base=24
-# T=295000 [STATE]:   LOAD, Addr=26, Word=2, Base=24
-# T=305000 [STATE]:   LOAD, Addr=27, Word=3, Base=24
-# T=305000 [BLOCK]: Addr=28, Data=1d, Valid=1, Done=0, Out=001c001b001a0019
-#   PE0: 0019, PE1: 001a, PE2: 001b, PE3: 001c
-# T=315000 [STATE]:   LOAD, Addr=28, Word=0, Base=28
-# T=325000 [STATE]:   LOAD, Addr=29, Word=1, Base=28
-# T=335000 [STATE]:   LOAD, Addr=30, Word=2, Base=28
-# T=345000 [STATE]:   LOAD, Addr=31, Word=3, Base=28
-# T=345000 [BLOCK]: Addr=32, Data=21, Valid=1, Done=0, Out=0020001f001e001d
-#   PE0: 001d, PE1: 001e, PE2: 001f, PE3: 0020
-# T=355000 [STATE]:   LOAD, Addr=32, Word=0, Base=32
-# T=365000 [STATE]:   LOAD, Addr=33, Word=1, Base=32
-# T=375000 [STATE]:   LOAD, Addr=34, Word=2, Base=32
-# T=385000 [STATE]:   LOAD, Addr=35, Word=3, Base=32
-# T=385000 [BLOCK]: Addr=36, Data=25, Valid=1, Done=0, Out=0024002300220021
-#   PE0: 0021, PE1: 0022, PE2: 0023, PE3: 0024
-# T=395000 [STATE]:   LOAD, Addr=36, Word=0, Base=36
-# T=405000 [STATE]:   LOAD, Addr=37, Word=1, Base=36
-# T=415000 [STATE]:   LOAD, Addr=38, Word=2, Base=36
-# T=425000 [STATE]:   LOAD, Addr=39, Word=3, Base=36
-# T=425000 [BLOCK]: Addr=40, Data=29, Valid=1, Done=0, Out=0028002700260025
-#   PE0: 0025, PE1: 0026, PE2: 0027, PE3: 0028
-# T=435000 [STATE]:   LOAD, Addr=40, Word=0, Base=40
-# T=445000 [STATE]:   LOAD, Addr=41, Word=1, Base=40
-# T=455000 [STATE]:   LOAD, Addr=42, Word=2, Base=40
-# T=465000 [STATE]:   LOAD, Addr=43, Word=3, Base=40
-# T=465000 [BLOCK]: Addr=44, Data=2d, Valid=1, Done=0, Out=002c002b002a0029
-#   PE0: 0029, PE1: 002a, PE2: 002b, PE3: 002c
-# T=475000 [STATE]:   LOAD, Addr=44, Word=0, Base=44
-# T=485000 [STATE]:   LOAD, Addr=45, Word=1, Base=44
-# T=495000 [STATE]:   LOAD, Addr=46, Word=2, Base=44
-# T=505000 [STATE]:   LOAD, Addr=47, Word=3, Base=44
-# T=505000 [BLOCK]: Addr=48, Data=31, Valid=1, Done=0, Out=0030002f002e002d
-#   PE0: 002d, PE1: 002e, PE2: 002f, PE3: 0030
-# T=515000 [STATE]:   LOAD, Addr=48, Word=0, Base=48
-# T=525000 [STATE]:   LOAD, Addr=49, Word=1, Base=48
-# T=535000 [STATE]:   LOAD, Addr=50, Word=2, Base=48
-# T=545000 [STATE]:   LOAD, Addr=51, Word=3, Base=48
-# T=545000 [BLOCK]: Addr=52, Data=35, Valid=1, Done=0, Out=0034003300320031
-#   PE0: 0031, PE1: 0032, PE2: 0033, PE3: 0034
-# T=555000 [STATE]:   LOAD, Addr=52, Word=0, Base=52
-# T=565000 [STATE]:   LOAD, Addr=53, Word=1, Base=52
-# T=575000 [STATE]:   LOAD, Addr=54, Word=2, Base=52
-# T=585000 [STATE]:   LOAD, Addr=55, Word=3, Base=52
-# T=585000 [BLOCK]: Addr=56, Data=39, Valid=1, Done=0, Out=0038003700360035
-#   PE0: 0035, PE1: 0036, PE2: 0037, PE3: 0038
-# T=595000 [STATE]:   LOAD, Addr=56, Word=0, Base=56
-# T=605000 [STATE]:   LOAD, Addr=57, Word=1, Base=56
-# T=615000 [STATE]:   LOAD, Addr=58, Word=2, Base=56
-# T=625000 [STATE]:   LOAD, Addr=59, Word=3, Base=56
-# T=625000 [BLOCK]: Addr=60, Data=3d, Valid=1, Done=0, Out=003c003b003a0039
-#   PE0: 0039, PE1: 003a, PE2: 003b, PE3: 003c
-# T=635000 [STATE]:   LOAD, Addr=60, Word=0, Base=60
-# T=645000 [STATE]:   LOAD, Addr=61, Word=1, Base=60
-# T=655000 [STATE]:   LOAD, Addr=62, Word=2, Base=60
-# T=665000 [STATE]:   LOAD, Addr=63, Word=3, Base=60
-# T=665000 [BLOCK]: Addr= 0, Data=01, Valid=1, Done=0, Out=0040003f003e003d
-#   PE0: 003d, PE1: 003e, PE2: 003f, PE3: 0040
-# T=675000 [STATE]: FINISH, Addr= 0, Word=0, Base= 0
-# T=685000 [STATE]:   DONE, Addr= 0, Word=0, Base= 0
+# === FASE 1: CARGA DE PESOS ===
+# 
+# Pesos en los PEs (T=750000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  xxxx        xxxx        xxxx        xxxx
+# Fila          1:  xxxx        xxxx        xxxx        xxxx
+# Fila          2:  xxxx        xxxx        xxxx        xxxx
+# Fila          3:  xxxx        xxxx        xxxx        xxxx
+# 
+# Pesos en los PEs (T=1250000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0000        0000        0000        0000
+# Fila          1:  xxxx        xxxx        xxxx        xxxx
+# Fila          2:  xxxx        xxxx        xxxx        xxxx
+# Fila          3:  xxxx        xxxx        xxxx        xxxx
+# 
+# Pesos en los PEs (T=1750000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0000        0000        0000        0002
+# Fila          1:  0000        0000        0000        0000
+# Fila          2:  xxxx        xxxx        xxxx        xxxx
+# Fila          3:  xxxx        xxxx        xxxx        xxxx
+# 
+# Pesos en los PEs (T=2250000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0000        0000        0002        0000
+# Fila          1:  0000        0000        0000        0002
+# Fila          2:  0000        0000        0000        0000
+# Fila          3:  xxxx        xxxx        xxxx        xxxx
+# 
+# Pesos finales cargados:
+# 
+# Pesos en los PEs (T=3250000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0002        0000        0000        0000
+# Fila          1:  0000        0002        0000        0000
+# Fila          2:  0000        0000        0002        0000
+# Fila          3:  0000        0000        0000        0002
+# 
+# === FASE 2: CARGA DE DATOS (PATRÓN DIAGONAL) ===
+# 
+# Pesos en los PEs (T=3250000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0002        0000        0000        0000
+# Fila          1:  0000        0002        0000        0000
+# Fila          2:  0000        0000        0002        0000
+# Fila          3:  0000        0000        0000        0002
+# 
+# Flujo de Datos (T=3750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          2:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          3:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# 
+# Pesos en los PEs (T=3750000):
+#         Col0        Col1        Col2        Col3
+# Fila          0:  0002        0000        0000        0000
+# Fila          1:  0000        0002        0000        0000
+# Fila          2:  0000        0000        0002        0000
+# Fila          3:  0000        0000        0000        0002
+# 
+# Flujo de Datos (T=4250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          2:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          3:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# 
+# Flujo de Datos (T=4750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0000/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
+# 
+# Flujo de Datos (T=5250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0000/out:0000  in:0000/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# Fila          2:  in:0000/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# 
+# Flujo de Datos (T=5750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0000/out:0000  in:0000/out:0000  in:0000/out:xxxx  in:xxxx/out:0000
+# Fila          2:  in:0000/out:0000  in:0000/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# Fila          3:  in:0000/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# 
+# Flujo de Datos (T=6250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0001/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:xxxx
+# Fila          2:  in:0002/out:0000  in:0000/out:0000  in:0000/out:xxxx  in:xxxx/out:xxxx
+# Fila          3:  in:0003/out:0000  in:0000/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# 
+# Flujo de Datos (T=6750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0004/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0005/out:0001  in:0001/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          2:  in:0006/out:0002  in:0002/out:0000  in:0000/out:0000  in:0000/out:xxxx
+# Fila          3:  in:0007/out:0003  in:0003/out:0000  in:0000/out:xxxx  in:xxxx/out:xxxx
+# 
+# Flujo de Datos (T=7250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0008/out:0004  in:0004/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          1:  in:0009/out:0005  in:0005/out:0001  in:0001/out:0000  in:0000/out:0000
+# Fila          2:  in:000a/out:0006  in:0006/out:0002  in:0002/out:0000  in:0000/out:0000
+# Fila          3:  in:000b/out:0007  in:0007/out:0003  in:0003/out:0000  in:0000/out:xxxx
+# 
+# Flujo de Datos (T=7750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:000c/out:0008  in:0008/out:0004  in:0004/out:0000  in:0000/out:0000
+# Fila          1:  in:000d/out:0009  in:0009/out:0005  in:0005/out:0001  in:0001/out:0000
+# Fila          2:  in:000e/out:000a  in:000a/out:0006  in:0006/out:0002  in:0002/out:0000
+# Fila          3:  in:000f/out:000b  in:000b/out:0007  in:0007/out:0003  in:0003/out:0000
+# 
+# Flujo de Datos (T=8250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:0000/out:000c  in:000c/out:0008  in:0008/out:0004  in:0004/out:0000
+# Fila          1:  in:0000/out:000d  in:000d/out:0009  in:0009/out:0005  in:0005/out:0001
+# Fila          2:  in:0000/out:000e  in:000e/out:000a  in:000a/out:0006  in:0006/out:0002
+# Fila          3:  in:0000/out:000f  in:000f/out:000b  in:000b/out:0007  in:0007/out:0003
+# 
+# Flujo de Datos (T=8750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:0000  in:0000/out:000c  in:000c/out:0008  in:0008/out:0004
+# Fila          1:  in:0000/out:0000  in:0000/out:000d  in:000d/out:0009  in:0009/out:0005
+# Fila          2:  in:0000/out:0000  in:0000/out:000e  in:000e/out:000a  in:000a/out:0006
+# Fila          3:  in:0000/out:0000  in:0000/out:000f  in:000f/out:000b  in:000b/out:0007
+# 
+# Flujo de Datos (T=9250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:000c  in:000c/out:0008
+# Fila          1:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:000d  in:000d/out:0009
+# Fila          2:  in:0000/out:0000  in:0000/out:0000  in:0000/out:000e  in:000e/out:000a
+# Fila          3:  in:0000/out:0000  in:0000/out:0000  in:0000/out:000f  in:000f/out:000b
+# 
+# Flujo de Datos (T=9750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:000c
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:000d
+# Fila          2:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:000e
+# Fila          3:  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:000f
+# 
+# Resultados Acumulados (T=9750000):
+# PE(3,0) = 0000000018 (dec 24)
+# PE(3,1) = 000000001a (dec 26)
+# PE(3,2) = 000000001c (dec 28)
+# PE(3,3) = 000000001e (dec 30)
+# 
+# Flujo de Datos (T=10250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
+# Fila          3:  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000  in:0000/out:0000
+# 
+# Resultados Acumulados (T=10250000):
+# PE(3,0) = 0000000000 (dec 0)
+# PE(3,1) = 0000000000 (dec 0)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
+# 
+# Flujo de Datos (T=10750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000  in:0000/out:0000
+# 
+# Resultados Acumulados (T=10750000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = 0000000000 (dec 0)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
+# 
+# Flujo de Datos (T=11250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000  in:0000/out:0000
+# 
+# Resultados Acumulados (T=11250000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = 0000000000 (dec 0)
+# PE(3,3) = 0000000000 (dec 0)
+# 
+# Flujo de Datos (T=11750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:0000
+# 
+# Resultados Acumulados (T=11750000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = xxxxxxxxxx (dec x)
+# PE(3,3) = 0000000000 (dec 0)
+# 
+# Flujo de Datos (T=12250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# 
+# Resultados Acumulados (T=12250000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = xxxxxxxxxx (dec x)
+# PE(3,3) = xxxxxxxxxx (dec x)
+# 
+# Flujo de Datos (T=12750000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# 
+# Resultados Acumulados (T=12750000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = xxxxxxxxxx (dec x)
+# PE(3,3) = xxxxxxxxxx (dec x)
+# 
+# Flujo de Datos (T=13250000):
+#         Col0               Col1               Col2               Col3
+# Fila          0:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          1:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          2:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# Fila          3:  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx  in:xxxx/out:xxxx
+# 
+# Resultados Acumulados (T=13250000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = xxxxxxxxxx (dec x)
+# PE(3,3) = xxxxxxxxxx (dec x)
 # 
 # === RESULTADOS FINALES ===
-# Bloques completos cargados: 16
-# Última dirección accedida:  0 (0x00)
-# Señal done: 1
-# TEST PASADO: Todos los datos se cargaron correctamente
-# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv(93)
-#    Time: 685 ns  Iteration: 2  Instance: /RAM_Loader_tb
+# 
+# Resultados Acumulados (T=13250000):
+# PE(3,0) = xxxxxxxxxx (dec x)
+# PE(3,1) = xxxxxxxxxx (dec x)
+# PE(3,2) = xxxxxxxxxx (dec x)
+# PE(3,3) = xxxxxxxxxx (dec x)
+# TEST FALLADO: Resultados incorrectos
+# ** Note: $finish    : C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv(265)
+#    Time: 13250 ns  Iteration: 1  Instance: /MMU_diagonalzeros_tb
 # 1
-# Break in Module RAM_Loader_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/RAM_Loader_tb.sv line 93
-# End time: 03:13:36 on Jun 18,2025, Elapsed time: 0:01:03
-# Errors: 0, Warnings: 2
+# Break in Module MMU_diagonalzeros_tb at C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv line 265
+# End time: 22:43:06 on Jun 20,2025, Elapsed time: 0:12:09
+# Errors: 0, Warnings: 6

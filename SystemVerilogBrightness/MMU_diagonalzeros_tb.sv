@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module MMU_tb;
+module MMU_diagonalzeros_tb;
     parameter BIT_WIDTH = 16;
     parameter ACC_WIDTH = 40;
     parameter DEPTH = 4;
@@ -163,19 +163,19 @@ module MMU_tb;
         
         // Carga por columnas (weight stationary)
         @(posedge clk);
-        wt_arr = 64'h0001000000000000;  // Columna 0: [-1, 0, 0, 0]
+        wt_arr = 64'h0002000000000000;  // Columna 0: [-1, 0, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000100000000;  // Columna 1: [0, -1, 0, 0]
+        wt_arr = 64'h0000000200000000;  // Columna 1: [0, -1, 0, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000010000;  // Columna 2: [0, 0, 1, 0]
+        wt_arr = 64'h0000000000020000;  // Columna 2: [0, 0, 1, 0]
         print_weights();
         
         @(posedge clk);
-        wt_arr = 64'h0000000000000001;  // Columna 3: [0, 0, 0, 1]
+        wt_arr = 64'h0000000000000002;  // Columna 3: [0, 0, 0, 1]
         print_weights();
 		  
         @(posedge clk);
@@ -196,29 +196,51 @@ module MMU_tb;
         
         // Ciclo 2: D1, D0
         @(posedge clk);
-        data_arr = 64'hxxxx_xxxx_0004_0001;  // [x, x, 4, 1]
+        data_arr = 64'hxxxx_xxxx_0000_0000;  // [x, x, 0, 0]
         print_data_flow();
         
         // Ciclo 3: D2, D1, D0
         @(posedge clk);
-        data_arr = 64'hxxxx_0008_0005_0002;  // [x, 8, 5, 2]
+        data_arr = 64'hxxxx_0000_0000_0000;  // [x, 0, 0, 0]
         print_data_flow();
         
         // Ciclo 4: D3, D2, D1, D0
         @(posedge clk);
-        data_arr = 64'h000c_0009_0006_0003;  // [c, 9, 6, 3]
+        data_arr = 64'h0000_0000_0000_0000;  // [0, 0, 0, 0]
+        print_data_flow();
+		  
+		  //ENTRADA DE DATOS
+		  @(posedge clk);
+        data_arr = 64'h0003_0002_0001_0000;  // [3, 2, 1,0]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h0007_0006_0005_0004;  // [7, 6, 5, 4]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000B_000a_0009_0008;  // [ 11, 10, 9, 8]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h000f_000e_000d_000c;  // [15, 14, 13, 12]
         print_data_flow();
 
+		  //DIAGONAL DE SALIDA
 		  @(posedge clk);
-        data_arr = 64'h000d_000a_0007_xxxx;  // [d, a, 7, x]
+        data_arr = 64'h0000_0000_0000_0000;  // [0, 0, 0, 0]
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000e_000b_xxxx_xxxx;  // [e, b, x, x]
+        data_arr = 64'h0000_0000_0000_xxxx;  // [0, 0, 0, x]
         print_data_flow();
 		  
 		  @(posedge clk);
-        data_arr = 64'h000f_xxxx_xxxx_xxxx;  // [f, x, x, x]
+        data_arr = 64'h0000_0000_xxxx_xxxx;  // [0, 0, x, x]
+        print_data_flow();
+		  
+		  @(posedge clk);
+        data_arr = 64'h0000_xxxx_xxxx_xxxx;  // [0, x, x, x]
         print_data_flow();
         
         // Ciclos adicionales para completar el flujo

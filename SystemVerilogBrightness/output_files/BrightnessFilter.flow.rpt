@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Wed Jun 18 03:12:25 2025
+Fri Jun 20 22:28:08 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Wed Jun 18 03:12:25 2025       ;
+; Flow Status                 ; Successful - Fri Jun 20 22:28:08 2025       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; BrightnessFilter                            ;
-; Top-level Entity Name       ; RAM_Loader                                  ;
+; Top-level Entity Name       ; TPU                                         ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/18/2025 03:12:19 ;
+; Start date & time ; 06/20/2025 22:28:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
@@ -74,20 +74,22 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id           ;
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589201.175023793902316         ; --               ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID                ; 10995770589201.175048008230652         ; --               ; --          ; --                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_negative_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; TPU_System_tb        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_diagonalzeros_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; Matrix_Controller_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_normalizer_tb    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; ram_tb               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; RAM_Loader_tb        ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RAM_Loader_tb                          ; --               ; --          ; eda_simulation       ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_diagonalzeros_tb                   ; --               ; --          ; eda_simulation       ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --               ; --          ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>           ; --          ; --                   ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --               ; --          ; eda_simulation       ;
 ; EDA_TEST_BENCH_FILE                  ; MMU_negative_tb.sv                     ; --               ; --          ; MMU_negative_tb      ;
 ; EDA_TEST_BENCH_FILE                  ; TPU_System_tb.sv                       ; --               ; --          ; TPU_System_tb        ;
+; EDA_TEST_BENCH_FILE                  ; MMU_diagonalzeros_tb.sv                ; --               ; --          ; MMU_diagonalzeros_tb ;
 ; EDA_TEST_BENCH_FILE                  ; Matrix_Controller_tb.sv                ; --               ; --          ; Matrix_Controller_tb ;
 ; EDA_TEST_BENCH_FILE                  ; MMU_normalizer_tb.sv                   ; --               ; --          ; MMU_normalizer_tb    ;
 ; EDA_TEST_BENCH_FILE                  ; MMU_tb.sv                              ; --               ; --          ; MMU_tb               ;
@@ -95,6 +97,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; RAM_Loader_tb.sv                       ; --               ; --          ; RAM_Loader_tb        ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MMU_negative_tb                        ; --               ; --          ; MMU_negative_tb      ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; TPU_System_tb                          ; --               ; --          ; TPU_System_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; MMU_diagonalzeros_tb                   ; --               ; --          ; MMU_diagonalzeros_tb ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; Matrix_Controller_tb                   ; --               ; --          ; Matrix_Controller_tb ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MMU_normalizer_tb                      ; --               ; --          ; MMU_normalizer_tb    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MMU_tb                                 ; --               ; --          ; MMU_tb               ;
@@ -107,18 +110,19 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; Matrix_Controller_tb                   ; --               ; --          ; eda_simulation       ;
 ; EDA_TEST_BENCH_NAME                  ; MMU_normalizer_tb                      ; --               ; --          ; eda_simulation       ;
 ; EDA_TEST_BENCH_NAME                  ; RAM_Loader_tb                          ; --               ; --          ; eda_simulation       ;
+; EDA_TEST_BENCH_NAME                  ; MMU_diagonalzeros_tb                   ; --               ; --          ; eda_simulation       ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --               ; --          ; eda_simulation       ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --               ; --          ; --                   ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --               ; --          ; --                   ;
 ; MISC_FILE                            ; ram1_bb.v                              ; --               ; --          ; --                   ;
 ; MISC_FILE                            ; ram2_bb.v                              ; --               ; --          ; --                   ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; RAM_Loader  ; Top                  ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                  ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --               ; --          ; --                   ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --          ; --                   ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --               ; --          ; --                   ;
-; TOP_LEVEL_ENTITY                     ; RAM_Loader                             ; BrightnessFilter ; --          ; --                   ;
+; TOP_LEVEL_ENTITY                     ; TPU                                    ; BrightnessFilter ; --          ; --                   ;
 +--------------------------------------+----------------------------------------+------------------+-------------+----------------------+
 
 
@@ -127,8 +131,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4768 MB             ; 00:00:15                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4773 MB             ; 00:00:17                           ;
+; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:17                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

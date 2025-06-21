@@ -15,10 +15,10 @@ int MATRIZ_SIZE = 4;
 int STEPPING = 0;
 
 int kernel[4][4]={
-    {1, 0, 0, 0},
-    {0, 1, 0, 0},
-    {0, 0, 1, 0},
-    {0, 0, 0, 1}
+    {2, 0, 0, 0},
+    {0, 2, 0, 0},
+    {0, 0, 2, 0},
+    {0, 0, 0, 2}
 };
 
 
@@ -376,7 +376,7 @@ int main(){
         }
     }
 
-    std::vector<std::vector<int>> Image_input = load_image_from_txt("prueba4x4.txt");
+    std::vector<std::vector<int>> Image_input = load_image_from_txt("prueba8x8.txt");
 
  
    
