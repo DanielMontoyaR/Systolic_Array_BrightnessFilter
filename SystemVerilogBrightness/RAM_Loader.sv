@@ -43,6 +43,7 @@ module RAM_Loader #(
     logic [PE_DATA_WIDTH-1:0] data_buffer [DEPTH];
     logic last_block;
     logic [1:0] read_delay;  // Contador para manejar latencia de RAM
+    logic first_read;        // Bandera para primer lectura
     
     // --- Lógica de estado ---
     always_ff @(posedge clk or posedge reset) begin
@@ -54,30 +55,53 @@ module RAM_Loader #(
             done <= 0;
             last_block <= 0;
             read_delay <= 0;
+            first_read <= 1;
             // Inicialización explícita del buffer
-            data_buffer[0] <= 0;
-            data_buffer[1] <= 0;
-            data_buffer[2] <= 0;
-            data_buffer[3] <= 0;
+            for (int i = 0; i < DEPTH; i++) begin
+                data_buffer[i] <= 0;
+            end
         end else begin
             current_state <= next_state;
             
             case (current_state)
                 LOAD: begin
-                    if (read_delay < 2) begin
-                        read_delay <= read_delay + 1;  // Esperar 2 ciclos para estabilizar RAM
-                    end else begin
-                        // Capturar dato de la RAM (extendido a 16 bits)
-                        data_buffer[word_counter] <= {8'h00, ram_data};
-                        
-                        if (word_counter == DEPTH-1) begin
-                            word_counter <= 0;
-                            base_addr <= base_addr + DEPTH;
-                            data_valid <= 1;  // Bloque completo
-                            last_block <= (base_addr + DEPTH >= 2**RAM_ADDR_WIDTH - DEPTH);
+                    if (first_read) begin
+                        // Esperar 3 ciclos para el primer dato
+                        if (read_delay < 3) begin
+                            read_delay <= read_delay + 1;
                         end else begin
-                            word_counter <= word_counter + 1;
-                            data_valid <= 0;
+                            // Capturar dato de la RAM (extendido a 16 bits)
+                            data_buffer[word_counter] <= {8'h00, ram_data};
+                            first_read <= 0;
+                            read_delay <= 0;
+                            
+                            if (word_counter == DEPTH-1) begin
+                                word_counter <= 0;
+                                base_addr <= base_addr + DEPTH;
+                                data_valid <= 1;
+                                last_block <= (base_addr + DEPTH >= 2**RAM_ADDR_WIDTH - DEPTH);
+                            end else begin
+                                word_counter <= word_counter + 1;
+                                data_valid <= 0;
+                            end
+                        end
+                    end else begin
+                        if (read_delay < 2) begin
+                            read_delay <= read_delay + 1;
+                        end else begin
+                            // Capturar dato de la RAM (extendido a 16 bits)
+                            data_buffer[word_counter] <= {8'h00, ram_data};
+                            read_delay <= 0;
+                            
+                            if (word_counter == DEPTH-1) begin
+                                word_counter <= 0;
+                                base_addr <= base_addr + DEPTH;
+                                data_valid <= 1;
+                                last_block <= (base_addr + DEPTH >= 2**RAM_ADDR_WIDTH - DEPTH);
+                            end else begin
+                                word_counter <= word_counter + 1;
+                                data_valid <= 0;
+                            end
                         end
                     end
                 end
@@ -104,7 +128,7 @@ module RAM_Loader #(
         
         case (current_state)
             IDLE:   if (start) next_state = LOAD;
-            LOAD:   if (last_block && word_counter == DEPTH-1) next_state = FINISH;
+            LOAD:   if (last_block && word_counter == DEPTH-1 && read_delay == 2) next_state = FINISH;
             FINISH: next_state = DONE_ST;
             DONE_ST: next_state = IDLE;
         endcase

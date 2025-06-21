@@ -12,39 +12,39 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:28:23 on Jun 21,2025
+# Start time: 16:21:52 on Jun 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v 
 # -- Compiling module ram1
 # 
 # Top level modules:
 # 	ram1
-# End time: 14:28:23 on Jun 21,2025, Elapsed time: 0:00:00
+# End time: 16:21:52 on Jun 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:28:23 on Jun 21,2025
+# Start time: 16:21:52 on Jun 21,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader.sv 
 # -- Compiling module RAM_Loader
 # 
 # Top level modules:
 # 	RAM_Loader
-# End time: 14:28:23 on Jun 21,2025, Elapsed time: 0:00:00
+# End time: 16:21:52 on Jun 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:28:23 on Jun 21,2025
+# Start time: 16:21:52 on Jun 21,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness" C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader_tb.sv 
 # -- Compiling module RAM_Loader_tb
 # 
 # Top level modules:
 # 	RAM_Loader_tb
-# End time: 14:28:24 on Jun 21,2025, Elapsed time: 0:00:01
+# End time: 16:21:52 on Jun 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_Loader_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" RAM_Loader_tb 
-# Start time: 14:28:24 on Jun 21,2025
+# Start time: 16:21:52 on Jun 21,2025
 # Loading sv_std.std
 # Loading work.RAM_Loader_tb
 # Loading work.RAM_Loader
@@ -57,9 +57,9 @@
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: njohn  Hostname: NAHEEM  ProcessID: 43544
-#           Attempting to use alternate WLF file "./wlft8527b7".
+#           Attempting to use alternate WLF file "./wlft7ddiv4".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8527b7
+#           Using alternate file: ./wlft7ddiv4
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -70,103 +70,230 @@
 # T=65000 [STATE]:   LOAD, Word=0, Base= 0, Addr= 0
 # T=75000 [STATE]:   LOAD, Word=0, Base= 0, Addr= 0
 # T=85000 [STATE]:   LOAD, Word=0, Base= 0, Addr= 0
-# T=95000 [STATE]:   LOAD, Word=1, Base= 0, Addr= 1
-# T=105000 [STATE]:   LOAD, Word=2, Base= 0, Addr= 2
-# T=115000 [STATE]:   LOAD, Word=3, Base= 0, Addr= 3
-# T=115000 [BLOCK]: Valid=1, Done=0, Out=0003000200090009
-#   PE0: 0009, PE1: 0009, PE2: 0002, PE3: 0003
-# T=125000 [STATE]:   LOAD, Word=0, Base= 4, Addr= 4
-# T=135000 [STATE]:   LOAD, Word=1, Base= 4, Addr= 5
-# T=145000 [STATE]:   LOAD, Word=2, Base= 4, Addr= 6
-# T=155000 [STATE]:   LOAD, Word=3, Base= 4, Addr= 7
-# T=155000 [BLOCK]: Valid=1, Done=0, Out=0007000600050004
-#   PE0: 0004, PE1: 0005, PE2: 0006, PE3: 0007
-# T=165000 [STATE]:   LOAD, Word=0, Base= 8, Addr= 8
-# T=175000 [STATE]:   LOAD, Word=1, Base= 8, Addr= 9
-# T=185000 [STATE]:   LOAD, Word=2, Base= 8, Addr=10
-# T=195000 [STATE]:   LOAD, Word=3, Base= 8, Addr=11
-# T=195000 [BLOCK]: Valid=1, Done=0, Out=000b000a00090008
-#   PE0: 0008, PE1: 0009, PE2: 000a, PE3: 000b
-# T=205000 [STATE]:   LOAD, Word=0, Base=12, Addr=12
-# T=215000 [STATE]:   LOAD, Word=1, Base=12, Addr=13
-# T=225000 [STATE]:   LOAD, Word=2, Base=12, Addr=14
-# T=235000 [STATE]:   LOAD, Word=3, Base=12, Addr=15
-# T=235000 [BLOCK]: Valid=1, Done=0, Out=000f000e000d000c
-#   PE0: 000c, PE1: 000d, PE2: 000e, PE3: 000f
-# T=245000 [STATE]:   LOAD, Word=0, Base=16, Addr=16
-# T=255000 [STATE]:   LOAD, Word=1, Base=16, Addr=17
-# T=265000 [STATE]:   LOAD, Word=2, Base=16, Addr=18
-# T=275000 [STATE]:   LOAD, Word=3, Base=16, Addr=19
-# T=275000 [BLOCK]: Valid=1, Done=0, Out=0013001200110010
-#   PE0: 0010, PE1: 0011, PE2: 0012, PE3: 0013
-# T=285000 [STATE]:   LOAD, Word=0, Base=20, Addr=20
-# T=295000 [STATE]:   LOAD, Word=1, Base=20, Addr=21
-# T=305000 [STATE]:   LOAD, Word=2, Base=20, Addr=22
-# T=315000 [STATE]:   LOAD, Word=3, Base=20, Addr=23
-# T=315000 [BLOCK]: Valid=1, Done=0, Out=0017001600150014
-#   PE0: 0014, PE1: 0015, PE2: 0016, PE3: 0017
-# T=325000 [STATE]:   LOAD, Word=0, Base=24, Addr=24
-# T=335000 [STATE]:   LOAD, Word=1, Base=24, Addr=25
-# T=345000 [STATE]:   LOAD, Word=2, Base=24, Addr=26
-# T=355000 [STATE]:   LOAD, Word=3, Base=24, Addr=27
-# T=355000 [BLOCK]: Valid=1, Done=0, Out=001b001a00190018
-#   PE0: 0018, PE1: 0019, PE2: 001a, PE3: 001b
-# T=365000 [STATE]:   LOAD, Word=0, Base=28, Addr=28
-# T=375000 [STATE]:   LOAD, Word=1, Base=28, Addr=29
-# T=385000 [STATE]:   LOAD, Word=2, Base=28, Addr=30
-# T=395000 [STATE]:   LOAD, Word=3, Base=28, Addr=31
-# T=395000 [BLOCK]: Valid=1, Done=0, Out=001f001e001d001c
-#   PE0: 001c, PE1: 001d, PE2: 001e, PE3: 001f
-# T=405000 [STATE]:   LOAD, Word=0, Base=32, Addr=32
-# T=415000 [STATE]:   LOAD, Word=1, Base=32, Addr=33
-# T=425000 [STATE]:   LOAD, Word=2, Base=32, Addr=34
-# T=435000 [STATE]:   LOAD, Word=3, Base=32, Addr=35
-# T=435000 [BLOCK]: Valid=1, Done=0, Out=0023002200210020
-#   PE0: 0020, PE1: 0021, PE2: 0022, PE3: 0023
-# T=445000 [STATE]:   LOAD, Word=0, Base=36, Addr=36
-# T=455000 [STATE]:   LOAD, Word=1, Base=36, Addr=37
-# T=465000 [STATE]:   LOAD, Word=2, Base=36, Addr=38
-# T=475000 [STATE]:   LOAD, Word=3, Base=36, Addr=39
-# T=475000 [BLOCK]: Valid=1, Done=0, Out=0027002600250024
-#   PE0: 0024, PE1: 0025, PE2: 0026, PE3: 0027
-# T=485000 [STATE]:   LOAD, Word=0, Base=40, Addr=40
-# T=495000 [STATE]:   LOAD, Word=1, Base=40, Addr=41
-# T=505000 [STATE]:   LOAD, Word=2, Base=40, Addr=42
-# T=515000 [STATE]:   LOAD, Word=3, Base=40, Addr=43
-# T=515000 [BLOCK]: Valid=1, Done=0, Out=002b002a00290028
-#   PE0: 0028, PE1: 0029, PE2: 002a, PE3: 002b
-# T=525000 [STATE]:   LOAD, Word=0, Base=44, Addr=44
-# T=535000 [STATE]:   LOAD, Word=1, Base=44, Addr=45
-# T=545000 [STATE]:   LOAD, Word=2, Base=44, Addr=46
-# T=555000 [STATE]:   LOAD, Word=3, Base=44, Addr=47
-# T=555000 [BLOCK]: Valid=1, Done=0, Out=002f002e002d002c
-#   PE0: 002c, PE1: 002d, PE2: 002e, PE3: 002f
-# T=565000 [STATE]:   LOAD, Word=0, Base=48, Addr=48
-# T=575000 [STATE]:   LOAD, Word=1, Base=48, Addr=49
-# T=585000 [STATE]:   LOAD, Word=2, Base=48, Addr=50
-# T=595000 [STATE]:   LOAD, Word=3, Base=48, Addr=51
-# T=595000 [BLOCK]: Valid=1, Done=0, Out=0033003200310030
-#   PE0: 0030, PE1: 0031, PE2: 0032, PE3: 0033
-# T=605000 [STATE]:   LOAD, Word=0, Base=52, Addr=52
-# T=615000 [STATE]:   LOAD, Word=1, Base=52, Addr=53
-# T=625000 [STATE]:   LOAD, Word=2, Base=52, Addr=54
-# T=635000 [STATE]:   LOAD, Word=3, Base=52, Addr=55
-# T=635000 [BLOCK]: Valid=1, Done=0, Out=0037003600350034
-#   PE0: 0034, PE1: 0035, PE2: 0036, PE3: 0037
-# T=645000 [STATE]:   LOAD, Word=0, Base=56, Addr=56
-# T=655000 [STATE]:   LOAD, Word=1, Base=56, Addr=57
-# T=665000 [STATE]:   LOAD, Word=2, Base=56, Addr=58
-# T=675000 [STATE]:   LOAD, Word=3, Base=56, Addr=59
-# T=675000 [BLOCK]: Valid=1, Done=0, Out=003b003a00390038
-#   PE0: 0038, PE1: 0039, PE2: 003a, PE3: 003b
-# T=685000 [STATE]:   LOAD, Word=0, Base=60, Addr=60
-# T=695000 [STATE]:   LOAD, Word=1, Base=60, Addr=61
-# T=705000 [STATE]:   LOAD, Word=2, Base=60, Addr=62
-# T=715000 [STATE]:   LOAD, Word=3, Base=60, Addr=63
-# T=715000 [BLOCK]: Valid=1, Done=0, Out=003f003e003d003c
-#   PE0: 003c, PE1: 003d, PE2: 003e, PE3: 003f
-# T=725000 [STATE]: FINISH, Word=0, Base= 0, Addr= 0
-# T=735000 [STATE]:   DONE, Word=0, Base= 0, Addr= 0
+# T=95000 [STATE]:   LOAD, Word=0, Base= 0, Addr= 0
+# T=105000 [STATE]:   LOAD, Word=1, Base= 0, Addr= 1
+# T=115000 [STATE]:   LOAD, Word=1, Base= 0, Addr= 1
+# T=125000 [STATE]:   LOAD, Word=1, Base= 0, Addr= 1
+# T=135000 [STATE]:   LOAD, Word=2, Base= 0, Addr= 2
+# T=145000 [STATE]:   LOAD, Word=2, Base= 0, Addr= 2
+# T=155000 [STATE]:   LOAD, Word=2, Base= 0, Addr= 2
+# T=165000 [STATE]:   LOAD, Word=3, Base= 0, Addr= 3
+# T=175000 [STATE]:   LOAD, Word=3, Base= 0, Addr= 3
+# T=185000 [STATE]:   LOAD, Word=3, Base= 0, Addr= 3
+# T=185000 [BLOCK]: Valid=1, Done=0, Out=0004000300020001
+#   PE0: 0001, PE1: 0002, PE2: 0003, PE3: 0004
+# T=195000 [STATE]:   LOAD, Word=0, Base= 4, Addr= 4
+# T=205000 [STATE]:   LOAD, Word=0, Base= 4, Addr= 4
+# T=215000 [STATE]:   LOAD, Word=0, Base= 4, Addr= 4
+# T=225000 [STATE]:   LOAD, Word=1, Base= 4, Addr= 5
+# T=235000 [STATE]:   LOAD, Word=1, Base= 4, Addr= 5
+# T=245000 [STATE]:   LOAD, Word=1, Base= 4, Addr= 5
+# T=255000 [STATE]:   LOAD, Word=2, Base= 4, Addr= 6
+# T=265000 [STATE]:   LOAD, Word=2, Base= 4, Addr= 6
+# T=275000 [STATE]:   LOAD, Word=2, Base= 4, Addr= 6
+# T=285000 [STATE]:   LOAD, Word=3, Base= 4, Addr= 7
+# T=295000 [STATE]:   LOAD, Word=3, Base= 4, Addr= 7
+# T=305000 [STATE]:   LOAD, Word=3, Base= 4, Addr= 7
+# T=305000 [BLOCK]: Valid=1, Done=0, Out=0008000700060005
+#   PE0: 0005, PE1: 0006, PE2: 0007, PE3: 0008
+# T=315000 [STATE]:   LOAD, Word=0, Base= 8, Addr= 8
+# T=325000 [STATE]:   LOAD, Word=0, Base= 8, Addr= 8
+# T=335000 [STATE]:   LOAD, Word=0, Base= 8, Addr= 8
+# T=345000 [STATE]:   LOAD, Word=1, Base= 8, Addr= 9
+# T=355000 [STATE]:   LOAD, Word=1, Base= 8, Addr= 9
+# T=365000 [STATE]:   LOAD, Word=1, Base= 8, Addr= 9
+# T=375000 [STATE]:   LOAD, Word=2, Base= 8, Addr=10
+# T=385000 [STATE]:   LOAD, Word=2, Base= 8, Addr=10
+# T=395000 [STATE]:   LOAD, Word=2, Base= 8, Addr=10
+# T=405000 [STATE]:   LOAD, Word=3, Base= 8, Addr=11
+# T=415000 [STATE]:   LOAD, Word=3, Base= 8, Addr=11
+# T=425000 [STATE]:   LOAD, Word=3, Base= 8, Addr=11
+# T=425000 [BLOCK]: Valid=1, Done=0, Out=000c000b000a0009
+#   PE0: 0009, PE1: 000a, PE2: 000b, PE3: 000c
+# T=435000 [STATE]:   LOAD, Word=0, Base=12, Addr=12
+# T=445000 [STATE]:   LOAD, Word=0, Base=12, Addr=12
+# T=455000 [STATE]:   LOAD, Word=0, Base=12, Addr=12
+# T=465000 [STATE]:   LOAD, Word=1, Base=12, Addr=13
+# T=475000 [STATE]:   LOAD, Word=1, Base=12, Addr=13
+# T=485000 [STATE]:   LOAD, Word=1, Base=12, Addr=13
+# T=495000 [STATE]:   LOAD, Word=2, Base=12, Addr=14
+# T=505000 [STATE]:   LOAD, Word=2, Base=12, Addr=14
+# T=515000 [STATE]:   LOAD, Word=2, Base=12, Addr=14
+# T=525000 [STATE]:   LOAD, Word=3, Base=12, Addr=15
+# T=535000 [STATE]:   LOAD, Word=3, Base=12, Addr=15
+# T=545000 [STATE]:   LOAD, Word=3, Base=12, Addr=15
+# T=545000 [BLOCK]: Valid=1, Done=0, Out=0010000f000e000d
+#   PE0: 000d, PE1: 000e, PE2: 000f, PE3: 0010
+# T=555000 [STATE]:   LOAD, Word=0, Base=16, Addr=16
+# T=565000 [STATE]:   LOAD, Word=0, Base=16, Addr=16
+# T=575000 [STATE]:   LOAD, Word=0, Base=16, Addr=16
+# T=585000 [STATE]:   LOAD, Word=1, Base=16, Addr=17
+# T=595000 [STATE]:   LOAD, Word=1, Base=16, Addr=17
+# T=605000 [STATE]:   LOAD, Word=1, Base=16, Addr=17
+# T=615000 [STATE]:   LOAD, Word=2, Base=16, Addr=18
+# T=625000 [STATE]:   LOAD, Word=2, Base=16, Addr=18
+# T=635000 [STATE]:   LOAD, Word=2, Base=16, Addr=18
+# T=645000 [STATE]:   LOAD, Word=3, Base=16, Addr=19
+# T=655000 [STATE]:   LOAD, Word=3, Base=16, Addr=19
+# T=665000 [STATE]:   LOAD, Word=3, Base=16, Addr=19
+# T=665000 [BLOCK]: Valid=1, Done=0, Out=0014001300120011
+#   PE0: 0011, PE1: 0012, PE2: 0013, PE3: 0014
+# T=675000 [STATE]:   LOAD, Word=0, Base=20, Addr=20
+# T=685000 [STATE]:   LOAD, Word=0, Base=20, Addr=20
+# T=695000 [STATE]:   LOAD, Word=0, Base=20, Addr=20
+# T=705000 [STATE]:   LOAD, Word=1, Base=20, Addr=21
+# T=715000 [STATE]:   LOAD, Word=1, Base=20, Addr=21
+# T=725000 [STATE]:   LOAD, Word=1, Base=20, Addr=21
+# T=735000 [STATE]:   LOAD, Word=2, Base=20, Addr=22
+# T=745000 [STATE]:   LOAD, Word=2, Base=20, Addr=22
+# T=755000 [STATE]:   LOAD, Word=2, Base=20, Addr=22
+# T=765000 [STATE]:   LOAD, Word=3, Base=20, Addr=23
+# T=775000 [STATE]:   LOAD, Word=3, Base=20, Addr=23
+# T=785000 [STATE]:   LOAD, Word=3, Base=20, Addr=23
+# T=785000 [BLOCK]: Valid=1, Done=0, Out=0018001700160015
+#   PE0: 0015, PE1: 0016, PE2: 0017, PE3: 0018
+# T=795000 [STATE]:   LOAD, Word=0, Base=24, Addr=24
+# T=805000 [STATE]:   LOAD, Word=0, Base=24, Addr=24
+# T=815000 [STATE]:   LOAD, Word=0, Base=24, Addr=24
+# T=825000 [STATE]:   LOAD, Word=1, Base=24, Addr=25
+# T=835000 [STATE]:   LOAD, Word=1, Base=24, Addr=25
+# T=845000 [STATE]:   LOAD, Word=1, Base=24, Addr=25
+# T=855000 [STATE]:   LOAD, Word=2, Base=24, Addr=26
+# T=865000 [STATE]:   LOAD, Word=2, Base=24, Addr=26
+# T=875000 [STATE]:   LOAD, Word=2, Base=24, Addr=26
+# T=885000 [STATE]:   LOAD, Word=3, Base=24, Addr=27
+# T=895000 [STATE]:   LOAD, Word=3, Base=24, Addr=27
+# T=905000 [STATE]:   LOAD, Word=3, Base=24, Addr=27
+# T=905000 [BLOCK]: Valid=1, Done=0, Out=001c001b001a0019
+#   PE0: 0019, PE1: 001a, PE2: 001b, PE3: 001c
+# T=915000 [STATE]:   LOAD, Word=0, Base=28, Addr=28
+# T=925000 [STATE]:   LOAD, Word=0, Base=28, Addr=28
+# T=935000 [STATE]:   LOAD, Word=0, Base=28, Addr=28
+# T=945000 [STATE]:   LOAD, Word=1, Base=28, Addr=29
+# T=955000 [STATE]:   LOAD, Word=1, Base=28, Addr=29
+# T=965000 [STATE]:   LOAD, Word=1, Base=28, Addr=29
+# T=975000 [STATE]:   LOAD, Word=2, Base=28, Addr=30
+# T=985000 [STATE]:   LOAD, Word=2, Base=28, Addr=30
+# T=995000 [STATE]:   LOAD, Word=2, Base=28, Addr=30
+# T=1005000 [STATE]:   LOAD, Word=3, Base=28, Addr=31
+# T=1015000 [STATE]:   LOAD, Word=3, Base=28, Addr=31
+# T=1025000 [STATE]:   LOAD, Word=3, Base=28, Addr=31
+# T=1025000 [BLOCK]: Valid=1, Done=0, Out=0020001f001e001d
+#   PE0: 001d, PE1: 001e, PE2: 001f, PE3: 0020
+# T=1035000 [STATE]:   LOAD, Word=0, Base=32, Addr=32
+# T=1045000 [STATE]:   LOAD, Word=0, Base=32, Addr=32
+# T=1055000 [STATE]:   LOAD, Word=0, Base=32, Addr=32
+# T=1065000 [STATE]:   LOAD, Word=1, Base=32, Addr=33
+# T=1075000 [STATE]:   LOAD, Word=1, Base=32, Addr=33
+# T=1085000 [STATE]:   LOAD, Word=1, Base=32, Addr=33
+# T=1095000 [STATE]:   LOAD, Word=2, Base=32, Addr=34
+# T=1105000 [STATE]:   LOAD, Word=2, Base=32, Addr=34
+# T=1115000 [STATE]:   LOAD, Word=2, Base=32, Addr=34
+# T=1125000 [STATE]:   LOAD, Word=3, Base=32, Addr=35
+# T=1135000 [STATE]:   LOAD, Word=3, Base=32, Addr=35
+# T=1145000 [STATE]:   LOAD, Word=3, Base=32, Addr=35
+# T=1145000 [BLOCK]: Valid=1, Done=0, Out=0024002300220021
+#   PE0: 0021, PE1: 0022, PE2: 0023, PE3: 0024
+# T=1155000 [STATE]:   LOAD, Word=0, Base=36, Addr=36
+# T=1165000 [STATE]:   LOAD, Word=0, Base=36, Addr=36
+# T=1175000 [STATE]:   LOAD, Word=0, Base=36, Addr=36
+# T=1185000 [STATE]:   LOAD, Word=1, Base=36, Addr=37
+# T=1195000 [STATE]:   LOAD, Word=1, Base=36, Addr=37
+# T=1205000 [STATE]:   LOAD, Word=1, Base=36, Addr=37
+# T=1215000 [STATE]:   LOAD, Word=2, Base=36, Addr=38
+# T=1225000 [STATE]:   LOAD, Word=2, Base=36, Addr=38
+# T=1235000 [STATE]:   LOAD, Word=2, Base=36, Addr=38
+# T=1245000 [STATE]:   LOAD, Word=3, Base=36, Addr=39
+# T=1255000 [STATE]:   LOAD, Word=3, Base=36, Addr=39
+# T=1265000 [STATE]:   LOAD, Word=3, Base=36, Addr=39
+# T=1265000 [BLOCK]: Valid=1, Done=0, Out=0028002700260025
+#   PE0: 0025, PE1: 0026, PE2: 0027, PE3: 0028
+# T=1275000 [STATE]:   LOAD, Word=0, Base=40, Addr=40
+# T=1285000 [STATE]:   LOAD, Word=0, Base=40, Addr=40
+# T=1295000 [STATE]:   LOAD, Word=0, Base=40, Addr=40
+# T=1305000 [STATE]:   LOAD, Word=1, Base=40, Addr=41
+# T=1315000 [STATE]:   LOAD, Word=1, Base=40, Addr=41
+# T=1325000 [STATE]:   LOAD, Word=1, Base=40, Addr=41
+# T=1335000 [STATE]:   LOAD, Word=2, Base=40, Addr=42
+# T=1345000 [STATE]:   LOAD, Word=2, Base=40, Addr=42
+# T=1355000 [STATE]:   LOAD, Word=2, Base=40, Addr=42
+# T=1365000 [STATE]:   LOAD, Word=3, Base=40, Addr=43
+# T=1375000 [STATE]:   LOAD, Word=3, Base=40, Addr=43
+# T=1385000 [STATE]:   LOAD, Word=3, Base=40, Addr=43
+# T=1385000 [BLOCK]: Valid=1, Done=0, Out=002c002b002a0029
+#   PE0: 0029, PE1: 002a, PE2: 002b, PE3: 002c
+# T=1395000 [STATE]:   LOAD, Word=0, Base=44, Addr=44
+# T=1405000 [STATE]:   LOAD, Word=0, Base=44, Addr=44
+# T=1415000 [STATE]:   LOAD, Word=0, Base=44, Addr=44
+# T=1425000 [STATE]:   LOAD, Word=1, Base=44, Addr=45
+# T=1435000 [STATE]:   LOAD, Word=1, Base=44, Addr=45
+# T=1445000 [STATE]:   LOAD, Word=1, Base=44, Addr=45
+# T=1455000 [STATE]:   LOAD, Word=2, Base=44, Addr=46
+# T=1465000 [STATE]:   LOAD, Word=2, Base=44, Addr=46
+# T=1475000 [STATE]:   LOAD, Word=2, Base=44, Addr=46
+# T=1485000 [STATE]:   LOAD, Word=3, Base=44, Addr=47
+# T=1495000 [STATE]:   LOAD, Word=3, Base=44, Addr=47
+# T=1505000 [STATE]:   LOAD, Word=3, Base=44, Addr=47
+# T=1505000 [BLOCK]: Valid=1, Done=0, Out=0030002f002e002d
+#   PE0: 002d, PE1: 002e, PE2: 002f, PE3: 0030
+# T=1515000 [STATE]:   LOAD, Word=0, Base=48, Addr=48
+# T=1525000 [STATE]:   LOAD, Word=0, Base=48, Addr=48
+# T=1535000 [STATE]:   LOAD, Word=0, Base=48, Addr=48
+# T=1545000 [STATE]:   LOAD, Word=1, Base=48, Addr=49
+# T=1555000 [STATE]:   LOAD, Word=1, Base=48, Addr=49
+# T=1565000 [STATE]:   LOAD, Word=1, Base=48, Addr=49
+# T=1575000 [STATE]:   LOAD, Word=2, Base=48, Addr=50
+# T=1585000 [STATE]:   LOAD, Word=2, Base=48, Addr=50
+# T=1595000 [STATE]:   LOAD, Word=2, Base=48, Addr=50
+# T=1605000 [STATE]:   LOAD, Word=3, Base=48, Addr=51
+# T=1615000 [STATE]:   LOAD, Word=3, Base=48, Addr=51
+# T=1625000 [STATE]:   LOAD, Word=3, Base=48, Addr=51
+# T=1625000 [BLOCK]: Valid=1, Done=0, Out=0034003300320031
+#   PE0: 0031, PE1: 0032, PE2: 0033, PE3: 0034
+# T=1635000 [STATE]:   LOAD, Word=0, Base=52, Addr=52
+# T=1645000 [STATE]:   LOAD, Word=0, Base=52, Addr=52
+# T=1655000 [STATE]:   LOAD, Word=0, Base=52, Addr=52
+# T=1665000 [STATE]:   LOAD, Word=1, Base=52, Addr=53
+# T=1675000 [STATE]:   LOAD, Word=1, Base=52, Addr=53
+# T=1685000 [STATE]:   LOAD, Word=1, Base=52, Addr=53
+# T=1695000 [STATE]:   LOAD, Word=2, Base=52, Addr=54
+# T=1705000 [STATE]:   LOAD, Word=2, Base=52, Addr=54
+# T=1715000 [STATE]:   LOAD, Word=2, Base=52, Addr=54
+# T=1725000 [STATE]:   LOAD, Word=3, Base=52, Addr=55
+# T=1735000 [STATE]:   LOAD, Word=3, Base=52, Addr=55
+# T=1745000 [STATE]:   LOAD, Word=3, Base=52, Addr=55
+# T=1745000 [BLOCK]: Valid=1, Done=0, Out=0038003700360035
+#   PE0: 0035, PE1: 0036, PE2: 0037, PE3: 0038
+# T=1755000 [STATE]:   LOAD, Word=0, Base=56, Addr=56
+# T=1765000 [STATE]:   LOAD, Word=0, Base=56, Addr=56
+# T=1775000 [STATE]:   LOAD, Word=0, Base=56, Addr=56
+# T=1785000 [STATE]:   LOAD, Word=1, Base=56, Addr=57
+# T=1795000 [STATE]:   LOAD, Word=1, Base=56, Addr=57
+# T=1805000 [STATE]:   LOAD, Word=1, Base=56, Addr=57
+# T=1815000 [STATE]:   LOAD, Word=2, Base=56, Addr=58
+# T=1825000 [STATE]:   LOAD, Word=2, Base=56, Addr=58
+# T=1835000 [STATE]:   LOAD, Word=2, Base=56, Addr=58
+# T=1845000 [STATE]:   LOAD, Word=3, Base=56, Addr=59
+# T=1855000 [STATE]:   LOAD, Word=3, Base=56, Addr=59
+# T=1865000 [STATE]:   LOAD, Word=3, Base=56, Addr=59
+# T=1865000 [BLOCK]: Valid=1, Done=0, Out=003c003b003a0039
+#   PE0: 0039, PE1: 003a, PE2: 003b, PE3: 003c
+# T=1875000 [STATE]:   LOAD, Word=0, Base=60, Addr=60
+# T=1885000 [STATE]:   LOAD, Word=0, Base=60, Addr=60
+# T=1895000 [STATE]:   LOAD, Word=0, Base=60, Addr=60
+# T=1905000 [STATE]:   LOAD, Word=1, Base=60, Addr=61
+# T=1915000 [STATE]:   LOAD, Word=1, Base=60, Addr=61
+# T=1925000 [STATE]:   LOAD, Word=1, Base=60, Addr=61
+# T=1935000 [STATE]:   LOAD, Word=2, Base=60, Addr=62
+# T=1945000 [STATE]:   LOAD, Word=2, Base=60, Addr=62
+# T=1955000 [STATE]:   LOAD, Word=2, Base=60, Addr=62
+# T=1965000 [STATE]:   LOAD, Word=3, Base=60, Addr=63
+# T=1975000 [STATE]:   LOAD, Word=3, Base=60, Addr=63
+# T=1985000 [STATE]:   LOAD, Word=3, Base=60, Addr=63
+# T=1985000 [BLOCK]: Valid=1, Done=0, Out=0040003f003e003d
+#   PE0: 003d, PE1: 003e, PE2: 003f, PE3: 0040
+# T=1995000 [STATE]: FINISH, Word=0, Base= 0, Addr= 0
+# T=2005000 [STATE]:   DONE, Word=0, Base= 0, Addr= 0
 # 
 # === RESULTADOS FINALES ===
 # Bloques completos cargados: 16
@@ -174,8 +301,9 @@
 # ERROR en primer bloque
 # TEST PASADO: Todos los datos se cargaron correctamente
 # ** Note: $finish    : C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader_tb.sv(87)
-#    Time: 735 ns  Iteration: 2  Instance: /RAM_Loader_tb
+#    Time: 2005 ns  Iteration: 2  Instance: /RAM_Loader_tb
 # 1
 # Break in Module RAM_Loader_tb at C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader_tb.sv line 87
-# End time: 15:54:51 on Jun 21,2025, Elapsed time: 1:26:27
+# A time value could not be extracted from the current line
+# End time: 16:23:09 on Jun 21,2025, Elapsed time: 0:01:17
 # Errors: 0, Warnings: 2
