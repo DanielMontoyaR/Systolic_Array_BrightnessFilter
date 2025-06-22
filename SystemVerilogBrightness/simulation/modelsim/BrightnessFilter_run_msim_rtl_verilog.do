@@ -5,12 +5,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/ram1.v}
-vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader.sv}
+vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/TPU.sv}
+vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MAC_module.sv}
+vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/Normalizer.sv}
 
-vlog -sv -work work +incdir+C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/njohn/OneDrive/Documents/Github/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/RAM_Loader_tb.sv}
+vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness {C:/Users/maxga/OneDrive/Documentos/PARQ2/Systolic_Array_BrightnessFilter/SystemVerilogBrightness/MMU_diagonalzeros_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_Loader_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  MMU_diagonalzeros_tb
 
 add wave *
 view structure
