@@ -1,5 +1,5 @@
 Flow report for BrightnessFilter
-Sun Jun 22 23:20:51 2025
+Sun Jun 22 23:41:27 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sun Jun 22 23:20:51 2025       ;
-; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name               ; BrightnessFilter                            ;
-; Top-level Entity Name       ; TPU                                         ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSEMA5F31C6                                ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sun Jun 22 23:41:27 2025       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; BrightnessFilter                            ;
+; Top-level Entity Name           ; top                                         ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 82 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 161                                         ;
+; Total pins                      ; 64 / 457 ( 14 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,100 +68,118 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/22/2025 23:20:45 ;
+; Start date & time ; 06/22/2025 23:39:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BrightnessFilter    ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                            ;
-+--------------------------------------+----------------------------------------+------------------+-------------+----------------------------+
-; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name ; Section Id                 ;
-+--------------------------------------+----------------------------------------+------------------+-------------+----------------------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589199.175065604536436         ; --               ; --          ; --                         ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_negative_tb            ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; TPU_System_tb              ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; SystolicArrayController_tb ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_diagonalzeros_tb       ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; Matrix_Controller_tb       ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_normalizer_tb          ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; MMU_tb                     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; ram_tb                     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; RAM_Loader_tb              ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --          ; RAM_Loader_Prueba_tb       ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_tb                                 ; --               ; --          ; eda_simulation             ;
-; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --               ; --          ; eda_simulation             ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>           ; --          ; --                         ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_FILE                  ; MMU_negative_tb.sv                     ; --               ; --          ; MMU_negative_tb            ;
-; EDA_TEST_BENCH_FILE                  ; TPU_System_tb.sv                       ; --               ; --          ; TPU_System_tb              ;
-; EDA_TEST_BENCH_FILE                  ; SystolicArrayController_tb.sv          ; --               ; --          ; SystolicArrayController_tb ;
-; EDA_TEST_BENCH_FILE                  ; MMU_diagonalzeros_tb.sv                ; --               ; --          ; MMU_diagonalzeros_tb       ;
-; EDA_TEST_BENCH_FILE                  ; Matrix_Controller_tb.sv                ; --               ; --          ; Matrix_Controller_tb       ;
-; EDA_TEST_BENCH_FILE                  ; MMU_normalizer_tb.sv                   ; --               ; --          ; MMU_normalizer_tb          ;
-; EDA_TEST_BENCH_FILE                  ; MMU_tb.sv                              ; --               ; --          ; MMU_tb                     ;
-; EDA_TEST_BENCH_FILE                  ; ram_tb.sv                              ; --               ; --          ; ram_tb                     ;
-; EDA_TEST_BENCH_FILE                  ; RAM_Loader_tb.sv                       ; --               ; --          ; RAM_Loader_tb              ;
-; EDA_TEST_BENCH_FILE                  ; RAM_Loader_Prueba_tb.sv                ; --               ; --          ; RAM_Loader_Prueba_tb       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; MMU_negative_tb                        ; --               ; --          ; MMU_negative_tb            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; TPU_System_tb                          ; --               ; --          ; TPU_System_tb              ;
-; EDA_TEST_BENCH_MODULE_NAME           ; SystolicArrayController_tb             ; --               ; --          ; SystolicArrayController_tb ;
-; EDA_TEST_BENCH_MODULE_NAME           ; MMU_diagonalzeros_tb                   ; --               ; --          ; MMU_diagonalzeros_tb       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; Matrix_Controller_tb                   ; --               ; --          ; Matrix_Controller_tb       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; MMU_normalizer_tb                      ; --               ; --          ; MMU_normalizer_tb          ;
-; EDA_TEST_BENCH_MODULE_NAME           ; MMU_tb                                 ; --               ; --          ; MMU_tb                     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; ram_tb                                 ; --               ; --          ; ram_tb                     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; RAM_Loader_tb                          ; --               ; --          ; RAM_Loader_tb              ;
-; EDA_TEST_BENCH_MODULE_NAME           ; RAM_Loader_Prueba_tb                   ; --               ; --          ; RAM_Loader_Prueba_tb       ;
-; EDA_TEST_BENCH_NAME                  ; MMU_tb                                 ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; MMU_negative_tb                        ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; ram_tb                                 ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; TPU_System_tb                          ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; Matrix_Controller_tb                   ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; MMU_normalizer_tb                      ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; RAM_Loader_tb                          ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; MMU_diagonalzeros_tb                   ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; RAM_Loader_Prueba_tb                   ; --               ; --          ; eda_simulation             ;
-; EDA_TEST_BENCH_NAME                  ; SystolicArrayController_tb             ; --               ; --          ; eda_simulation             ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --               ; --          ; eda_simulation             ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --               ; --          ; --                         ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --               ; --          ; --                         ;
-; MISC_FILE                            ; ram1_bb.v                              ; --               ; --          ; --                         ;
-; MISC_FILE                            ; ram2_bb.v                              ; --               ; --          ; --                         ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                        ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --               ; TPU         ; Top                        ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --               ; --          ; --                         ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --          ; --                         ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --               ; --          ; --                         ;
-; TOP_LEVEL_ENTITY                     ; TPU                                    ; BrightnessFilter ; --          ; --                         ;
-+--------------------------------------+----------------------------------------+------------------+-------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                               ;
++--------------------------------------+-----------------------------------------------------------+------------------+-------------+----------------------------+
+; Assignment Name                      ; Value                                                     ; Default Value    ; Entity Name ; Section Id                 ;
++--------------------------------------+-----------------------------------------------------------+------------------+-------------+----------------------------+
+; COMPILER_SIGNATURE_ID                ; 10995770589199.175065719034860                            ; --               ; --          ; --                         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; MMU_negative_tb            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; TPU_System_tb              ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; SystolicArrayController_tb ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; MMU_diagonalzeros_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; Matrix_Controller_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; MMU_normalizer_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; MMU_tb                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; ram_tb                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; RAM_Loader_tb              ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --               ; --          ; RAM_Loader_Prueba_tb       ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MMU_normalizer_tb                                         ; --               ; --          ; eda_simulation             ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                         ; --               ; --          ; eda_simulation             ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)                           ; <None>           ; --          ; --                         ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                           ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_FILE                  ; MMU_negative_tb.sv                                        ; --               ; --          ; MMU_negative_tb            ;
+; EDA_TEST_BENCH_FILE                  ; TPU_System_tb.sv                                          ; --               ; --          ; TPU_System_tb              ;
+; EDA_TEST_BENCH_FILE                  ; SystolicArrayController_tb.sv                             ; --               ; --          ; SystolicArrayController_tb ;
+; EDA_TEST_BENCH_FILE                  ; MMU_diagonalzeros_tb.sv                                   ; --               ; --          ; MMU_diagonalzeros_tb       ;
+; EDA_TEST_BENCH_FILE                  ; Matrix_Controller_tb.sv                                   ; --               ; --          ; Matrix_Controller_tb       ;
+; EDA_TEST_BENCH_FILE                  ; MMU_normalizer_tb.sv                                      ; --               ; --          ; MMU_normalizer_tb          ;
+; EDA_TEST_BENCH_FILE                  ; MMU_tb.sv                                                 ; --               ; --          ; MMU_tb                     ;
+; EDA_TEST_BENCH_FILE                  ; ram_tb.sv                                                 ; --               ; --          ; ram_tb                     ;
+; EDA_TEST_BENCH_FILE                  ; RAM_Loader_tb.sv                                          ; --               ; --          ; RAM_Loader_tb              ;
+; EDA_TEST_BENCH_FILE                  ; RAM_Loader_Prueba_tb.sv                                   ; --               ; --          ; RAM_Loader_Prueba_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; MMU_negative_tb                                           ; --               ; --          ; MMU_negative_tb            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; TPU_System_tb                                             ; --               ; --          ; TPU_System_tb              ;
+; EDA_TEST_BENCH_MODULE_NAME           ; SystolicArrayController_tb                                ; --               ; --          ; SystolicArrayController_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; MMU_diagonalzeros_tb                                      ; --               ; --          ; MMU_diagonalzeros_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Matrix_Controller_tb                                      ; --               ; --          ; Matrix_Controller_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; MMU_normalizer_tb                                         ; --               ; --          ; MMU_normalizer_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; MMU_tb                                                    ; --               ; --          ; MMU_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ram_tb                                                    ; --               ; --          ; ram_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAM_Loader_tb                                             ; --               ; --          ; RAM_Loader_tb              ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAM_Loader_Prueba_tb                                      ; --               ; --          ; RAM_Loader_Prueba_tb       ;
+; EDA_TEST_BENCH_NAME                  ; MMU_tb                                                    ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; MMU_negative_tb                                           ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; ram_tb                                                    ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; TPU_System_tb                                             ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Matrix_Controller_tb                                      ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; MMU_normalizer_tb                                         ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; RAM_Loader_tb                                             ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; MMU_diagonalzeros_tb                                      ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; RAM_Loader_Prueba_tb                                      ; --               ; --          ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; SystolicArrayController_tb                                ; --               ; --          ; eda_simulation             ;
+; EDA_TIME_SCALE                       ; 1 ps                                                      ; --               ; --          ; eda_simulation             ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                        ; --               ; --          ; --                         ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                         ; --               ; --          ; --                         ;
+; MISC_FILE                            ; u_vjtag/synthesis/../u_vjtag.cmp                          ; --               ; --          ; --                         ;
+; MISC_FILE                            ; u_vjtag/synthesis/../../u_vjtag.qsys                      ; --               ; --          ; --                         ;
+; MISC_FILE                            ; ram1_bb.v                                                 ; --               ; --          ; --                         ;
+; MISC_FILE                            ; ram2_bb.v                                                 ; --               ; --          ; --                         ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                    ; --               ; top         ; Top                        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                    ; --               ; top         ; Top                        ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                    ; --               ; top         ; Top                        ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                       ; --               ; --          ; --                         ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                     ; --               ; --          ; --                         ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                              ; --               ; --          ; --                         ;
+; SLD_FILE                             ; u_vjtag/synthesis/u_vjtag.debuginfo                       ; --               ; --          ; --                         ;
+; SLD_INFO                             ; QSYS_NAME u_vjtag HAS_SOPCINFO 1 GENERATION_ID 1750656922 ; --               ; u_vjtag     ; --                         ;
+; SOPCINFO_FILE                        ; u_vjtag/synthesis/../../u_vjtag.sopcinfo                  ; --               ; --          ; --                         ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                        ; --               ; --          ; --                         ;
+; TOP_LEVEL_ENTITY                     ; top                                                       ; BrightnessFilter ; --          ; --                         ;
++--------------------------------------+-----------------------------------------------------------+------------------+-------------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4774 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:16                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4935 MB             ; 00:00:37                           ;
+; Fitter               ; 00:00:57     ; 1.0                     ; 7909 MB             ; 00:04:24                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4842 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.2                     ; 5301 MB             ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4730 MB             ; 00:00:01                           ;
+; Total                ; 00:01:31     ; --                      ; --                  ; 00:05:15                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-GO0OT7L  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off BrightnessFilter -c BrightnessFilter --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off BrightnessFilter -c BrightnessFilter
+quartus_fit --read_settings_files=off --write_settings_files=off BrightnessFilter -c BrightnessFilter
+quartus_asm --read_settings_files=off --write_settings_files=off BrightnessFilter -c BrightnessFilter
+quartus_sta BrightnessFilter -c BrightnessFilter
+quartus_eda --read_settings_files=off --write_settings_files=off BrightnessFilter -c BrightnessFilter
 
 
 

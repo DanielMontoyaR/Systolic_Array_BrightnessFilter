@@ -1,1 +1,2 @@
 Info (10281): Verilog HDL Declaration information at Matrix_Controller.sv(10): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/Matrix_Controller.sv Line: 10
+Warning (10268): Verilog HDL information at paintscreen.sv(19): always construct contains both blocking and non-blocking assignments File: C:/Users/Daniel/Desktop/Arqui2ProyectoRepositorio/Systolic_Array_GaussianFilter/SystemVerilogBrightness/paintscreen.sv Line: 19
