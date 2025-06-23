@@ -9,9 +9,12 @@ module RAM_Loader #(
     input logic clk,
     input logic reset,
     input logic start,
+	 input logic tpu_ready,       // Nueva entrada: TPU listo para nuevos datos
     output logic [PE_DATA_WIDTH*DEPTH-1:0] data_out,
     output logic data_valid,
-    output logic done
+    output logic done,
+	 output logic load_next       // Nueva salida: Solicitud de siguiente bloque
+	 
 );
 
     // --- Señales internas para la RAM ---
@@ -28,9 +31,10 @@ module RAM_Loader #(
     );
 
     // --- Estados ---
-    typedef enum logic [1:0] {
+     typedef enum logic [2:0] {  // Ampliado a 3 bits
         IDLE,
         LOAD,
+        WAIT_TPU,      // Nuevo estado: esperar a que TPU procese
         FINISH,
         DONE_ST
     } state_t;
@@ -122,15 +126,19 @@ module RAM_Loader #(
         end
     end
     
-    // --- Lógica de próximo estado ---
+    // Lógica de próximo estado modificada
     always_comb begin
         next_state = current_state;
         
         case (current_state)
-            IDLE:   if (start) next_state = LOAD;
-            LOAD:   if (last_block && word_counter == DEPTH-1 && read_delay == 2) next_state = FINISH;
-            FINISH: next_state = DONE_ST;
-            DONE_ST: next_state = IDLE;
+            IDLE:     if (start) next_state = LOAD;
+            LOAD:     if (last_block && word_counter == DEPTH-1 && read_delay == 2) 
+                          next_state = FINISH;
+                      else if (word_counter == DEPTH-1 && read_delay == 2) 
+                          next_state = WAIT_TPU;
+            WAIT_TPU: if (tpu_ready) next_state = LOAD;
+            FINISH:   next_state = DONE_ST;
+            DONE_ST:  next_state = IDLE;
         endcase
     end
     
@@ -139,4 +147,5 @@ module RAM_Loader #(
     
     // --- Salida concatenada ---
     assign data_out = {data_buffer[3], data_buffer[2], data_buffer[1], data_buffer[0]};
+	 assign load_next = (current_state == WAIT_TPU);
 endmodule

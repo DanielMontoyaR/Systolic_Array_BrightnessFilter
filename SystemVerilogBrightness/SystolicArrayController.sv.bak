@@ -1,0 +1,103 @@
+`timescale 1ns / 1ps
+
+module SystolicArrayController #(
+    parameter RAM_ADDR_WIDTH = 6,
+    parameter RAM_DATA_WIDTH = 8,
+    parameter PE_DATA_WIDTH = 16,
+    parameter DEPTH = 4,
+    parameter ACC_WIDTH = 40
+)(
+    input logic clk,
+    input logic reset,
+    input logic start,
+    output logic done,
+    
+    // Salidas para monitoreo/debug
+    output logic [PE_DATA_WIDTH*DEPTH-1:0] current_data_out,
+    output logic [PE_DATA_WIDTH*DEPTH-1:0] current_weights_out,
+    output logic [ACC_WIDTH-1:0] pe30_out, pe31_out, pe32_out, pe33_out,
+    output logic [15:0] pe30_norm_out, pe31_norm_out, pe32_norm_out, pe33_norm_out
+);
+
+    // Señales de interconexión
+    logic tpu_ready;
+    logic load_next;
+    logic [PE_DATA_WIDTH*DEPTH-1:0] data_to_tpu;
+    logic data_valid;
+    logic control_signal;
+    
+    // Contador para controlar la carga de pesos
+    logic [1:0] weight_load_counter;
+    logic weights_loaded;
+    
+    // Instancia del RAM_Loader
+    RAM_Loader #(
+        .RAM_ADDR_WIDTH(RAM_ADDR_WIDTH),
+        .RAM_DATA_WIDTH(RAM_DATA_WIDTH),
+        .PE_DATA_WIDTH(PE_DATA_WIDTH),
+        .DEPTH(DEPTH)
+    ) ram_loader (
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .tpu_ready(tpu_ready),
+        .data_out(data_to_tpu),
+        .data_valid(data_valid),
+        .done(done),
+        .load_next(load_next)
+    );
+    
+    // Instancia del TPU (arreglo sistólico)
+    TPU #(
+        .depth(DEPTH),
+        .bit_width(PE_DATA_WIDTH),
+        .acc_width(ACC_WIDTH),
+        .size(DEPTH)
+    ) systolic_array (
+        .clk(clk),
+        .control(control_signal),
+        .data_arr(data_to_tpu),
+        .wt_arr(data_to_tpu), // Usamos los mismos datos para pesos en esta prueba
+        .acc_out(),
+        .pe30_out(pe30_out),
+        .pe31_out(pe31_out),
+        .pe32_out(pe32_out),
+        .pe33_out(pe33_out),
+        .pe30_norm_out(pe30_norm_out),
+        .pe31_norm_out(pe31_norm_out),
+        .pe32_norm_out(pe32_norm_out),
+        .pe33_norm_out(pe33_norm_out)
+    );
+    
+    // Lógica de control
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
+            weight_load_counter <= 0;
+            weights_loaded <= 0;
+            control_signal <= 0;
+        end else begin
+            // Primero cargamos los pesos (primeros 4 bloques)
+            if (data_valid && !weights_loaded) begin
+                control_signal <= 1;
+                weight_load_counter <= weight_load_counter + 1;
+                
+                if (weight_load_counter == DEPTH-1) begin
+                    weights_loaded <= 1;
+                    control_signal <= 0;
+                end
+            end
+            
+            // Después procesamos datos normales
+            else if (weights_loaded) begin
+                control_signal <= 0;
+            end
+        end
+    end
+    
+    // La TPU está lista cuando no está cargando pesos y hay datos válidos
+    assign tpu_ready = weights_loaded && !control_signal;
+    
+    // Señales de monitoreo
+    assign current_data_out = data_to_tpu;
+    assign current_weights_out = systolic_array.wt_arr;
+endmodule
